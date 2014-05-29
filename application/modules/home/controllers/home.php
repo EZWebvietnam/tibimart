@@ -4,31 +4,10 @@ class Home extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
-        parent::list_cate();
-        parent::info_company();
-        parent::load_clip();
-        parent::load_header();
-        parent::list_province();
-        parent::captcha_random();
-        $this->load->model('productmodel');
-        $this->load->helper(array('form', 'url'));
-        $this->load->library('form_validation');
-        $this->load->library('tank_auth');
-        $this->lang->load('tank_auth');
     }
 
     public function index() {
-        /*$this->data['clip_top'] = $this->productmodel->load_top_clip();
-        $this->data['list_clip_right'] = $this->productmodel->load_top_right();
-        $this->data['list_product'] = $this->productmodel->list_product_home();
-        $this->data['main_content'] = 'home_view/home';
-        $this->load->view('home/layout_home', $this->data);*/
-        $this->data['clip_top'] = $this->productmodel->load_top_clip();
-        $detail_product = $this->productmodel->product_detail(1);
-        $this->data['image']=$this->_create_captcha();
-        $this->data['main_content']='home_view/detail_home';
-        $this->data['product_detail']=$detail_product;
-        $this->load->view('home/layout_home',$this->data);
+       $this->load->view('home/layout_home_index');
     }
 
     public function contact() {
