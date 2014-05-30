@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2014 at 06:27 AM
+-- Generation Time: May 30, 2014 at 05:33 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -19,6 +19,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `tibimart`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cate_product`
+--
+
+CREATE TABLE IF NOT EXISTS `cate_product` (
+  `id_cate` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `show_home` int(11) NOT NULL,
+  PRIMARY KEY (`id_cate`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `cate_product`
+--
+
+INSERT INTO `cate_product` (`id_cate`, `title`, `show_home`) VALUES
+(1, 'Sản phẩm làm đẹp', 1),
+(2, 'Sản phẩm làm đẹp', 1);
 
 -- --------------------------------------------------------
 
