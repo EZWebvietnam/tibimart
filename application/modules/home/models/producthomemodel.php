@@ -35,5 +35,21 @@ class Producthomemodel extends CI_Model
 		$query = $this->db->get("{$this->_name}");
 		return $query->result_array();
 	}
+	public function list_product_list($id_cate,$number,$offset)
+	{
+		$id_cate = intval($id_cate);
+		$number = intval($number);
+		$offset = intval($offset);
+		$sql="SELECT * FROM {$this->_name} WHERE id_cate = ? LIMIT ?,?";
+		$query = $this->db->query($sql,array($id_cate,$offset,$number));
+		return $query->result_array();
+	}
+	public function count_product_list($id_cate)
+	{
+		$id_cate = intval($id_cate);
+		$sql="SELECT * FROM {$this->_name} WHERE id_cate = ?";
+		$query = $this->db->query($sql,array($id_cate));
+		return count($query->result_array());
+	}
 }
 ?>

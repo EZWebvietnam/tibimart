@@ -329,30 +329,20 @@
                            </h3>
                         </div>
                         <div class="bd">
-                           <ul id="menu-ver">
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban.aspx">Thang nhôm Hasegawa - Nhật bản</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_1" href="http://thangnhom.net.vn/thang-nhom-dai-loan.aspx">Thang nhôm PAL - Đài Loan</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_2" href="http://thangnhom.net.vn/thang-nhom-tungshing.aspx">Thang nhôm Tungshing - Việt Nam</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_3" href="http://thangnhom.net.vn/thang-nhom-rut-gon.aspx">Thang nhôm rút Salvo</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_4" href="http://thangnhom.net.vn/thang-ghe-salvo.aspx">Thang nhôm Little - Mỹ</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_5" href="http://thangnhom.net.vn/thang-nhom-poongsan-han-quoc.aspx">Thang nhôm Poongsan-Hàn Quốc</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_6" href="http://thangnhom.net.vn/thang-nhom-nikawa-nhat-ban.aspx">Thang nhôm Nikawa-Nhật Bản</a>
-                              </li>
-                           </ul>
-                        </div>
+            <ul id="menu-ver">
+                		<?php 
+						foreach($list_cate as $l_cate)
+						{
+						?>
+                        <li>
+                            <a id="MenuVerticalControl1_rptParent_hplLinkParent_0" href="<?php echo base_url();?>san-pham/c/<?php echo $l_cate['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($l_cate['title'])));?>"><?php echo $l_cate['title']?></a>
+                            
+                        </li>
+						<?php } ?>
+                    
+            </ul>
+         
+        </div>
                      </div>
                      <div class="menu-ver">
                         <div class="title">

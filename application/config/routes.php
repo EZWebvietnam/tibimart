@@ -41,24 +41,13 @@
 $route['default_controller'] = "home/index";
 $route['trang-chu'] = "home/home/index";
 $route['san-pham'] = "home/product/list_product";
-$route['san-pham/page/(:any)'] = "home/product/list_product";
-$route['ref/(:any)'] = "home/home/index";
-
+$route['san-pham/c/(:any)-(:any)']="home/product/list_product/$1";
+$route['san-pham/c/(:any)-(:any)/page/(:any)']="home/product/list_product/$1";
 $route['san-pham/(:any)-(:any)'] = "home/product/product_detail/$1";
-$route['san-pham/(:any)-(:any)/ref/(:any)'] = "home/product/detail/$1";
-
-$route['p_c-(:any)-(:any)/p_p-(:any)-(:any)'] = "home/product/detail/$3";
-$route['p_c-(:any)-(:any)'] = "home/product/list_product/$1";
-$route['p_c-(:any)-(:any)/page/(:any)'] = "home/product/list_product/$1";
-$route['cong-tac-vien'] = "ctv/productctv/index";
-$route['cong-tac-vien/login'] = "ctv/homectv/login";
-$route['cong-tac-vien/register'] = "home/home/register";
 $route['404_override'] = '';
 $route['hoi-dap']='home/product/faq_list';
 $route['gioi-thieu']='home/home/about';
 $route['gui-cau-hoi']='home/product/send_faq';
-$route['tin-tuc']='home/news/list_news';
-$route['tin-tuc-(:any)-(:any)']='home/news/detail/$1';
 $route['hoi-dap-(:any)-(:any)'] = 'home/product/detail_faq/$1';
 $route['active-user/(:any)/(:any)']='home/home/activate';
 $route['lien-he'] = 'home/home/contact';
