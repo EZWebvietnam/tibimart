@@ -17,5 +17,13 @@ class Producthomemodel extends CI_Model
 		$query = $this->db->get("{$this->_name}");
 		return $query->result_array();
 	}
+	public function product_detail($id)
+	{
+		$id = intval($id);
+		$this->db->select();
+		$this->db->where('id_product',$id);
+		$query = $this->db->get("{$this->_name}");
+		return $query->result_array();
+	}
 }
 ?>

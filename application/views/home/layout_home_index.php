@@ -365,7 +365,7 @@ foreach($list_cate_home as $l_c_home)
 		
         <div class="sanpham_tab">
             <center>
-                <a id="ContentPlaceHolder1_ctl00_ProductListControl1_rpt1_hplImg_<?php echo $l_product['id_product']?>" data-tooltip="sticky<?php echo $l_product['id_product']?>" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-12.aspx">
+                <a id="ContentPlaceHolder1_ctl00_ProductListControl1_rpt1_hplImg_<?php echo $l_product['id_product']?>" data-tooltip="sticky<?php echo $l_product['id_product']?>" href="<?php echo base_url();?>san-pham/<?php echo $l_product['id_product']?>-<?php echo mb_strtolower(url_title(removesign($l_product['title'])))?>">
 				<?php 
 				if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$l_product['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$l_product['image']) && $l_product['image']!='')
 				{
@@ -380,7 +380,7 @@ foreach($list_cate_home as $l_c_home)
             </center>
          
             <p>
-                <a id="ContentPlaceHolder1_ctl00_ProductListControl1_rpt1_hplTitle_<?php echo $l_product['id_product']?>" data-tooltip="sticky<?php echo $l_product['id_product']?>" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-12.aspx"><?php echo$l_product['title']?></a></p>
+                <a id="ContentPlaceHolder1_ctl00_ProductListControl1_rpt1_hplTitle_<?php echo $l_product['id_product']?>" data-tooltip="sticky<?php echo $l_product['id_product']?>" href="<?php echo base_url();?>san-pham/<?php echo $l_product['id_product']?>-<?php echo mb_strtolower(url_title(removesign($l_product['title'])))?>"><?php echo$l_product['title']?></a></p>
             Giá: <span class="price">
                 <?php echo number_format($l_product['price'])?> VNĐ</span>
         </div>

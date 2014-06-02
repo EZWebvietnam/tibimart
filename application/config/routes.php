@@ -44,7 +44,7 @@ $route['san-pham'] = "home/product/list_product";
 $route['san-pham/page/(:any)'] = "home/product/list_product";
 $route['ref/(:any)'] = "home/home/index";
 
-$route['san-pham/(:any)-(:any)'] = "home/product/detail/$1";
+$route['san-pham/(:any)-(:any)'] = "home/product/product_detail/$1";
 $route['san-pham/(:any)-(:any)/ref/(:any)'] = "home/product/detail/$1";
 
 $route['p_c-(:any)-(:any)/p_p-(:any)-(:any)'] = "home/product/detail/$3";
