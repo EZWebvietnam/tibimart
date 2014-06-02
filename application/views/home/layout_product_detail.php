@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
-      <title>Thang nhôm Hasegawa-Japan RS-12,thang giá rẻ,thang xây dựng,tungshing</title>
+      <title><?php echo $product_detail[0]['title']?></title>
       <meta name="keywords" content="thang,thang nhôm,thang nhật,thang nhat,thang gấp,thang rút,thang xếp nhôm,thang tungshing,thang salvo,thang rút gọn,thang nhôm rút gọn,thang chữ a,thang chữ m" />
       <meta name="description" content="Thang nhôm RS-12 là thang gấp 2 đoạn có được nhập khẩu từ Nhật Bản,do công ty Công ty Thành Đạt phân phối" />
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.min.js"></script>
@@ -156,7 +156,23 @@
                      </div>
                      <div class="clear">
                      </div>
-                     <a id="ContentPlaceHolder1_btnAddCart" class="addcart" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$btnAddCart&#39;,&#39;&#39;)">Thêm vào giỏ hàng</a>
+                     <form name="addToCart" method="post">
+                     <input type="hidden" name="cart" value="1"/>
+                     <input type="hidden" name="id_product" value="<?php echo $product_detail[0]['id_product']?>"/>
+                     <a id="ContentPlaceHolder1_btnAddCart" class="addcart" href="javascript:addToCart()">Thêm vào giỏ hàng</a>
+                     <div class="info">
+                    <div class="left"> Số lượng:</div>
+                    <div class="right">
+                    <select name="quantity" id="quantity">
+                     	<option value="1">1</option>
+                     	<option value="2">2</option>
+                     	<option value="3">3</option>
+                     	<option value="4">4</option>
+                     	<option value="5">5</option>
+                     </select>
+                     </div>
+                     </div>
+                     </form>
                      <div class="action">
                         <a id="ContentPlaceHolder1_hplBaoGia" class="baogia" href="/InBaoGia/AddInfo.aspx?pid=11" target="_blank">In báo giá</a>
                         <a id="ContentPlaceHolder1_hplEdit" class="edit">Sửa</a>
@@ -219,21 +235,7 @@
                      <div class="tab_container">
                         <div class="tab_content1" id="chitiet" style="display: block;">
                            <div class="tab_content" id="chitiet" style="display: block;">
-                              <p>
-                                 <a href="http://www.xeday.vn/products/20/Thang-nhom-Nhat-Ban.aspx"><span style="color:#000000;">Thang nhôm</span></a> Hasegawa-Japan RS-12
-                              </p>
-                              <p>
-                                 <strong>Mô tả sản phẩm:</strong><br />
-                                 <br />
-                                 -Thang gấp 2 đoạn&nbsp; Hasegawa&nbsp; RS-12&nbsp; trọng lượng 5.4kg, chiều cao duỗi thẳng 2.4m,<br />
-                                 chiều cao chữ A 1.2m, tải trọng cho phép 100kg, tiêu chuẩn Japan .<br />
-                                 <br />
-                                 <span style="color:#ff0000;"><strong>- Sản xuất : Trung Quốc</strong></span>
-                              </p>
-                              <p>
-                                 <strong>Catalogue&amp; thông số kĩ thuật</strong><br />
-                                 <img alt="" src="/upload/images/rs-12(2).jpg" style="width: 704px; height: 992px;" />
-                              </p>
+                              <?php echo $product_detail[0]['content'];?>
                            </div>
                            <p>
                               &nbsp;
@@ -278,68 +280,35 @@
                      </div>
                      <div class="tab-products">
                         <div style="" class="tabcontainer">
+                        <?php 
+                        foreach($list_product_cate as $p_cate)
+                        {
+                        ?>
                            <div class="sanpham_tab">
                               <center>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplImg_0" data-tooltip="sticky11-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-12.aspx"><img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_0" src="/upload/images/products/Thang-nhom-Hasegawa-Japan-RS-12.jpg?width=160&amp;height=160&amp;quality=100" alt="Thang nhôm Hasegawa-Japan RS-12" /></a>
+                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplImg_0" data-tooltip="sticky11-0" href="<?php echo base_url();?>san-pham/<?php echo $p_cate['id_product']?>-<?php echo mb_strtolower(url_title(removesign($p_cate['title'])));?>">
+                                 <?php 
+                     if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$p_cate['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$p_cate['image']) && $p_cate['image']!='')
+                     {
+                     ?>
+                                 <img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_0" src="<?php echo base_url();?>file/uploads/product/<?php echo $p_cate['image']?>" width="160" height="160" alt="<?php echo $p_cate['title']?>" />
+                                 <?php } else {?>
+                                   <img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_0" src="<?php echo base_url();?>file/uploads/no_image.gif" width="160" height="160" alt="<?php echo $p_cate['title']?>" />
+                                 <?php } ?>
+                                 </a>
                               </center>
                               <p>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplTitle_0" data-tooltip="sticky11-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-12.aspx">Thang nhôm Hasegawa-Japan RS-12</a>
+                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplTitle_0" data-tooltip="sticky11-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-12.aspx"><?php echo $p_cate['title'];?></a>
                               </p>
                               Giá: <span class="price">
-                              1.550.000 VNĐ</span>
+                              <?php echo number_format($p_cate['price']);?> VNĐ</span>
                            </div>
-                           <div class="sanpham_tab">
-                              <center>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplImg_1" data-tooltip="sticky14-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-sra-8.aspx"><img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_1" src="/upload/images/products/Thang-nhom-Hasegawa-Japan-SRA-8.jpg?width=160&amp;height=160&amp;quality=100" alt="Thang nhôm Hasegawa-Japan SRA-8" /></a>
-                              </center>
-                              <p>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplTitle_1" data-tooltip="sticky14-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-sra-8.aspx">Thang nhôm Hasegawa-Japan SRA-8</a>
-                              </p>
-                              Giá: <span class="price">
-                              1.750.000 VNĐ</span>
-                           </div>
-                           <div class="sanpham_tab">
-                              <center>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplImg_2" data-tooltip="sticky10-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-15.aspx"><img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_2" src="/upload/images/products/Thang-nhom-Hasegawa-Japan-RS-15.jpg?width=160&amp;height=160&amp;quality=100" alt="Thang nhôm Hasegawa-Japan RS-15" /></a>
-                              </center>
-                              <p>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplTitle_2" data-tooltip="sticky10-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-15.aspx">Thang nhôm Hasegawa-Japan RS-15</a>
-                              </p>
-                              Giá: <span class="price">
-                              1.750.000 VNĐ</span>
-                           </div>
-                           <div class="sanpham_tab">
-                              <center>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplImg_3" data-tooltip="sticky12-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-sra-11.aspx"><img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_3" src="/upload/images/products/Thang-nhom-Hasegawa-Japan-SRA-11.jpg?width=160&amp;height=160&amp;quality=100" alt="Thang nhôm Hasegawa-Japan SRA-11" /></a>
-                              </center>
-                              <p>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplTitle_3" data-tooltip="sticky12-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-sra-11.aspx">Thang nhôm Hasegawa-Japan SRA-11</a>
-                              </p>
-                              Giá: <span class="price">
-                              2.000.000 VNĐ</span>
-                           </div>
+                         <?php } ?>  
+                           
+                           
                            <div id="ContentPlaceHolder1_ProductListControl1_rpt1_div_space_3" class="clear">
                            </div>
-                           <div class="sanpham_tab">
-                              <center>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplImg_4" data-tooltip="sticky9-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-18.aspx"><img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_4" src="/upload/images/products/Thang-nhom-Hasegawa-Japan-RS-18.jpg?width=160&amp;height=160&amp;quality=100" alt="Thang nhôm Hasegawa-Japan RS-18" /></a>
-                              </center>
-                              <p>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplTitle_4" data-tooltip="sticky9-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-18.aspx">Thang nhôm Hasegawa-Japan RS-18</a>
-                              </p>
-                              Giá: <span class="price">
-                              2.000.000 VNĐ</span>
-                           </div>
-                           <div class="sanpham_tab">
-                              <center>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplImg_5" data-tooltip="sticky1-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-21.aspx"><img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_5" src="/upload/images/products/Thang-nhom-Hasegawa-Japan-RS-21.jpg?width=160&amp;height=160&amp;quality=100" alt="Thang nhôm Hasegawa-Japan RS-21" /></a>
-                              </center>
-                              <p>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplTitle_5" data-tooltip="sticky1-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-21.aspx">Thang nhôm Hasegawa-Japan RS-21</a>
-                              </p>
-                              Giá: <span class="price">
-                              2.280.000 VNĐ</span>
-                           </div>
+                           
                            <div id="ContentPlaceHolder1_ProductListControl1_pnlList" class="prd-list">
                               <div class="clear">
                               </div>
@@ -417,8 +386,8 @@
                   </div>
                   <div class="clear">
                   </div>
-                  <a href="/Shopping-cart.aspx" class="cart"><span class="text">Giỏ hàng của quý khách</span> <span class="quantity">
-                  0</span> </a>
+                  <a href="/gio-hang" class="cart"><span class="text">Giỏ hàng của quý khách</span> <span class="quantity">
+                  <?php echo $count_cart;?></span> </a>
                   <div class="clear">
                   </div>
                   <div class="block">
@@ -660,6 +629,12 @@
          <div id="divBannerFloatRight">
          </div>
       </div>
+      <script>
+      	function addToCart()
+		{
+			document.forms.addToCart.submit();
+		}      	
+      </script>
       <script type="text/javascript">
          var _gaq = _gaq || [];
          _gaq.push(['_setAccount', 'UA-21718856-13']);

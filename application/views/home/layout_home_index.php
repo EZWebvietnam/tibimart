@@ -455,8 +455,8 @@ foreach($list_cate_home as $l_c_home)
                 </div>
                 <div id="small">
                     
-<a href="/Shopping-cart.aspx" class="cart"><span class="text">Giỏ hàng của quý khách</span> <span class="quantity">
-    0</span> </a>
+<a href="/gio-hang" class="cart"><span class="text">Giỏ hàng của quý khách</span> <span class="quantity">
+    <?php echo $count_cart;?></span> </a>
                     <div class="clear">
                     </div>
                     

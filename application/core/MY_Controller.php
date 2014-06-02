@@ -14,7 +14,19 @@ class MY_Controller extends CI_Controller
         $this->load->model('catehomemodel');
         $this->data['list_cate']=$this->catehomemodel->list_cate_nav();
     }
-    
+    public function count_cart()
+    {
+    	$this->load->model('cartmodel');
+    	if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+			}elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+				$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			}else{
+				$ip = $_SERVER['REMOTE_ADDR'];
+			}
+		$count_cart = count($this->cartmodel->list_cart_ip($ip));
+		$this->data['count_cart']=$count_cart;
+	}
     public function load_header()
     {
         $link = $_SERVER['DOCUMENT_ROOT'] . ROT_DIR . 'setting.xml';
