@@ -41,6 +41,7 @@
 $route['default_controller'] = "home/index";
 $route['trang-chu'] = "home/home/index";
 $route['gio-hang']="home/product/cart";
+$route['thanh-toan']="home/product/checkout";
 $route['san-pham'] = "home/product/list_product";
 $route['san-pham/c/(:any)-(:any)']="home/product/list_product/$1";
 $route['san-pham/c/(:any)-(:any)/page/(:any)']="home/product/list_product/$1";

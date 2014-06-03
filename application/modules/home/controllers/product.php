@@ -171,6 +171,18 @@ class Product extends MY_Controller
 	}
 	public function checkout()
 	{
+		if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+			}elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+				$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			}else{
+				$ip = $_SERVER['REMOTE_ADDR'];
+			}
+		$list_cart = $this->cartmodel->list_cart_ip($ip);
+		if(empty($list_cart))
+		{
+			redirect('../'.ROT_DIR);
+		}
 		if($this->input->post())
 		{
 			$lat ="10.771101";

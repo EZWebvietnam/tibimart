@@ -76,8 +76,8 @@
                         <div class="clearBoth">
                         </div>
                         <div style="float: right;">
-                           <input type="submit" name="ctl00$ContentPlaceHolder1$btnUpdateCart" value="Cập nhật" id="ContentPlaceHolder1_btnUpdateCart" class="btn floatLeft" />
-                           <input type="submit" name="ctl00$ContentPlaceHolder1$btnHome" value="Tiếp tục mua" id="ContentPlaceHolder1_btnHome" class="btn-120 floatLeft" />
-                           <input type="submit" name="ctl00$ContentPlaceHolder1$ibtnOrder" value="Thanh Toán" id="ContentPlaceHolder1_ibtnOrder" class="btn floatLeft" />
+                          
+                           <input type="button" value="Tiếp tục mua" onclick="window.location.href='<?php echo base_url();?>'"  class="btn-120 floatLeft" />
+                           <input type="button" value="Thanh Toán" onclick="window.location.href='<?php echo base_url();?>thanh-toan'" class="btn floatLeft" />
                         </div>
                      </div>
