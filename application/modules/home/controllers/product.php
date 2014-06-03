@@ -110,6 +110,20 @@ class Product extends MY_Controller
         $this->data['list'] = $array_sv;
         $this->load->view('home/layout_list_product',$this->data);
 	}
+	public function cart()
+	{
+		$this->load->model('cartmodel');
+		if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+			}elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+				$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			}else{
+				$ip = $_SERVER['REMOTE_ADDR'];
+			}
+		$list_cart = $this->cartmodel->list_cart_ip($ip);
+		$this->data['list_cart'] = $list_cart;
+		$this->load->view('home/layout_cart',$this->data);
+	}
 	public function checkout()
 	{
 		if($this->input->post())
