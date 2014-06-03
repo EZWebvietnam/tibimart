@@ -74,6 +74,7 @@ class Product extends MY_Controller
 	}
 	public function list_product($id_cate)
 	{
+		$this->load->model('catehomemodel');
 		if(empty($id_cate))
 		{
 			show_404();
@@ -88,8 +89,9 @@ class Product extends MY_Controller
 		}
 		$this->load->helper('url');
         $config['uri_segment'] = 5;
-        $page = $this->uri->segment(4);
-        $config['per_page'] = 10;
+        $page = $this->uri->segment(5);
+        $config['per_page'] = 12;
+		$this->data['cate_detail']=$this->catehomemodel->cate_detail($id_cate);
         $config['total_rows'] = $this->producthomemodel->count_product_list($id_cate);
         if ($page == '') {
             $page = 1;

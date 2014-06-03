@@ -376,8 +376,8 @@
                   </div>
                   <div class="clear">
                   </div>
-                  <a href="/gio-hang" class="cart"><span class="text">Giỏ hàng của quý khách</span> <span class="quantity">
-                  <?php echo $count_cart;?></span> </a>
+                  <a href="<?php echo base_url();?>gio-hang" class="cart"><span class="text">Giỏ hàng của quý khách</span> <span class="quantity">
+    <?php echo $count_cart;?></span> </a>
                   <div class="clear">
                   </div>
                   <div class="block">

@@ -352,6 +352,7 @@ foreach($list_cate_home as $l_c_home)
         </div>
         <?php 
 		$i = 1;
+		$data_sticky = array();
 		foreach($list_product as $l_product)
 		{
 			if($i%5==0)
@@ -455,7 +456,7 @@ foreach($list_cate_home as $l_c_home)
                 </div>
                 <div id="small">
                     
-<a href="/gio-hang" class="cart"><span class="text">Giỏ hàng của quý khách</span> <span class="quantity">
+<a href="<?php echo base_url();?>gio-hang" class="cart"><span class="text">Giỏ hàng của quý khách</span> <span class="quantity">
     <?php echo $count_cart;?></span> </a>
                     <div class="clear">
                     </div>
