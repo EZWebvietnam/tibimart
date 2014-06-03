@@ -18,6 +18,24 @@
       <link rel="stylesheet" href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.hoveraccordion.min.js"></script>
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/tooltip/stickytooltip.js"></script>
+	  <?php
+	  if($_SERVER['SERVER_NAME'] == 'localhost')
+		 {
+		      ?> 
+			  <script>
+			  	var app_main_url ="http://localhost/tibimart";
+			  </script>
+			  <?php
+		 }
+		 else
+		 {
+		    ?> 
+			 <script>
+			  	var app_main_url ="http://tibimart.com";
+			  </script>
+			<?php
+		 }
+		 ?>
       <script type="text/javascript">
          function mycarousel_initCallback(carousel) {
              carousel.buttonNext.bind('click', function () {
@@ -138,7 +156,7 @@
                               <span id="ContentPlaceHolder1_dgShopCart_ProductName_0"><?php echo $cart['title']?></span>
                            </td>
                            <td>
-                              <input name="quantity" type="text" value="<?php echo $cart['quantity']?>" maxlength="4" id="quantity" style="width:20px;text-align: center" />
+                              <input id="quantity_<?php echo $cart['id']?>" name="quantity" type="text" value="<?php echo $cart['quantity']?>" maxlength="4" id="quantity" style="width:20px;text-align: center" />
                            </td>
                            <td align="right">
                               <span id="ContentPlaceHolder1_dgShopCart_lblUnitPriceVND_0" class="price"><?php echo number_format($cart['price'])?> VNĐ</span>
@@ -150,6 +168,30 @@
                               <a href="javascript:deleteItem(<?php echo $cart['id']?>)">Xóa</a>
                            </td>
                         </tr>
+						<script>
+							 jQuery(document).ready(function () {
+								$('#quantity_'+<?php echo $cart['id']?>).keyup(function(){
+									var quantity = $('#quantity_'+<?php echo $cart['id']?>).val();
+									$.ajax({
+							            url: app_main_url + '/home/product/ajax_update_cart',
+							            type: 'POST',
+							            dataType: "html",
+							            data: {
+											quantity:quantity,
+							                id_cart: <?php echo $cart['id']?>,
+							            },
+							            success: function(response) {
+											
+							                $('#cart_content').html(response)
+							            },
+							            error: function(XMLHttpRequest, textStatus, exception) {
+							                alert("Ajax failure\n");
+							            },
+							            async: true
+							        });
+								});
+							});
+						</script>
 						<?php 
 						$total_price +=$cart['total_price'];
 						} ?>
@@ -484,24 +526,7 @@
          <div id="divBannerFloatRight">
          </div>
       </div>
-	  <?php
-	  if($_SERVER['SERVER_NAME'] == 'localhost')
-		 {
-		      ?> 
-			  <script>
-			  	var app_main_url ="http://localhost/tibimart";
-			  </script>
-			  <?php
-		 }
-		 else
-		 {
-		    ?> 
-			 <script>
-			  	var app_main_url ="http://tibimart.com";
-			  </script>
-			<?php
-		 }
-		 ?>
+	  
 	  <script>
 	  
 	  function deleteItem(id)
@@ -514,6 +539,7 @@
                 id_cart: id,
             },
             success: function(response) {
+				
                 $('#cart_content').html(response)
             },
             error: function(XMLHttpRequest, textStatus, exception) {

@@ -124,6 +124,51 @@ class Product extends MY_Controller
 		$this->data['list_cart'] = $list_cart;
 		$this->load->view('home/layout_cart',$this->data);
 	}
+	public function ajax_delete_cart()
+	{
+		$id_cart = $this->input->post('id_cart');
+		$this->load->model('cartmodel');
+		$this->cartmodel->delete_cart($id_cart);
+		if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+			}elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+				$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			}else{
+				$ip = $_SERVER['REMOTE_ADDR'];
+			}
+		$list_cart = $this->cartmodel->list_cart_ip($ip);
+		$this->data['list_cart'] = $list_cart;
+		$this->load->view('ajax_cart',$this->data);
+	}
+	public function ajax_update_cart()
+	{
+		$quantity = $this->input->post('quantity');
+		$id_cart = $this->input->post('id_cart');
+		$this->load->model('cartmodel');
+		$cart_detail = $this->cartmodel->check_cart_id($id_cart);
+		if(empty($cart_detail))
+		{
+			show_404();exit;	
+		}
+		else
+		{
+			$price = $cart_detail[0]['price'];
+			$total_price = $price*$quantity;
+			$data_save = array('quantity'=>$quantity,'total_price'=>$total_price);
+			$this->cartmodel->update_cart($id_cart,$data_save);
+		}
+		
+		if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+			}elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+				$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			}else{
+				$ip = $_SERVER['REMOTE_ADDR'];
+			}
+		$list_cart = $this->cartmodel->list_cart_ip($ip);
+		$this->data['list_cart'] = $list_cart;
+		$this->load->view('ajax_cart',$this->data);
+	}
 	public function checkout()
 	{
 		if($this->input->post())
