@@ -110,5 +110,23 @@ class Product extends MY_Controller
         $this->data['list'] = $array_sv;
         $this->load->view('home/layout_list_product',$this->data);
 	}
+	public function checkout()
+	{
+		if($this->input->post())
+		{
+			$lat ="10.771101";
+			$long = "106.693066";
+			$dis = distance($this->input->post('lat'),$this->input->post('lng'),$lat,$long,'K');
+			$total_fee = 0;
+			if($dis > 5)
+			{
+				$new_dis = $dis-5;
+				$fee = 5000;
+				$total_fee = round($new_dis * $fee);
+			}
+			echo $dis.'<br>'.$total_fee;exit;
+		}
+		$this->load->view('home/layout_check_out',$this->data);
+	}
 }
 ?>
