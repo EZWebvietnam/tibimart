@@ -185,8 +185,8 @@ class Product extends MY_Controller
 		}
 		if($this->input->post())
 		{
-			$lat ="10.771101";
-			$long = "106.693066";
+			$lat =LAT;
+			$long = LONG;
 			$dis = distance($this->input->post('lat'),$this->input->post('lng'),$lat,$long,'K');
 			$total_fee = 0;
 			if($dis > 5)
@@ -201,8 +201,8 @@ class Product extends MY_Controller
 	}
 	public function direction()
 	{
-		$lat_ ="10.771101";
-		$long = "106.693066";
+		$lat_ =LAT;
+		$long = LONG;
 		$lng = $this->input->get('lng');
 		$lat = $this->input->get('lat');
 		$data = array('lat_di'=>$lat,'long_di'=>$lng,'lat_den'=>$lat_,'long_den'=>$long);
