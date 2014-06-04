@@ -199,5 +199,15 @@ class Product extends MY_Controller
 		}
 		$this->load->view('home/layout_check_out',$this->data);
 	}
+	public function direction()
+	{
+		$lat_ ="10.771101";
+		$long = "106.693066";
+		$lng = $this->input->get('lng');
+		$lat = $this->input->get('lat');
+		$data = array('lat_di'=>$lat,'long_di'=>$lng,'lat_den'=>$lat_,'long_den'=>$long);
+		$this->data['data']=$data;
+		$this->load->view('map_view',$this->data);
+	}
 }
 ?>

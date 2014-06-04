@@ -24,7 +24,24 @@
 	   <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	     
 	  <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.ui.addresspicker.js"></script>
-      
+      <?php
+	  if($_SERVER['SERVER_NAME'] == 'localhost')
+		 {
+		      ?> 
+			  <script>
+			  	var app_main_url ="http://localhost/tibimart";
+			  </script>
+			  <?php
+		 }
+		 else
+		 {
+		    ?> 
+			 <script>
+			  	var app_main_url ="http://tibimart.com";
+			  </script>
+			<?php
+		 }
+		 ?>
 	  <script>
   $(function() {
     var addresspicker = $( "#addresspicker" ).addresspicker({
@@ -150,8 +167,7 @@
                      <div style="padding: 5px;">
                         <div style="padding: 20px; overflow: hidden">
                            <p style="padding-top: 10px; padding-bottom: 20px">
-                              <b>Xin vui lòng điền đầy đủ thông tin dưới đây, chúng tôi sẽ liên hệ cho quý khách trước
-                              khi giao hàng</b>
+                              <b>Xin vui lòng điền đầy đủ thông tin dưới đây, chúng tôi sẽ liên hệ cho quý khách trước khi giao hàng</b><br/> Khi quý khách điền địa chỉ, chúng tôi sẽ hiển thị vị trí trên bản đồ, nếu thấy không đúng, quý khách vui lòng click chuột vào icon màu đỏ, di chuột đến địa chỉ chính xác.
                            </p>
                            <div style="padding-top: 0px;">
                               <div class="validation">
@@ -186,16 +202,23 @@
                                           <input name="phone" type="text" id="ContentPlaceHolder1_txtPhone" style="width:250px;" />
                                        </td>
                                     </tr>
+									<tr>
+                                       <td style="height: 30px">
+                                          Hình thức giao hàng:
+                                       </td>
+                                       <td>
+                                          <input  type="radio" name="radio" value="1"/>Giao hàng tận nơi<input  type="radio" name="radio" value="0"/>Nhận hàng tại shop
+                                       </td>
+                                    </tr>
                                     <tr>
                                        <td style="height: 30px">
                                           Địa chỉ nhận hàng:
                                        </td>
                                        <td>
-                                          <input id="addresspicker_map" />
+                                          <input id="addresspicker_map" style="width:250px;"/>
 										  <input id="addresspicker" type="hidden"/>
-										  <input id="lat" name="lat"/>
-										  <input id="lng" name="lng"/>
-                                          <span id="ContentPlaceHolder1_RequiredFieldValidator4" style="display:none;"></span>
+										  <input id="lat" name="lat" type="hidden"/>
+										  <input id="lng" name="lng" type="hidden"/>
                                        </td>
                                     </tr>
 									<tr>
@@ -206,20 +229,19 @@
                                           <div id="map"></div>
                                        </td>
                                     </tr>
-                                    <tr>
-                                       <td style="height: 89px">
-                                          Ghi chú chi tiết:
+									<tr>
+                                       <td style="height: 30px">
+                                          Chỉ dẫn đường đi tới shop
                                        </td>
-                                       <td style="height: 110px">
-                                          <textarea name="detail" rows="2" cols="20" id="ContentPlaceHolder1_txtNote" style="height:100px;width:350px;">
-                                          </textarea>
+                                       <td>
+                                          <a id="chi_duong" href="#">Chỉ đường</a>
                                        </td>
                                     </tr>
                                     <tr>
                                        <td>
                                        </td>
                                        <td style="padding: 10px 0">
-                                          <input type="submit"  value="Quay lại" id="ContentPlaceHolder1_btnOrder" class="btn floatLeft" />
+                                          <input type="button" onclick="window.location.href='<?php echo base_url();?>gio-hang'"  value="Quay lại"  class="btn floatLeft" />
                                           <input type="submit" value="Hoàn tất"  class="btn floatLeft" />
                                        </td>
                                     </tr>
@@ -542,6 +564,18 @@
          <div id="divBannerFloatRight">
          </div>
       </div>
+	  <script>
+	  	jQuery(document).ready(function(){
+			$('#chi_duong').click(function(){
+				var lat = $('#lat').val();
+				var lng = $('#lng').val();
+				url =app_main_url+'/chi-duong/?lng='+lng+'&lat='+lat;
+				window.open(url,'_blank');
+		});
+		});
+	  	
+		
+	  </script>
       <script type="text/javascript">
          var _gaq = _gaq || [];
          _gaq.push(['_setAccount', 'UA-21718856-13']);
