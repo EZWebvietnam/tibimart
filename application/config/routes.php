@@ -41,6 +41,8 @@
 $route['default_controller'] = "home/index";
 $route['trang-chu'] = "home/home/index";
 $route['gio-hang']="home/product/cart";
+$route['hoi-dap']="home/faq/list_faq";
+$route['hoi-dap/page/(:any)']="home/faq/list_faq";
 $route['chi-duong']="home/product/direction";
 $route['thanh-toan']="home/product/checkout";
 $route['san-pham'] = "home/product/list_product";
@@ -48,7 +50,6 @@ $route['san-pham/c/(:any)-(:any)']="home/product/list_product/$1";
 $route['san-pham/c/(:any)-(:any)/page/(:any)']="home/product/list_product/$1";
 $route['san-pham/(:any)-(:any)'] = "home/product/product_detail/$1";
 $route['404_override'] = '';
-$route['hoi-dap']='home/product/faq_list';
 $route['gioi-thieu']='home/home/about';
 $route['gui-cau-hoi']='home/product/send_faq';
 $route['hoi-dap-(:any)-(:any)'] = 'home/product/detail_faq/$1';
