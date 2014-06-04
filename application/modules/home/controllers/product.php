@@ -171,6 +171,7 @@ class Product extends MY_Controller
 	}
 	public function checkout()
 	{
+		
 		if(!empty($_SERVER['HTTP_CLIENT_IP'])){
 			$ip = $_SERVER['HTTP_CLIENT_IP'];
 			}elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
@@ -185,17 +186,41 @@ class Product extends MY_Controller
 		}
 		if($this->input->post())
 		{
+			$this->load->model('orderhomemodel');
+			$ship_type = $this->input->post('radio');
+			$email = $this->input->post('email');
+			$fullname = $this->input->post('fullname');
+			$phone = $this->input->post('phone');
+			$address = $this->input->post('address');
 			$lat =LAT;
 			$long = LONG;
 			$dis = distance($this->input->post('lat'),$this->input->post('lng'),$lat,$long,'K');
 			$total_fee = 0;
-			if($dis > 5)
+			if($ship_type == 1)
 			{
-				$new_dis = $dis-5;
-				$fee = 5000;
-				$total_fee = round($new_dis * $fee);
+				if($dis > 5)
+				{
+					$new_dis = $dis-5;
+					$fee = 5000;
+					$total_fee = round($new_dis * $fee);
+				}
 			}
-			echo $dis.'<br>'.$total_fee;exit;
+			$total_money_cart = 0;
+			foreach($list_cart as $value)
+			{
+				$total_money_cart +=$value['total_price'];
+			}
+			$total_money_cart = $total_money_cart+$total_fee;
+			$data_insert = array('full_name'=>$fullname,'address'=>$address,'phone'=>$phone,'email'=>$email,'status'=>0,'fee_ship'=>$total_fee,'ship_type'=>$ship_type,'create_date'=>strtotime('now'),'total_price_order'=>$total_money_cart);
+			$id_order = $this->orderhomemodel->insert_order($data_insert);
+			foreach($list_cart as $value)
+			{
+				$data_save_order_detail = array('id_product'=>$value['id_product'],'quantity'=>$value['quantity'],'price'=>$value['price'],'ip_user'=>$ip,'order_id'=>$id_order,'create_date'=>strtotime('now'));
+				$this->orderhomemodel->insert_order_detail($data_save_order_detail);
+				$data_save_order_detail = array();
+			}
+			$this->cartmodel->delete_cart_ip($ip);
+			redirect('../'.ROT_DIR);
 		}
 		$this->load->view('home/layout_check_out',$this->data);
 	}

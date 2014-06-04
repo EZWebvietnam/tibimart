@@ -215,7 +215,7 @@
                                           Địa chỉ nhận hàng:
                                        </td>
                                        <td>
-                                          <input id="addresspicker_map" style="width:250px;"/>
+                                          <input id="addresspicker_map" name="address" style="width:250px;"/>
 										  <input id="addresspicker" type="hidden"/>
 										  <input id="lat" name="lat" type="hidden"/>
 										  <input id="lng" name="lng" type="hidden"/>

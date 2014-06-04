@@ -222,8 +222,8 @@ if (defined('ENVIRONMENT'))
     define('MAIL_ADMIN','giangbeoit@gmail.com');
     define('PATH_FOLDER',$_SERVER['DOCUMENT_ROOT']);
  }
- define('LAT','10.771101');
- define('LONG','106.693066');
+ define('LAT','10.8408666');
+ define('LONG','106.7169267');
 require_once BASEPATH.'core/CodeIgniter.php';
 
 /* End of file index.php */
