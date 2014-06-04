@@ -344,35 +344,7 @@
          
         </div>
                      </div>
-                     <div class="menu-ver">
-                        <div class="title">
-                           <h3>
-                              Kiểu thiết kế
-                           </h3>
-                        </div>
-                        <div class="bd">
-                           <ul id="Ul1">
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_0" href="http://thangnhom.net.vn/type/2/Thang-nhom-gap.aspx">Thang nhôm gấp</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_1" href="http://thangnhom.net.vn/type/3/Thang-nhom-rut.aspx">Thang nhôm rút</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_2" href="http://thangnhom.net.vn/type/5/Thang-nhom-rut-day.aspx">Thang nhôm rút dây</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_3" href="http://thangnhom.net.vn/type/4/Thang-nhom-tay-vin.aspx">Thang nhôm tay vịn</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_4" href="http://thangnhom.net.vn/type/1/Thang-nhom-chu-A.aspx">Thang nhôm chữ A</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_5" href="http://thangnhom.net.vn/type/6/Thang-nhom-ghe-tay-vin.aspx">Thang nhôm ghế-tay vịn</a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
+                   
                   </div>
                   <div class="clear">
                   </div>
@@ -443,6 +415,7 @@
                   </div>
                   <div style="margin-top: 5px">
                      <div id="FaceBookControl1_pnlFacebook">
+					 <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftibimarthcm&amp;width=240&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=771797639499496" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:290px;" allowTransparency="true"></iframe>
                      </div>
                   </div>
                   <div class="clear">

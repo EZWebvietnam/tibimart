@@ -263,59 +263,20 @@
                         </div>
                         <div class="bd">
                            <ul id="menu-ver">
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban.aspx">Thang nhôm Hasegawa - Nhật bản</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_1" href="http://thangnhom.net.vn/thang-nhom-dai-loan.aspx">Thang nhôm PAL - Đài Loan</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_2" href="http://thangnhom.net.vn/thang-nhom-tungshing.aspx">Thang nhôm Tungshing - Việt Nam</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_3" href="http://thangnhom.net.vn/thang-nhom-rut-gon.aspx">Thang nhôm rút Salvo</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_4" href="http://thangnhom.net.vn/thang-ghe-salvo.aspx">Thang nhôm Little - Mỹ</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_5" href="http://thangnhom.net.vn/thang-nhom-poongsan-han-quoc.aspx">Thang nhôm Poongsan-Hàn Quốc</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_6" href="http://thangnhom.net.vn/thang-nhom-nikawa-nhat-ban.aspx">Thang nhôm Nikawa-Nhật Bản</a>
-                              </li>
-                           </ul>
+                		<?php 
+						foreach($list_cate as $l_cate)
+						{
+						?>
+                        <li>
+                            <a id="MenuVerticalControl1_rptParent_hplLinkParent_0" href="<?php echo base_url();?>san-pham/c/<?php echo $l_cate['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($l_cate['title'])));?>"><?php echo $l_cate['title']?></a>
+                            
+                        </li>
+						<?php } ?>
+                    
+            </ul>
                         </div>
                      </div>
-                     <div class="menu-ver">
-                        <div class="title">
-                           <h3>
-                              Kiểu thiết kế
-                           </h3>
-                        </div>
-                        <div class="bd">
-                           <ul id="Ul1">
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_0" href="http://thangnhom.net.vn/type/2/Thang-nhom-gap.aspx">Thang nhôm gấp</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_1" href="http://thangnhom.net.vn/type/3/Thang-nhom-rut.aspx">Thang nhôm rút</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_2" href="http://thangnhom.net.vn/type/5/Thang-nhom-rut-day.aspx">Thang nhôm rút dây</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_3" href="http://thangnhom.net.vn/type/4/Thang-nhom-tay-vin.aspx">Thang nhôm tay vịn</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_4" href="http://thangnhom.net.vn/type/1/Thang-nhom-chu-A.aspx">Thang nhôm chữ A</a>
-                              </li>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptType_hpl_5" href="http://thangnhom.net.vn/type/6/Thang-nhom-ghe-tay-vin.aspx">Thang nhôm ghế-tay vịn</a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
+                     
                   </div>
                   <div class="clear">
                   </div>
@@ -386,8 +347,7 @@
                   </div>
                   <div style="margin-top: 5px">
                      <div id="FaceBookControl1_pnlFacebook">
-                        <iframe width="240" scrolling="no" height="290" frameborder="0" src="/FacebookFrame.aspx">
-                        </iframe>
+                       <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftibimarthcm&amp;width=240&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=771797639499496" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:290px;" allowTransparency="true"></iframe>
                      </div>
                   </div>
                   <div class="clear">

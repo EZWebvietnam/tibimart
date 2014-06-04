@@ -13,7 +13,7 @@ class Producthomemodel extends CI_Model
 		$this->db->select();
 		$this->db->where('id_cate',$id_cate);
 		$this->db->order_by('rand()');
-		$this->db->limit('12');
+		$this->db->limit('8');
 		$query = $this->db->get("{$this->_name}");
 		return $query->result_array();
 	}
