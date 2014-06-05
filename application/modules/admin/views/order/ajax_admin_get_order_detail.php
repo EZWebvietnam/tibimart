@@ -96,11 +96,11 @@ $status = array('0'=>'Chưa nhận tiền','1'=>'Đã nhận tiền')
                         <td><?php echo $ctv_ref['quantity']?></td>
                         <td><?php echo $ctv_ref['price']?></td>
                         <td>
-                            <?php if($ctv_ref['status_money']==0)
+                            <?php if($ctv_ref['status']==0)
                             {?>
-                            <img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/0.png" style="cursor: pointer;" title="Chưa nhận tiền" />CTV Chưa nhận tiền
+                            <img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/0.png" style="cursor: pointer;" title="Khách hàng chưa thanh toán" />Khách hàng chưa thanh toán
                             <?php } else {?>
-                            <img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/1.png" title="Đã nhận tiền"/>CTV Đã nhận tiền
+                            <img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/1.png" title="Khách hàng đã thanh toán"/>Khách hàng đã thanh toán
                             <?php } ?>
                         </td>
                         

@@ -254,6 +254,18 @@
                         </div>
                         <div class="tab_content1" id="video" style="display: none;">
                         </div>
+                        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=771797639499496&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="<?php echo full_url_($_SERVER);?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+                      <center><div class="fb-comments" data-href="<?php echo full_url_($_SERVER);?>" data-numposts="5" data-colorscheme="light"></div></center>
                      </div>
                   </div>
                   <script type="text/javascript">

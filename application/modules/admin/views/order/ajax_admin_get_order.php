@@ -81,7 +81,7 @@ $status = array('0'=>'Khách hàng Chưa thanh toán','1'=>'Khách Đã thanh to
                            <th>SĐT</th>
                            <th>Đia chỉ</th>
                            <th>Email</th>
-                           <td>Tình trạng</td>
+                           
                            <td>Thanh toán</td>
                            <th class="publish">Chức năng</th>
                         </tr>
@@ -92,13 +92,13 @@ $status = array('0'=>'Khách hàng Chưa thanh toán','1'=>'Khách Đã thanh to
                         ?>
                      <tr class="row1 ">
                         <td align="center"><input  type="checkbox" name="ar_id[]" value="<?php echo $ctv_ref['id']?>"></td>
-                        <td><?php echo $ctv_ref['name']?></td>
-                        <td><?php echo $ctv_ref['mobile']?></td>
+                        <td><?php echo $ctv_ref['full_name']?></td>
+                        <td><?php echo $ctv_ref['phone']?></td>
                         <td><?php echo $ctv_ref['address']?></td>
+                      
                         <td><?php echo $ctv_ref['email']?></td>
-                        <td><?php echo $status[$ctv_ref['payment']]?></td>
                         <td>
-                            <?php if($ctv_ref['payment']==0)
+                            <?php if($ctv_ref['status']==0)
                             {?>
                             <img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/0.png" style="cursor: pointer;" title="Chưa thanh toán" onclick="change_status_order(<?php echo $ctv_ref['id']?>,<?php echo $page?>)"/>
                             <?php } else {?>

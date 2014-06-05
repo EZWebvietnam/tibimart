@@ -58,7 +58,7 @@ $route['active-user/(:any)/(:any)']='home/home/activate';
 $route['lien-he'] = 'home/home/contact';
 $route['quan-tri'] = "admin/login/index";
 $route['quan-tri-vien'] = "admin/productadmin/index";
-$route['quen-mat-khau'] = "ctv/homectv/reset_pass";
-$route['active-pass/(:any)/(:any)'] = "ctv/homectv/active_pass";
+$route['quen-mat-khau'] = "admin/login/reset_pass";
+$route['active-pass/(:any)/(:any)'] = "admin/login/active_pass";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
