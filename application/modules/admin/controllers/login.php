@@ -1,9 +1,7 @@
 <?php
 class Login extends MY_Controller {
     public function __construct() {
-        
         parent::__construct();
-        
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
         $this->load->library('tank_auth');
@@ -77,8 +75,8 @@ class Login extends MY_Controller {
     function _show_message($message)
 	{
         $this->session->set_flashdata('message', $message);
-	   redirect('../'.ROT_DIR);
-	}  
+	   	redirect('../'.ROT_DIR);
+	}
 	public function reset_pass()
     {
         if($this->input->post())

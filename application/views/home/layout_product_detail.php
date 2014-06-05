@@ -153,6 +153,17 @@
                         <div class="right">
                            <img id="ContentPlaceHolder1_imgStatus" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/images/ico_available.gif" />
                            &nbsp;Có hàng
+                        </div><br/>
+                        
+                        <div class="right">
+                         <b>QR Code (Scan)</b>:
+                           <script type="text/javascript">
+
+							var uri=window.location.href;
+
+							document.write("<img src='http://api.qrserver.com/v1/create-qr-code/?data="+encodeURI(uri)+"&size=100x100'/>");
+
+							</script>
                         </div>
                         <div class="clear">
                         </div>
