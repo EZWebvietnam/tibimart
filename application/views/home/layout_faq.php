@@ -69,7 +69,7 @@
                </div>
                <div class="opentime">
                   Giờ mở cửa: <b>8h00 - 18h00</b> <i>(tất cả các ngày trong tuần)</i><br />
-                  <i><a href="http://thadaco.vn/contact.html" target="_blank">Để mua hàng ngoài giờ hành chính, quý khách vui lòng click vào đây...</a></i>
+                  
                </div>
             </div>
             <div class="ads">
@@ -350,15 +350,13 @@
                      <div class="link">
                         <center>
                            <!-- Histats.com  START  (standard)-->
-                           <script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
-                           <a href="http://www.histats.com" target="_blank" title="web statistics" >
-                              <script  type="text/javascript" >
-                                 try {Histats.start(1,2171565,4,471,112,61,"00011111");
-                                 Histats.track_hits();} catch(err){};
-                              </script>
-                           </a>
-                           <noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2171565&101" alt="web statistics" border="0"></a></noscript>
-                           <!-- Histats.com  END  -->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="web stats analysis" ><script  type="text/javascript" >
+try {Histats.start(1,2696468,4,103,102,47,"00010000");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2696468&101" alt="web stats analysis" border="0"></a></noscript>
+<!-- Histats.com  END  -->
                         </center>
                      </div>
                   </div>
