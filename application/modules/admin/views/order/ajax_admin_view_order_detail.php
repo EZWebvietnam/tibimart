@@ -29,13 +29,11 @@ $status = array('0'=>'Khách hàng Chưa thanh toán','1'=>'Khách Đã thanh to
 		<td style="text-align: center; font-weight: bold">Số lượng</td>
 		<td style="text-align: center; font-weight: bold">Đơn giá</td>
 		<td style="text-align: center; font-weight: bold">Thành tiền</td>
-		<td style="text-align: center; font-weight: bold">Hoa hồng CTV</td>
 		<td style="text-align: center; font-weight: bold">Ngày tạo</td>
 		
 	</tr>
         <?php
         $total_money = 0;
-        $hoa_hong = 0;
         foreach($list_order_detail as $order)
         {
             
@@ -45,16 +43,14 @@ $status = array('0'=>'Khách hàng Chưa thanh toán','1'=>'Khách Đã thanh to
 		<td><?php echo $order['quantity']?></td>
 		<td><?php echo $order['price']?></td>
 		<td><?php echo $order['quantity']*$order['price']?></td>
-		<td><?php echo $order['commissions']?></td>
 		<td><?php echo date('d/m/Y',$order['create_date'])?></td>
 		
 	</tr>
         <?php $total_money +=$order['quantity']*$order['price'];
-               $hoa_hong +=  $order['commissions'];
         
         } ?>
 </table>
-Tổng số tiền: <?php echo $total_money;?> - Hoa hồng CTV: <?php echo $hoa_hong;?>
+Tổng số tiền: <?php echo $total_money;?>
 
     </form>
 </div>

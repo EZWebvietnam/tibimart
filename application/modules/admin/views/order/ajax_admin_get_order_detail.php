@@ -81,7 +81,6 @@ $status = array('0'=>'Chưa nhận tiền','1'=>'Đã nhận tiền')
                            <th>Sản phẩm</th>
                            <th>Số lượng</th>
                            <th>Tiền</th>
-                           <td>Hoa hồng</td>
                            <td>Tình trạng</td>
                            
                         </tr>
@@ -96,11 +95,10 @@ $status = array('0'=>'Chưa nhận tiền','1'=>'Đã nhận tiền')
                         <td><?php echo $ctv_ref['title']?></td>
                         <td><?php echo $ctv_ref['quantity']?></td>
                         <td><?php echo $ctv_ref['price']?></td>
-                        <td><?php echo $ctv_ref['commissions']?></td>
                         <td>
                             <?php if($ctv_ref['status_money']==0)
                             {?>
-                            <img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/0.png" style="cursor: pointer;" title="Chưa nhận tiền" <?php if ($ctv_ref['id_ref_detail']!=0) {?>onclick="change_status_order(<?php echo $ctv_ref['id_order_detail']?>,<?php echo $page?>)"<?php } ?>/>CTV Chưa nhận tiền
+                            <img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/0.png" style="cursor: pointer;" title="Chưa nhận tiền" />CTV Chưa nhận tiền
                             <?php } else {?>
                             <img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/1.png" title="Đã nhận tiền"/>CTV Đã nhận tiền
                             <?php } ?>

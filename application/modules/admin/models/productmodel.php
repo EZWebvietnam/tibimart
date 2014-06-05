@@ -7,7 +7,6 @@ class Productmodel extends CI_Model
     }
     public function list_product($number,$offset)
     {
-        //$sql ="SELECT * FROM product LIMIT $offset,$number";
         $sql ="SELECT * FROM product LIMIT $offset,$number";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -47,7 +46,7 @@ class Productmodel extends CI_Model
     }
      public function delete_user_product_2($id_user)
     {
-        $this->db->delete('user_product',array('id_user'=>$id_user));
+        $this->db->delete('user_product',array('id_product'=>$id_user));
     }
     public function insert_clip(array $data)
     {

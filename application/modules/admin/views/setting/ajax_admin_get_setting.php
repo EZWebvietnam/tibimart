@@ -20,7 +20,7 @@
                      <div class="h-title">Cấu hình website</div>
                   </td>
                   <td style="float: right;">
-                     <div class="addlink"><a href="<?php echo base_url(); ?>admin/settingadmin/about" class="add grouped_elements"><span>Giới thiệu</span></a><a href="<?php echo base_url(); ?>admin/settingadmin/edit_address" class="add grouped_elements"><span>Địa chỉ</span></a></div>
+                     
                   </td>
                </tr>
             </table>

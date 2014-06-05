@@ -12,40 +12,25 @@
 </div>
 <div class="m-pop">
     <script type="text/javascript" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/js/core/price_format.js"></script>
-    <form action="<?php echo base_url(); ?>admin/productadmin/view/<?php echo $detail_product[0]['id_product'] ?>" method="post" accept-charset="utf-8" id="adminform"><input type="hidden" name="id" value="74">
+    <form action="<?php echo base_url(); ?>admin/productadmin/view/<?php echo $detail_product[0]['id'] ?>" method="post" accept-charset="utf-8" id="adminform"><input type="hidden" name="id" value="74">
         <table class="form" style="width: 1200px;">
 
             <tr>
-                <td class="label">Tên khóa học</td>
+                <td class="label">Tên sản phẩm</td>
                 <td colspan="3">
                     <?php echo $detail_product[0]['title'] ?>
-                </td>
-            </tr>
-             <tr>
-                <td class="label">Ngày hết hạn</td>
-                <td colspan="3">
-                    <?php echo $detail_product[0]['exp_date'] ?>
                 </td>
             </tr>
             <tr>
                 <td class="label">Giá</td>
                 <td colspan="3">
-                    <?php echo $detail_product[0]['cost'] ?>
+                    <?php echo $detail_product[0]['price'] ?>
                 </td>
             </tr>
-            <tr>
-                <td class="label">Hoa Hồng</td>
+			<tr>
+                <td class="label">Năm</td>
                 <td colspan="3">
-                    <?php echo $detail_product[0]['comission'] ?>
-                </td>
-            </tr>
-            <tr>
-                <td class="label">Tóm tắt</td>
-                <td colspan="3">
-                    <textarea id="editor1"><?php echo $detail_product[0]['description'] ?></textarea>
-                    <script type="text/javascript">
-                                CKEDITOR.replace('editor1');
-                            </script>
+                    <?php echo $detail_product[0]['year'] ?>
                 </td>
             </tr>
             <tr>

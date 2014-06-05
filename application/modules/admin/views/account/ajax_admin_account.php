@@ -90,7 +90,7 @@
                         <td><?php echo $ctv_ref['address']?></td>
                         <td><?php echo $ctv_ref['email']?></td>
                         <td align="center">
-                            <a class="grouped_elements" href="<?php echo base_url();?>admin/messageadmin/send_message_to_member/<?php echo $ctv_ref['id']?>" title="Gửi tin nhắn đến thành viên"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/mail.png"></a>
+                            
                             <a class="grouped_elements" href="<?php echo base_url();?>admin/accountadmin/edit/<?php echo $ctv_ref['id']?>" title="Sửa"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/edit.png"></a>
                             <a class="delete_record" href="<?php echo base_url();?>admin/accountadmin/delete/<?php echo $ctv_ref['id']?>" title="Xóa"><img src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/del.png"></a>        
                         </td>

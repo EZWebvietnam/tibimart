@@ -1,3 +1,4 @@
+
 <script type="text/javascript">
     $(document).ready(function() {
         $("input").each(function() {
@@ -5,35 +6,40 @@
         });
     });
 </script>
-<script src="<?php echo base_url()?>js_upload/ajaxfileupload.js"></script>
 <div class="h-pop">
     <div class="h-icon"></div>
-    <h3>Gửi tin nhắn tới tất cả thành viên</h3>
+    <h3>Chi tiết yêu cầu báo giá</h3>
 </div>
 <div class="m-pop">
     <script type="text/javascript" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/js/core/price_format.js"></script>
-    <form action="<?php echo base_url(); ?>admin/messageadmin/add_all" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="adminform">
-        <table class="form" style="width: 1200px;">
-
+    <form action="<?php echo base_url(); ?>admin/priceadmin/edit/<?php echo $detail[0]['id'] ?>" method="post" accept-charset="utf-8" id="adminform"><input type="hidden" name="id" value="74">
+        <table class="form" style="width: 550px;">
             <tr>
-                <td class="label">Tiêu đề</td>
+                <td class="label">Họ tên</td>
                 <td colspan="3">
-                    <input id="title_" type="texbox" name="title"/>
+                    <?php echo $detail[0]['name']?>
                 </td>
             </tr>
-            
             <tr>
+                <td class="label">Email</td>
+                <td colspan="3">
+                    <?php echo $detail[0]['email']?>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Điện thoại</td>
+                <td colspan="3">
+                    <?php echo $detail[0]['phone']?>
+                </td>
+            </tr>
+			<tr>
                 <td class="label">Nội dung</td>
                 <td colspan="3">
-                    <textarea id="editor1" name="content"></textarea>
-                    <script type="text/javascript">
-                        CKEDITOR.replace('editor1');
-                    </script>
+                    <?php echo $detail[0]['content']?>
                 </td>
             </tr>
-           
-            <td><input class="bt100" type="submit" value="Thêm"></td>
-
+            <td></td>
+            
             </tr>
 
         </table>
@@ -41,19 +47,17 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#cost_').priceFormat();
         $("#adminform").validate({
             rules: {
-                title: "required",
-                content: "required"
-               
+                full_name: "required",
+                phone: "required",
+                address: "required",
+                
             },
             messages: {
-                title: "Vui lòng nhập tiêu đề",
-               
-                content: "Vui lòng nhập nội dung"
-                
-
+                full_name: "Vui lòng nhập tên",
+                phone: "Vui lòng nhập SĐT",
+                address: "Vui lòng nhập địa chỉ"
             }
             , submitHandler: function(form) {
                 var page = 1;
@@ -67,7 +71,7 @@
                     cache: false,
                     success: function(data) {
                         $.fancybox.close();
-                        reload_callback("<?php echo base_url(); ?>admin/messageadmin/list_message", page, 'message_content');
+                        reload_callback("<?php echo base_url(); ?>admin/accountadmin/list_account", page, 'result');
                         show_msg(data.msg);
                     }
                 });

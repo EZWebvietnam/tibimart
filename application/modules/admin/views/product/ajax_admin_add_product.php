@@ -29,9 +29,29 @@
                 </td>
             </tr>
             <tr>
-                <td class="label">Phần trăm hoa hồng</td>
+                <td class="label">Năm</td>
                 <td colspan="3">
-                    <input id="hoa_hong" type="texbox" name="hoa_hong"/>
+                    <select name="year" id="year_">
+						<?php 
+						for($i=date('Y');$i>=1995;$i--)
+						{
+						?>
+						<option value="<?php echo $i?>"><?php echo $i?></option>
+						<?php } ?>
+					</select>
+                </td>
+            </tr>
+			<tr>
+                <td class="label">Loại sản phẩm</td>
+                <td colspan="3">
+                    <select name="category" id="category">
+					<?php 
+					foreach($list_cate as $cate)
+					{
+						?>
+						<option value="<?php echo $cate['id_cate']?>"><?php echo $cate['title']?></option>
+					<?php } ?>
+					</select>
                 </td>
             </tr>
             <tr>
@@ -41,21 +61,6 @@
                     <input id="userfile" name="userfile" type="button" class="bt100" value="Upload" onClick="fileUpload(this.form,'<?php echo base_url();?>upload/do_upload','upload','<?php echo base_url(); ?>admin/productadmin/add'); return false;">
                    <div id="upload"></div>
                     <input type='hidden' name='file' id='file'/>
-                </td>
-            </tr>
-            <tr>
-                <td class="label">Clip: (Các link cách nhau bởi dấu ;)</td>
-                <td colspan="3">
-                    <input id="clip" type="texbox" name="clip"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="label">Tóm tắt</td>
-                <td colspan="3">
-                    <textarea id="editor1" name="description"></textarea>
-                    <script type="text/javascript">
-                        CKEDITOR.replace('editor1');
-                    </script>
                 </td>
             </tr>
             <tr>
@@ -98,12 +103,11 @@
             , submitHandler: function(form) {
                 var page = 1;
                 dataString = $("#adminform").serialize();
-                var description = CKEDITOR.instances['editor1'].getData();
                 var content = CKEDITOR.instances['editor2'].getData();
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title_').val(),category:$('#category').val(),cost:$('#cost_').val(),hoa_hong:$('#hoa_hong').val(),file:$('#file').val(),description:description,content:content,clip:($('#clip').val())},
+                    data: {title:$('#title_').val(),cost:$('#cost_').val(),file:$('#file').val(),content:content,year:$('#year_').val(),category:$('#category').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

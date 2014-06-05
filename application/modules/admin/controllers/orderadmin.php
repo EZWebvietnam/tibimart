@@ -21,25 +21,6 @@ class Orderadmin extends MY_Controller
     }
     public function list_order()
     {
-        $order_detail = $this->ordermodel->list_order_detail();
-        $total_money = 0;
-        $not_pay = 0;
-        $pay_ctv = 0;
-        foreach($order_detail as $o_d)
-        {
-            $total_money += ($o_d['price']*$o_d['quantity']);
-            if($o_d['status']==0)
-            {
-                $not_pay +=$o_d['price']*$o_d['quantity'];
-            }
-            else
-            {
-                $pay_ctv +=$o_d['commissions'];
-            }
-        }
-        $this->data['total_money']=$total_money;
-        $this->data['not_pay']=$not_pay;
-        $this->data['pay_ctv']=$pay_ctv;
         $this->load->helper('url');
         $config['uri_segment'] = 5;
         if ($this->input->post('page_no')) {

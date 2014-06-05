@@ -87,31 +87,27 @@
                            <th class="id">Tên</th>
                            <th>Giới thiệu</th>
                           
-                           <th>Vị trí hiển thị</th>
+                          
                            <th>Giá</th>
                            <th class="publish">Chức năng</th>
                         </tr>
                      </thead>
                      <?php 
-                     $array = array('0'=>'Trang chủ','1'=>'Trang sản phẩm');
                         foreach($list_product as $product_ref)
                         {
                         ?>
                      <tr class="row1 ">
                         <td align="center"><input  type="checkbox" name="ar_id[]" value="<?php echo $product_ref['id_product']?>"></td>
                         <td><?php echo $product_ref['title']?></td>
-                        <td><?php echo $product_ref['description']?></td>
+                        <td><?php echo sub_string(loaibohtmltrongvanban($product_ref['content']),300);?></td>
                        
-                        <td><?php echo $array[$product_ref['position']]?></td>
-                        <td><?php echo $product_ref['cost']?></td>
+                        
+                        <td><?php echo $product_ref['price']?></td>
                         <td align="center"><a class="grouped_elements" href="<?php echo base_url();?>admin/productadmin/edit/<?php echo $product_ref['id_product']?>" title="Sửa"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/edit.png"></a>
                             <a class="grouped_elements" href="<?php echo base_url();?>admin/productadmin/view/<?php echo $product_ref['id_product']?>" title="Xem chi tiết"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/view.png"></a>
-                            <?php 
-                            if($product_ref['position']!=0)
-                            {
-                            ?>
+                            
                            <a class="delete_record" href="<?php echo base_url();?>admin/productadmin/delete/<?php echo $product_ref['id_product']?>" title="Xóa"><img src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/del.png"></a>        
-                            <?php } ?>
+                            
                         </td>
                      </tr>
                      <?php }?>       

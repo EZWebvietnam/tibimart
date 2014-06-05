@@ -184,5 +184,9 @@ class Accountadmin extends MY_Controller
         $array = array('error' => 0, 'msg' => "Xóa thành công");
         echo json_encode($array);
     }
+	public function auto_delete()
+	{
+		
+	}
 }
 ?>
