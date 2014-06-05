@@ -6,6 +6,7 @@ class Faq extends MY_Controller
 		parent::__construct();
 		parent::list_cate();
 		parent::count_cart();
+		parent::load_faq();
 		$this->load->model('faqhomemodel');
 	}
 	public function list_faq()
@@ -31,6 +32,41 @@ class Faq extends MY_Controller
         $this->data['total'] = $config['total_rows'];
         $this->data['list'] = $array_sv;
 		 $this->load->view('home/layout_faq',$this->data);
+	}
+	public function faq_detail($id = null)
+	{
+		if(empty($id))
+		{
+			show_404();
+			exit;
+		}
+		$id = explode('-',$id);
+		$id = $id[0];
+		if(!is_numeric($id))
+		{
+			show_404();exit;
+		}
+		$faq_detail = $this->faqhomemodel->faq_detail($id);
+		$this->data['faq_detail'] = $faq_detail;
+		$this->load->view('home/layout_faq_detail',$this->data);
+	}
+	public function faq_post()
+	{
+		if($this->input->post())
+		{
+			$email = $this->input->post('email');
+			$fullname = $this->input->post('fullname');
+			$title = $this->input->post('title');
+			$noi_dung = $this->input->post('noi_dung');
+			$data_save = array('name'=>$fullname,'title'=>$title,'email'=>$email,'question'=>$noi_dung,'status'=>0,'create_date'=>strtotime('now'));
+			$this->faqhomemodel->insert($data_save);
+		}
+		
+			$this->data['title']='Gửi câu hỏi';
+			$this->data['gui_cau_hoi'] = 1;
+			$this->data['main_content']='postfaq';
+			$this->load->view('home/layout_check_out',$this->data);
+		
 	}
 }
 ?>

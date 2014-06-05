@@ -1,13 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
-      <title><?php echo $product_detail[0]['title']?></title>
-      <meta name="keywords" content="thang,thang nhôm,thang nhật,thang nhat,thang gấp,thang rút,thang xếp nhôm,thang tungshing,thang salvo,thang rút gọn,thang nhôm rút gọn,thang chữ a,thang chữ m" />
-      <meta name="description" content="Thang nhôm RS-12 là thang gấp 2 đoạn có được nhập khẩu từ Nhật Bản,do công ty Công ty Thành Đạt phân phối" />
+      <title><?php echo $faq_detail[0]['title']?></title>
+      <meta name="keywords" content="Công ty CP TM và DV Kỹ thuật Thành Đạt tuyển dụng, Thang nhôm, thang các loại, thang chất lượng cao, thang giá rẻ, thang nhật bản" />
+      <meta name="description" content="Công ty CP TM và DV Kỹ thuật Thành Đạt tuyển dụng, Website Thang nhôm của công ty Cổ Phần Thương Mại và dịch vụ kỹ thuật Thành Đạt mang đến cho quý khách những sản phẩm thang nhôm chất lượng cao, giá cả phải chăng" />
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.min.js"></script>
-      <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/lightbox.js"></script>
-      <link rel="stylesheet" href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/css/lightbox.css" type="text/css"
-         media="screen" />
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta http-equiv="Content-Language" content="vn" />
       <link href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/css/style.css" rel="stylesheet" type="text/css" />
@@ -104,217 +101,66 @@
                <div id="large">
                   <ul id="crumbs">
                      <li><a href="/">Trang chủ</a></li>
-                     <li><a href="<?php echo full_url_($_SERVER);?>"><?php echo $product_detail[0]['title']?></a></li>
+                     <li><a href="<?php echo base_url();?>hoi-dap">Hỏi đáp</a></li>
                   </ul>
                   <div class="clear">
                   </div>
-                  <span id="ContentPlaceHolder1_lblNotice" style="font-weight:bold;"></span>
-                  <input type="hidden" name="ctl00$ContentPlaceHolder1$hdfID" id="ContentPlaceHolder1_hdfID" value="11" />
-                  <div class="details-img">
-                     <a id="ContentPlaceHolder1_hplImage">
-                     <?php 
-                     if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_detail[0]['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_detail[0]['image']) && $product_detail[0]['image']!='')
-                     {
-                     ?>
-                     <img id="ContentPlaceHolder1_img" src="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image'] ?>" alt="<?php echo $product_detail[0]['title'] ?>" width="200"/>
-                     <?php } else { ?>
-                     <img id="ContentPlaceHolder1_img" src="<?php echo base_url();?>file/uploads/no_image.gif" alt="<?php echo $product_detail[0]['title'] ?>" width="200"/>
-                     <?php } ?>
-                     </a>
-                  </div>
-                  <div class="details-info">
+                  <div class="article-details">
                      <h1>
-                        Thang nhôm Hasegawa-Japan RS-12
+                        <?php echo $faq_detail[0]['title'];?>
                      </h1>
                      <div class="clear">
                      </div>
-                     <div class="info">
-                        <div class="left">
-                           Giá
-                        </div>
-                        <div class="right">
-                           <span class="price">
-                           <?php echo number_format($product_detail[0]['price'])?> VNĐ</span>
-                           (Chưa VAT)
-                        </div>
-                        <div class="clear">
-                        </div>
-                        <div class="left">
-                           Tình trạng
-                        </div>
-                        <div class="right">
-                           <img id="ContentPlaceHolder1_imgStatus" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/images/ico_available.gif" />
-                           &nbsp;Có hàng
-                        </div>
-                        <div class="clear">
-                        </div>
-                        <div class="clear">
-                        </div>
-                        <div class="clear">
-                        </div>
+                     <p><?php echo $faq_detail[0]['question'];?></p>
+                     <div class="clear">
                      </div>
                      <div class="clear">
                      </div>
-                     <form name="addToCart" method="post">
-                     <input type="hidden" name="cart" value="1"/>
-                     <input type="hidden" name="id_product" value="<?php echo $product_detail[0]['id_product']?>"/>
-                     <a id="ContentPlaceHolder1_btnAddCart" class="addcart" href="javascript:addToCart()">Thêm vào giỏ hàng</a>
-                     <div class="info">
-                    <div class="left"> Số lượng:</div>
-                    <div class="right">
-                    <select name="quantity" id="quantity">
-                     	<option value="1">1</option>
-                     	<option value="2">2</option>
-                     	<option value="3">3</option>
-                     	<option value="4">4</option>
-                     	<option value="5">5</option>
-                     </select>
-                     </div>
-                     </div>
-                     </form>
-                     <div class="action">
-                        <a id="ContentPlaceHolder1_hplBaoGia" class="baogia" href="/InBaoGia/AddInfo.aspx?pid=11" target="_blank">In báo giá</a>
-                        <a id="ContentPlaceHolder1_hplEdit" class="edit">Sửa</a>
+                     <p>
+                        <span data-ft="{&quot;tn&quot;:&quot;K&quot;}"><strong>TRẢ LỜI</strong><br />
+                        <?php echo $faq_detail[0]['answer'];?></span><br />
+                        &nbsp;
+                     </p>
+                     <p>
+                     <div class="clear">
+                        &nbsp;
                      </div>
                      <div class="clear">
                      </div>
-                     <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$hdfID" id="ContentPlaceHolder1_RatingControl1_hdfID" value="0" />
-                     <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$HdfModuls" id="ContentPlaceHolder1_RatingControl1_HdfModuls" />
-                     <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$hdfTotalRating" id="ContentPlaceHolder1_RatingControl1_hdfTotalRating" value="23" />
-                     <div class="ratinglike">
-                        <div style="padding: 5px 0 0px 0; width: 370px; float: right;">
-                           <div class="demoarea" style="width:200px; float:left; margin-top:2px">
-                              <div id="ContentPlaceHolder1_RatingControl1_up1">
-                                 <div id="ContentPlaceHolder1_RatingControl1_ratingControl" style="float: left; padding-right: 5px">
-                                    <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$ratingControl_RatingExtender_ClientState" id="ContentPlaceHolder1_RatingControl1_ratingControl_RatingExtender_ClientState" value="8" /><a href="javascript:void(0)" id="ContentPlaceHolder1_RatingControl1_ratingControl_A" title="8" style="text-decoration:none"><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_1" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_2" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_3" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_4" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_5" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_6" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_7" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_8" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_9" class="rating ratingEmpty" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_10" class="rating ratingEmpty" style="float:left;">&nbsp;</span></a>
+                     <div style="margin: 10px 0; overflow: hidden">
+                        <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$hdfID" id="ContentPlaceHolder1_RatingControl1_hdfID" value="49" />
+                        <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$HdfModuls" id="ContentPlaceHolder1_RatingControl1_HdfModuls" value="a_d_r" />
+                        <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$hdfTotalRating" id="ContentPlaceHolder1_RatingControl1_hdfTotalRating" value="1" />
+                        <div class="ratinglike">
+                           <div style="padding: 5px 0 0px 0; width: 370px; float: right;">
+                              <script type="text/javascript">
+                                 //<![CDATA[
+                                 Sys.WebForms.PageRequestManager._initialize('ctl00$ContentPlaceHolder1$RatingControl1$ScriptManager1', 'form1', ['tctl00$ContentPlaceHolder1$RatingControl1$up1','ContentPlaceHolder1_RatingControl1_up1'], [], [], 90, 'ctl00');
+                                 //]]>
+                              </script>
+                              <div style="width: 150px; float: right">
+                                 <!-- AddThis Button BEGIN -->
+                                 <div class="addthis_toolbox addthis_default_style ">
+                                    <a class="addthis_button_google_plusone_share"></a><a class="addthis_button_facebook">
+                                    </a><a class="addthis_button_zingme"></a><a class="addthis_button_twitter"></a><a
+                                       class="addthis_button_blogger"></a><a class="addthis_button_email"></a><a class="addthis_button_compact">
+                                    </a>
                                  </div>
-                                 <span id="ContentPlaceHolder1_RatingControl1_ltrRating" style="line-height: 12px; color: #7F7F7F">23 đánh giá</span>
+                                 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=tuanson"></script>
+                                 <!-- AddThis Button END -->
                               </div>
                            </div>
-                           <div style="width: 150px; float: right">
-                              <!-- AddThis Button BEGIN -->
-                              <div class="addthis_toolbox addthis_default_style ">
-                                 <a class="addthis_button_google_plusone_share"></a><a class="addthis_button_facebook">
-                                 </a><a class="addthis_button_zingme"></a><a class="addthis_button_twitter"></a><a
-                                    class="addthis_button_blogger"></a><a class="addthis_button_email"></a><a class="addthis_button_compact">
-                                 </a>
-                              </div>
-                              <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=tuanson"></script>
-                              <!-- AddThis Button END -->
+                           <div style="display:none" xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:Review">
+                              <span property="v:itemreviewed">Công ty CP TM và DV Kỹ thuật Thành Đạt tuyển dụng</span> Đánh giá bởi <span property="v:reviewer">
+                              hơn 5600 khách hàng</span>. Kết quả bình chọn: <span property="v:rating">
+                              8</span> <span property="v:best">10</span>
                            </div>
                         </div>
-                        <div style="display:none" xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:Review">
-                           <span property="v:itemreviewed">http://thangnhom.net.vn/</span> Đánh giá bởi <span property="v:reviewer">
-                           hơn 5600 khách hàng</span>. Kết quả bình chọn: <span property="v:rating">
-                           8</span> <span property="v:best">10</span>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="clear">
-                  </div>
-                  <div id="ContentPlaceHolder1_pnlTag">
-                     <div class="tagLeft">
-                     </div>
-                     <div class="tagMid">
-                        <div class="tag">
-                        </div>
-                        <div class="wordTag">
-                           <a href="/tag/thang.aspx">thang</a>, <a href="/tag/thang-gap-nhom.aspx">Thang gấp nhôm</a>, <a href="/tag/thang-gia-dinh.aspx">thang gia đình</a>, <a href="/tag/thang-nhom-gap.aspx">thang nhôm gấp</a>, <a href="/tag/thang-nhom-japan-thang-sra-thang-rs-thang-rut-thang-gap-thang-gia-dinh.aspx">thang nhôm japan</a>, <a href="/tag/thangnhom.aspx">thangnhom</a>, <a href="/tag/the-gioi-thang.aspx">thế giới thang</a>
-                        </div>
-                     </div>
-                     <div class="tagRight">
-                     </div>
-                  </div>
-                  <div class="clear">
-                  </div>
-                  <div class="tab-product-details">
-                     <ul class="tabs1">
-                        <li id="ContentPlaceHolder1_li_chitiet" class="active"><a href="#chitiet">Chi tiết tính năng</a></li>
-                     </ul>
-                     <div class="tab_container">
-                        <div class="tab_content1" id="chitiet" style="display: block;">
-                           <div class="tab_content" id="chitiet" style="display: block;">
-                              <?php echo $product_detail[0]['content'];?>
-                           </div>
-                           <p>
-                              &nbsp;
-                           </p>
-                        </div>
-                        <div class="tab_content1" id="baiviet" style="display: none;">
-                        </div>
-                        <div class="tab_content1" id="hinhanh" style="display: none;">
-                        </div>
-                        <div class="tab_content1" id="video" style="display: none;">
-                        </div>
-                     </div>
-                  </div>
-                  <script type="text/javascript">
-                     $(document).ready(function () {
-                     
-                         $(".tab_content1").hide();
-                         $("ul.tabs1 li:first").addClass("active").show();
-                         $(".tab_content1:first").show();
-                     
-                         //On Click Event
-                         $("ul.tabs1 li").click(function () {
-                             $("ul.tabs1 li").removeClass("active");
-                             $(this).addClass("active");
-                             $(".tab_content1").hide();
-                             var activeTab = $(this).find("a").attr("href");
-                             $(activeTab).fadeIn();
-                     
-                             return false;
-                         });
-                     });
-                  </script>
-                  <div class="clear">
-                  </div>
-                  <div class="module">
-                     <div class="title">
-                        <h2>
-                           Sản phẩm cùng loại
-                        </h2>
                      </div>
                      <div class="clear">
                      </div>
-                     <div class="tab-products">
-                        <div style="" class="tabcontainer">
-                        <?php 
-                        foreach($list_product_cate as $p_cate)
-                        {
-                        ?>
-                           <div class="sanpham_tab">
-                              <center>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplImg_0" data-tooltip="sticky11-0" href="<?php echo base_url();?>san-pham/<?php echo $p_cate['id_product']?>-<?php echo mb_strtolower(url_title(removesign($p_cate['title'])));?>">
-                                 <?php 
-                     if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$p_cate['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$p_cate['image']) && $p_cate['image']!='')
-                     {
-                     ?>
-                                 <img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_0" src="<?php echo base_url();?>file/uploads/product/<?php echo $p_cate['image']?>" width="160" height="160" alt="<?php echo $p_cate['title']?>" />
-                                 <?php } else {?>
-                                   <img id="ContentPlaceHolder1_ProductListControl1_rpt1_img_0" src="<?php echo base_url();?>file/uploads/no_image.gif" width="160" height="160" alt="<?php echo $p_cate['title']?>" />
-                                 <?php } ?>
-                                 </a>
-                              </center>
-                              <p>
-                                 <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplTitle_0" data-tooltip="sticky11-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-12.aspx"><?php echo $p_cate['title'];?></a>
-                              </p>
-                              Giá: <span class="price">
-                              <?php echo number_format($p_cate['price']);?> VNĐ</span>
-                           </div>
-                         <?php } ?>  
-                           
-                           
-                           <div id="ContentPlaceHolder1_ProductListControl1_rpt1_div_space_3" class="clear">
-                           </div>
-                           
-                           <div id="ContentPlaceHolder1_ProductListControl1_pnlList" class="prd-list">
-                              <div class="clear">
-                              </div>
-                           </div>
-                           <div class="clear"></div>
-                        </div>
-                     </div>
+                  </div>
+                  <div class="clear">
                   </div>
                   <div class="clear">
                   </div>
@@ -328,7 +174,7 @@
                            </h3>
                         </div>
                         <div class="bd">
-            <ul id="menu-ver">
+                           <ul id="menu-ver">
                 		<?php 
 						foreach($list_cate as $l_cate)
 						{
@@ -340,10 +186,9 @@
 						<?php } ?>
                     
             </ul>
-         
-        </div>
+                        </div>
                      </div>
-                   
+                     
                   </div>
                   <div class="clear">
                   </div>
@@ -414,7 +259,7 @@
                   </div>
                   <div style="margin-top: 5px">
                      <div id="FaceBookControl1_pnlFacebook">
-					 <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftibimarthcm&amp;width=240&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=771797639499496" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:290px;" allowTransparency="true"></iframe>
+                       <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftibimarthcm&amp;width=240&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=771797639499496" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:290px;" allowTransparency="true"></iframe>
                      </div>
                   </div>
                   <div class="clear">
@@ -422,12 +267,11 @@
                   <div class="block">
                      <div class="title">
                         <h3>
-                           Hỏi đáp
+                           Tin tức
                         </h3>
                      </div>
                      <div class="news-box">
-                        
-                        <?php 
+        <?php 
 		foreach($list_faq_rand as $faq_rand)
 		{
 		?>
@@ -438,15 +282,12 @@
                     <a id="NewsBoxControl1_rptArticleList_hplTitle_0" title="<?php echo $faq_rand['title']?>" href="<?php echo base_url();?>hoi-dap-<?php echo $faq_rand['id']?>-<?php echo mb_strtolower(url_title(removesign($faq_rand['title'])))?>"><?php echo $faq_rand['title']?></a>
                 </div>
             <?php } ?>
-                     </div>
+    </div>
                   </div>
                   <div class="clear">
                   </div>
                   <div class="box-none-title">
-                     <a id="AdsControl1_rptAdvertise_hpl_0" href="http://thangnhom.net.vn/m8/Thanh-toan-va-van-chuyen.aspx"><img alt="Máy quẹt thẻ" src="http://danguitar.vn/upload/images/ads/mayquetthe.jpg?width=200&quality=100" /></a>
-                     <a id="AdsControl1_rptAdvertise_hpl_1"><img alt="Thang gấp" src="/upload/images/ads/thang-gap-28.jpg?width=200&quality=100" /></a>
-                     <a id="AdsControl1_rptAdvertise_hpl_2"><img alt="" src="/upload/images/ads/thang-nhom-43.jpg?width=200&quality=100" /></a>
-                     <a id="AdsControl1_rptAdvertise_hpl_3"><img alt="" src="/upload/images/ads/20000697.jpg?width=200&quality=100" /></a>
+                    
                   </div>
                   <div class="block">
                      <div class="title">
@@ -568,12 +409,6 @@
          <div id="divBannerFloatRight">
          </div>
       </div>
-      <script>
-      	function addToCart()
-		{
-			document.forms.addToCart.submit();
-		}      	
-      </script>
       <script type="text/javascript">
          var _gaq = _gaq || [];
          _gaq.push(['_setAccount', 'UA-21718856-13']);

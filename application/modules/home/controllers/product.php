@@ -8,6 +8,7 @@ class Product extends MY_Controller
 		$this->load->model('cartmodel');
 		parent::list_cate();
 		parent::count_cart();
+		parent::load_faq();
 	}
 	public function product_detail($id = null)
 	{
@@ -72,7 +73,7 @@ class Product extends MY_Controller
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 	}
-	public function list_product($id_cate)
+	public function list_product($id_cate = null)
 	{
 		$this->load->model('catehomemodel');
 		if(empty($id_cate))
@@ -103,6 +104,32 @@ class Product extends MY_Controller
         }
         $num_pages = ceil($config['total_rows'] / $config['per_page']);
         $array_sv = $this->producthomemodel->list_product_list($id_cate,$config['per_page'], $page1);
+        $this->data['total_page'] = $num_pages;
+        $this->data['offset'] = $page1;
+        $this->data['page'] = $page;
+        $this->data['total'] = $config['total_rows'];
+        $this->data['list'] = $array_sv;
+        $this->load->view('home/layout_list_product',$this->data);
+	}
+	public function list_product_all()
+	{
+		
+		$this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(3);
+        $config['per_page'] = 12;
+		$this->data['cate_detail'][0]['title']='Sản phẩm';
+        $config['total_rows'] = $this->producthomemodel->count_product_list_all();
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+        $num_pages = ceil($config['total_rows'] / $config['per_page']);
+        $array_sv = $this->producthomemodel->list_product_list_all($config['per_page'], $page1);
         $this->data['total_page'] = $num_pages;
         $this->data['offset'] = $page1;
         $this->data['page'] = $page;
@@ -222,6 +249,9 @@ class Product extends MY_Controller
 			$this->cartmodel->delete_cart_ip($ip);
 			redirect('../'.ROT_DIR);
 		}
+		$this->data['title']='Thông tin đặt hàng';
+			$this->data['gui_cau_hoi'] = 0;
+		$this->data['main_content']='checkout';
 		$this->load->view('home/layout_check_out',$this->data);
 	}
 	public function direction()

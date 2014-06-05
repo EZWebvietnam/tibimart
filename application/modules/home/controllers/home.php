@@ -6,6 +6,7 @@ class Home extends MY_Controller {
         parent::__construct();
 		parent::list_cate();
 		parent::count_cart();
+		parent::load_faq();
     }
 
     public function index() {

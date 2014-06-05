@@ -63,5 +63,10 @@ class MY_Controller extends CI_Controller
         }
         $this->data['header']=$data_setting;
     }
+	public function load_faq()
+	{
+		$this->load->model('faqhomemodel');
+		$this->data['list_faq_rand']=$this->faqhomemodel->random_faq();
+	}
 }
 ?>

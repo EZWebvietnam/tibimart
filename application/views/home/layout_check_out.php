@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
-      <title>Thông tin đặt hàng</title>
+      <title><?php echo $title?></title>
       <meta name="keywords" content="Checkout, Thang nhôm, thang các loại, thang chất lượng cao, thang giá rẻ, thang nhật bản" />
       <meta name="description" content="Checkout, Website Thang nhôm của công ty Cổ Phần Thương Mại và dịch vụ kỹ thuật Thành Đạt mang đến cho quý khách những sản phẩm thang nhôm chất lượng cao, giá cả phải chăng" />
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.min.js"></script>
@@ -41,6 +41,11 @@
 			  </script>
 			<?php
 		 }
+		 ?>
+		 <?php 
+		 if($gui_cau_hoi == 0)
+		 {
+		 	
 		 ?>
 	  <script>
   $(function() {
@@ -82,6 +87,7 @@
 
   });
   </script>
+  <?php } ?>
   <style>
   	#map {
   border: 1px solid #DDD; 
@@ -119,25 +125,24 @@
          <div class="menu-hoz">
             <div class="menu-horizontal">
                <ul>
-                  <li id="MenuTopControl1_rptTopMenu2_li_0" class="first">
-                     <a id="MenuTopControl1_rptTopMenu2_hplLink_0" title="Trang chủ" href="http://thangnhom.net.vn/">Trang chủ</a>
-                  </li>
-                  <li id="MenuTopControl1_rptTopMenu2_li_1">
-                     <a id="MenuTopControl1_rptTopMenu2_hplLink_1" title="Giới thiệu" href="http://thangnhom.net.vn/m2/Gioi-thieu.aspx">Giới thiệu</a>
-                  </li>
-                  <li id="MenuTopControl1_rptTopMenu2_li_2">
-                     <a id="MenuTopControl1_rptTopMenu2_hplLink_2" title="Tin tức" href="http://thangnhom.net.vn/c7/tin-tuc.aspx">Tin tức</a>
-                  </li>
-                  <li id="MenuTopControl1_rptTopMenu2_li_3">
-                     <a id="MenuTopControl1_rptTopMenu2_hplLink_3" title="Thanh toán và vận chuyển" href="http://thangnhom.net.vn/m8/Thanh-toan-va-van-chuyen.aspx">Thanh toán và vận chuyển</a>
-                  </li>
-                  <li id="MenuTopControl1_rptTopMenu2_li_4">
-                     <a id="MenuTopControl1_rptTopMenu2_hplLink_4" title="Bản đồ" href="http://thangnhom.net.vn/Maps.aspx">Bản đồ</a>
-                  </li>
-                  <li id="MenuTopControl1_rptTopMenu2_li_5">
-                     <a id="MenuTopControl1_rptTopMenu2_hplLink_5" title="Liên hệ với chúng tôi" href="/contact.aspx">Liên hệ với chúng tôi</a>
-                  </li>
-               </ul>
+        
+                <li id="MenuTopControl1_rptTopMenu2_li_0" class="first">
+                    <a id="MenuTopControl1_rptTopMenu2_hplLink_0" title="Trang chủ" href="<?php echo base_url();?>">Trang chủ</a></li>
+            
+                <li id="MenuTopControl1_rptTopMenu2_li_1">
+                    <a id="MenuTopControl1_rptTopMenu2_hplLink_1" title="Giới thiệu" href="<?php echo base_url();?>san-pham">Sản phẩm</a></li>
+            
+                <li id="MenuTopControl1_rptTopMenu2_li_2">
+                    <a id="MenuTopControl1_rptTopMenu2_hplLink_2" title="Tin tức" href="<?php echo base_url();?>hoi-dap">Hỏi đáp</a></li>
+            
+                <li id="MenuTopControl1_rptTopMenu2_li_3">
+                    <a id="MenuTopControl1_rptTopMenu2_hplLink_3" title="Thanh toán và vận chuyển" href="http://thangnhom.net.vn/m8/Thanh-toan-va-van-chuyen.aspx">Thanh toán và vận chuyển</a></li>
+            
+            
+                <li id="MenuTopControl1_rptTopMenu2_li_5">
+                    <a id="MenuTopControl1_rptTopMenu2_hplLink_5" title="Liên hệ với chúng tôi" href="<?php echo base_url();?>lien-he">Liên hệ</a></li>
+            
+    </ul>
             </div>
             <div class="search">
                <input name="ctl00$SearchBoxControl1$txtSearch" type="text" value="tìm kiếm..." maxlength="27" id="SearchBoxControl1_txtSearch" class="inputbox" onfocus="if(this.value==&#39;tìm kiếm...&#39;) this.value=&#39;&#39;;" onblur="if(this.value==&#39;&#39;) this.value=&#39;tìm kiếm...&#39;;" />
@@ -163,94 +168,7 @@
                      </div>
                      <div class="clear">
                      </div>
-					 <form method="post">
-                     <div style="padding: 5px;">
-                        <div style="padding: 20px; overflow: hidden">
-                           <p style="padding-top: 10px; padding-bottom: 20px">
-                              <b>Xin vui lòng điền đầy đủ thông tin dưới đây, chúng tôi sẽ liên hệ cho quý khách trước khi giao hàng</b><br/> Khi quý khách điền địa chỉ, chúng tôi sẽ hiển thị vị trí trên bản đồ, nếu thấy không đúng, quý khách vui lòng click chuột vào icon màu đỏ, di chuột đến địa chỉ chính xác.
-                           </p>
-                           <div style="padding-top: 0px;">
-                              <div class="validation">
-                                 <div id="ContentPlaceHolder1_ValidationSummary1" style="display:none;">
-                                 </div>
-                              </div>
-                              <div style="float: left">
-                                 <table width="650">
-                                    <tr>
-                                       <td style="width: 180px; height: 30px">
-                                          Email người mua:
-                                       </td>
-                                       <td>
-                                          <input name="email" type="text" id="ContentPlaceHolder1_txtEmail" style="width:250px;" />
-                                          
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <td style="height: 30px">
-                                          Họ tên:
-                                       </td>
-                                       <td>
-                                          <input name="fullname" type="text" id="ContentPlaceHolder1_txtFullName" style="width:250px;" />
-                                          
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <td style="height: 30px">
-                                          Số điện thoại:
-                                       </td>
-                                       <td>
-                                          <input name="phone" type="text" id="ContentPlaceHolder1_txtPhone" style="width:250px;" />
-                                       </td>
-                                    </tr>
-									<tr>
-                                       <td style="height: 30px">
-                                          Hình thức giao hàng:
-                                       </td>
-                                       <td>
-                                          <input  type="radio" name="radio" value="1"/>Giao hàng tận nơi<input  type="radio" name="radio" value="0"/>Nhận hàng tại shop
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <td style="height: 30px">
-                                          Địa chỉ nhận hàng:
-                                       </td>
-                                       <td>
-                                          <input id="addresspicker_map" name="address" style="width:250px;"/>
-										  <input id="addresspicker" type="hidden"/>
-										  <input id="lat" name="lat" type="hidden"/>
-										  <input id="lng" name="lng" type="hidden"/>
-                                       </td>
-                                    </tr>
-									<tr>
-                                       <td style="height: 30px">
-                                          Map
-                                       </td>
-                                       <td>
-                                          <div id="map"></div>
-                                       </td>
-                                    </tr>
-									<tr>
-                                       <td style="height: 30px">
-                                          Chỉ dẫn đường đi tới shop
-                                       </td>
-                                       <td>
-                                          <a id="chi_duong" href="#">Chỉ đường</a>
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <td>
-                                       </td>
-                                       <td style="padding: 10px 0">
-                                          <input type="button" onclick="window.location.href='<?php echo base_url();?>gio-hang'"  value="Quay lại"  class="btn floatLeft" />
-                                          <input type="submit" value="Hoàn tất"  class="btn floatLeft" />
-                                       </td>
-                                    </tr>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-					 </form>
+					 <?php echo $this->load->view($main_content);?>
                   </div>
                </div>
                <div id="small">
@@ -355,48 +273,27 @@
                   <div class="block">
                      <div class="title">
                         <h3>
-                           Tin tức
+                           Hỏi đáp
                         </h3>
                      </div>
                      <div class="news-box">
-                        <div id="NewsBoxControl1_rptArticleList_div_0" class="first">
-                           <a id="NewsBoxControl1_rptArticleList_hplImage_0" title="Tin triển lãm" href="http://thangnhom.net.vn/18/tin-trien-lam.aspx"><img id="NewsBoxControl1_rptArticleList_img_0" src="/upload/images/article/Tin-trien-lam.jpg?width=50&amp;height=50&amp;mode=crop" alt="Tin triển lãm" style="width:50px;" /></a>
-                           <a id="NewsBoxControl1_rptArticleList_hplTitle_0" title="Tin triển lãm" href="http://thangnhom.net.vn/18/tin-trien-lam.aspx">Tin triển lãm</a>
-                        </div>
-                        <div id="NewsBoxControl1_rptArticleList_div_1">
-                           <a id="NewsBoxControl1_rptArticleList_hplImage_1" title="Thang nhôm ghế, thang chữ A cố định" href="http://thangnhom.net.vn/30/thang-nhom-ghe-thang-chu-a-co-dinh.aspx"><img id="NewsBoxControl1_rptArticleList_img_1" src="/upload/images/article/Thang-nhom-ghe-thang-chu-A-co-dinh.jpg?width=50&amp;height=50&amp;mode=crop" alt="Thang nhôm ghế, thang chữ A cố định" style="width:50px;" /></a>
-                           <a id="NewsBoxControl1_rptArticleList_hplTitle_1" title="Thang nhôm ghế, thang chữ A cố định" href="http://thangnhom.net.vn/30/thang-nhom-ghe-thang-chu-a-co-dinh.aspx">Thang nhôm ghế, thang chữ A cố định</a>
-                        </div>
-                        <div id="NewsBoxControl1_rptArticleList_div_2">
-                           <a id="NewsBoxControl1_rptArticleList_hplImage_2" title="Chọn thang nhôm cho người lớn tuổi ?" href="http://thangnhom.net.vn/35/chon-thang-nhom-cho-nguoi-lon-tuoi.aspx"><img id="NewsBoxControl1_rptArticleList_img_2" src="/upload/images/article/Chon-thang-nhom-cho-nguoi-lon-tuoi.jpg?width=50&amp;height=50&amp;mode=crop" alt="Chọn thang nhôm cho người lớn tuổi ?" style="width:50px;" /></a>
-                           <a id="NewsBoxControl1_rptArticleList_hplTitle_2" title="Chọn thang nhôm cho người lớn tuổi ?" href="http://thangnhom.net.vn/35/chon-thang-nhom-cho-nguoi-lon-tuoi.aspx">Chọn thang nhôm cho người lớn tuổi ?</a>
-                        </div>
-                        <div id="NewsBoxControl1_rptArticleList_div_3">
-                           <a id="NewsBoxControl1_rptArticleList_hplImage_3" title="Thông báo lịch Nghỉ Tết Nguyên Đán năm 2014" href="http://thangnhom.net.vn/38/thong-bao-lich-nghi-tet-nguyen-dan-nam-2014.aspx"><img id="NewsBoxControl1_rptArticleList_img_3" src="/upload/images/article/nopic.gif?width=50&amp;height=50&amp;mode=crop" alt="Thông báo lịch Nghỉ Tết Nguyên Đán năm 2014" style="width:50px;" /></a>
-                           <a id="NewsBoxControl1_rptArticleList_hplTitle_3" title="Thông báo lịch Nghỉ Tết Nguyên Đán năm 2014" href="http://thangnhom.net.vn/38/thong-bao-lich-nghi-tet-nguyen-dan-nam-2014.aspx">Thông báo lịch Nghỉ Tết Nguyên Đán năm 2014</a>
-                        </div>
-                        <div id="NewsBoxControl1_rptArticleList_div_4">
-                           <a id="NewsBoxControl1_rptArticleList_hplImage_4" title="Thang nhôm sử dụng trong nhà kho" href="http://thangnhom.net.vn/39/thang-nhom-su-dung-trong-nha-kho.aspx"><img id="NewsBoxControl1_rptArticleList_img_4" src="/upload/images/article/Thang-nhom-su-dung-trong-nha-kho.jpg?width=50&amp;height=50&amp;mode=crop" alt="Thang nhôm sử dụng trong nhà kho" style="width:50px;" /></a>
-                           <a id="NewsBoxControl1_rptArticleList_hplTitle_4" title="Thang nhôm sử dụng trong nhà kho" href="http://thangnhom.net.vn/39/thang-nhom-su-dung-trong-nha-kho.aspx">Thang nhôm sử dụng trong nhà kho</a>
-                        </div>
-                        <div id="NewsBoxControl1_rptArticleList_div_5">
-                           <a id="NewsBoxControl1_rptArticleList_hplImage_5" title="HASEGAWA – Thương hiệu thang nhôm chất lượng và uy tín" href="http://thangnhom.net.vn/40/hasegawa-%e2%80%93-thuong-hieu-thang-nhom-chat-luong-va-uy-tin.aspx"><img id="NewsBoxControl1_rptArticleList_img_5" src="/upload/images/article/HASEGAWA-%e2%80%93-Thuong-hieu-thang-nhom-chat-luong.jpg?width=50&amp;height=50&amp;mode=crop" alt="HASEGAWA – Thương hiệu thang nhôm chất lượng và uy tín" style="width:50px;" /></a>
-                           <a id="NewsBoxControl1_rptArticleList_hplTitle_5" title="HASEGAWA – Thương hiệu thang nhôm chất lượng và uy tín" href="http://thangnhom.net.vn/40/hasegawa-%e2%80%93-thuong-hieu-thang-nhom-chat-luong-va-uy-tin.aspx">HASEGAWA – Thương hiệu thang nhôm chất lượng và uy tín</a>
-                        </div>
-                        <div id="NewsBoxControl1_rptArticleList_div_6">
-                           <a id="NewsBoxControl1_rptArticleList_hplImage_6" title="Ưu và nhược điểm của mỗi loại thang" href="http://thangnhom.net.vn/44/uu-va-nhuoc-diem-cua-moi-loai-thang.aspx"><img id="NewsBoxControl1_rptArticleList_img_6" src="/upload/images/article/Uu-va-nhuoc-diem-cua-moi-loai-thang.jpg?width=50&amp;height=50&amp;mode=crop" alt="Ưu và nhược điểm của mỗi loại thang" style="width:50px;" /></a>
-                           <a id="NewsBoxControl1_rptArticleList_hplTitle_6" title="Ưu và nhược điểm của mỗi loại thang" href="http://thangnhom.net.vn/44/uu-va-nhuoc-diem-cua-moi-loai-thang.aspx">Ưu và nhược điểm của mỗi loại thang</a>
-                        </div>
+                         <?php 
+		foreach($list_faq_rand as $faq_rand)
+		{
+		?>
+                <div id="NewsBoxControl1_rptArticleList_div_<?php echo $faq_rand['id']?>" class="first">
+                    <a id="NewsBoxControl1_rptArticleList_hplImage_0" title="<?php echo $faq_rand['title']?>" href="<?php echo base_url();?>hoi-dap-<?php echo $faq_rand['id']?>-<?php echo mb_strtolower(url_title(removesign($faq_rand['title'])))?>">
+					<img id="NewsBoxControl1_rptArticleList_img_0" src="<?php echo base_url();?>file/uploads/faq.png" height="50" alt="<?php echo $faq_rand['title']?>" style="width:50px;" />
+					</a>
+                    <a id="NewsBoxControl1_rptArticleList_hplTitle_0" title="<?php echo $faq_rand['title']?>" href="<?php echo base_url();?>hoi-dap-<?php echo $faq_rand['id']?>-<?php echo mb_strtolower(url_title(removesign($faq_rand['title'])))?>"><?php echo $faq_rand['title']?></a>
+                </div>
+            <?php } ?>
+                        
                      </div>
                   </div>
                   <div class="clear">
                   </div>
-                  <div class="box-none-title">
-                     <a id="AdsControl1_rptAdvertise_hpl_0" href="http://thangnhom.net.vn/m8/Thanh-toan-va-van-chuyen.aspx"><img alt="Máy quẹt thẻ" src="http://danguitar.vn/upload/images/ads/mayquetthe.jpg?width=200&quality=100" /></a>
-                     <a id="AdsControl1_rptAdvertise_hpl_1"><img alt="Thang gấp" src="/upload/images/ads/thang-gap-28.jpg?width=200&quality=100" /></a>
-                     <a id="AdsControl1_rptAdvertise_hpl_2"><img alt="" src="/upload/images/ads/thang-nhom-43.jpg?width=200&quality=100" /></a>
-                     <a id="AdsControl1_rptAdvertise_hpl_3"><img alt="" src="/upload/images/ads/20000697.jpg?width=200&quality=100" /></a>
-                  </div>
+                  
                   <div class="block">
                      <div class="title">
                         <h3>
@@ -423,27 +320,7 @@
                </div>
                <div class="thumb-slider">
                   <ul id="mycarousel" class="jcarousel-skin-tango">
-                     <li>
-                        <a id="LogoControl1_rptAdvertise2_hpl1_0" href="http://thadaco.vn" target="_new"><img alt="" src="/upload/images/ads/logo.png?width=160&height=80&quality=100" height="80" width="160" /></a>
-                     </li>
-                     <li>
-                        <a id="LogoControl1_rptAdvertise2_hpl1_1" href="http://nhaccu.com.vn"><img alt="" src="/upload/images/ads/tidaco.png?width=160&height=80&quality=100" height="80" width="160" /></a>
-                     </li>
-                     <li>
-                        <a id="LogoControl1_rptAdvertise2_hpl1_2" href="http://thangnhom.net.vn/thang-nhom-tungshing.aspx"><img alt="" src="/upload/images/ads/tungshing.jpg?width=160&height=80&quality=100" height="80" width="160" /></a>
-                     </li>
-                     <li>
-                        <a id="LogoControl1_rptAdvertise2_hpl1_3" href="http://thangnhom.net.vn/thang-nhom-dai-loan.aspx"><img alt="" src="/upload/images/ads/PAL(1).gif" height="80" width="160" /></a>
-                     </li>
-                     <li>
-                        <a id="LogoControl1_rptAdvertise2_hpl1_4" href="http://thangnhom.net.vn/thang-nhom-nhat-ban.aspx"><img alt="" src="/upload/images/ads/hasigawa.gif" height="80" width="160" /></a>
-                     </li>
-                     <li>
-                        <a id="LogoControl1_rptAdvertise2_hpl1_5" href="http://www.microsoft.com/net" target="_new"><img alt="công nghệ asp.net" src="/upload/images/ads/NetLogo.jpg?width=160&height=80&quality=100" height="80" width="160" /></a>
-                     </li>
-                     <li>
-                        <a id="LogoControl1_rptAdvertise2_hpl1_6" href="http://www.microsoft.com/sqlserver/"><img alt="công nghệ Sql Server" src="/upload/images/ads/sql-server-logo.png?width=160&height=80&quality=100" height="80" width="160" /></a>
-                     </li>
+                     
                   </ul>
                </div>
                <div class="clear">
@@ -483,33 +360,27 @@
                <tbody>
                   <tr>
                      <td align="center" colspan="2">
-                        <b>Công ty Cổ phần Thương mại và Dịch vụ Kỹ thuật THÀNH ĐẠT</b>
+                        <b>TIBIMART.COM</b>
                      </td>
                   </tr>
                   <tr>
                      <td>
                         <p>
                            Trụ sở: Số 71 Đường bờ sông Quan Hoa - Phường Quan Hoa - Cầu Giấy - Hà Nội<br />
-                           Điện thoại: (84-4) 37671380 / Fax:(84-4) 37671381- 0902122585<br />
-                           website: <a href="http://sieuthitructuyen.net.vn/">http://sieuthitructuyen.net.vn</a>/ - Email: <a href="mailto:thanhdat@thadaco.vn">thanhdat@thadaco.vn</a>
+                           
                         </p>
                      </td>
                      <td>
                         <p style="padding-bottom: 0">
-                           <b>Tại TP.HCM:</b> 207 Điện Biên Phủ – P.15 – Q. Bình Thạnh – TPHCM<br />
-                           Điện thoại: 08.35144875 - 09456.11011 / Fax: 0835118092
+                           <b>Tại TP.HCM:</b> Số 40, Đường 13, Quốc lộ 13, Phường Hiệp Bình Chánh, Quận Thủ Đức – TPHCM<br />
                         </p>
-                        <p style="padding-bottom: 0">
-                           <strong>Tại Miền Trung:</strong> 109 Đường Cao xuân Huy, TP Vinh, Nghệ An<br />
-                           &nbsp;Điện thoại: 0386.253.189 - Fax: 0386.253.198 - 0989343585
-                        </p>
+                       
                      </td>
                   </tr>
                   <tr>
                      <td align="center" colspan="2">
                         <p style="padding-bottom: 0">
-                           <span style="font-size: small;"><span style="font-family: Arial;">Giấy chứng nhận đăng ký kinh doanh số: </span></span><span style="font-size: small;"><span style="font-family: Arial;">0101516915<br />
-                           Do: Sở kế hoạch và đầu tư thành phố Hà Nội cấp ngày 30 tháng 07 năm 2004</span></span>
+                           <span style="font-size: small;"><span style="font-family: Arial;">Desgin by <a href="https://www.facebook.com/ezwebvietnam">EZWeb Việt Nam</a> </span></span>
                         </p>
                      </td>
                   </tr>
