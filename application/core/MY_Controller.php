@@ -29,7 +29,7 @@ class MY_Controller extends CI_Controller
 	}
     public function load_header()
     {
-        $link = $_SERVER['DOCUMENT_ROOT'] . ROT_DIR . 'setting.xml';
+        $link = PATH_FOLDER . ROT_DIR . 'setting.xml';
         $doc = new DOMDocument();
         $doc->load($link);
 

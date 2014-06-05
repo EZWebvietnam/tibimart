@@ -2,8 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <title>Hỏi đáp</title>
-      <meta name="keywords" content="Tin tức, Thang nhôm, thang các loại, thang chất lượng cao, thang giá rẻ, thang nhật bản" />
-      <meta name="description" content="Tin tức, Website Thang nhôm của công ty Cổ Phần Thương Mại và dịch vụ kỹ thuật Thành Đạt mang đến cho quý khách những sản phẩm thang nhôm chất lượng cao, giá cả phải chăng" />
+      <meta vary="User-Agent" />
+	<meta name="title" content="<?php echo $header['title']?>" />
+	<meta name="ROBOTS" content="<?php echo $header['robots']?>" />
+	<meta name="google-site-verification" content="WlnQ-eKKwnhOw3DVTstkNknRMNzlwQ8tHc3znnVab6o" />
+	<link rel="canonical" href="<?php echo full_url_($_SERVER);?>"/>		
+	<meta property="og:url" content="<?php echo full_url_($_SERVER);?>" />
+	<meta property="og:title" content="<?php echo $header['title']?>" />
+	<meta property="og:description" content="<?php echo $header['description']?>" />
+	<meta property="og:image" content="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
+	<meta name="keywords" content="<?php echo $header['keywords']?>" />
+	<meta name="description" content="<?php echo $header['description']?>" />
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.min.js"></script>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta http-equiv="Content-Language" content="vn" />
@@ -51,7 +60,7 @@
       <div id="container">
          <div id="head">
             <a href="/">
-            <img id="HeaderControl1_imgLogo" title="Thang nhom, Thang nhôm các loại" class="logo" src="/upload/images/logo/logo-thadaco.jpg" />
+            <img width="288" height="80" id="HeaderControl1_imgLogo" title="<?php echo $header['title']?>" class="logo" src="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
             </a>
             <div class="hotline-head">
                <div class="hotline">

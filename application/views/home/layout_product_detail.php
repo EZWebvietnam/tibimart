@@ -2,8 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <title><?php echo $product_detail[0]['title']?></title>
-      <meta name="keywords" content="thang,thang nhôm,thang nhật,thang nhat,thang gấp,thang rút,thang xếp nhôm,thang tungshing,thang salvo,thang rút gọn,thang nhôm rút gọn,thang chữ a,thang chữ m" />
-      <meta name="description" content="Thang nhôm RS-12 là thang gấp 2 đoạn có được nhập khẩu từ Nhật Bản,do công ty Công ty Thành Đạt phân phối" />
+      <meta name="keywords" content="<?php echo $product_detail[0]['title']?>" />
+     <meta name="title" content="<?php echo $header['title']?>" />
+	<meta name="ROBOTS" content="<?php echo $header['robots']?>" />
+	<meta name="google-site-verification" content="WlnQ-eKKwnhOw3DVTstkNknRMNzlwQ8tHc3znnVab6o" />
+	<link rel="canonical" href="<?php echo full_url_($_SERVER);?>"/>		
+	<meta property="og:url" content="<?php echo full_url_($_SERVER);?>" />
+	<meta property="og:title" content="<?php echo $header['title']?>" />
+	<meta property="og:description" content="<?php echo $header['description']?>" />
+	<meta property="og:image" content="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
+	<meta name="description" content="<?php echo $header['description']?>" />
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.min.js"></script>
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/lightbox.js"></script>
       <link rel="stylesheet" href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/css/lightbox.css" type="text/css"
@@ -53,7 +61,7 @@
       <div id="container">
          <div id="head">
             <a href="/">
-            <img id="HeaderControl1_imgLogo" title="Thang nhom, Thang nhôm các loại" class="logo" src="/upload/images/logo/logo-thadaco.jpg" />
+            <img width="288" height="80" id="HeaderControl1_imgLogo" title="<?php echo $header['title']?>" class="logo" src="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
             </a>
             <div class="hotline-head">
                <div class="hotline">

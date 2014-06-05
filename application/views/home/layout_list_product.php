@@ -4,8 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title><?php echo $cate_detail[0]['title']?></title>
-<meta name="keywords" content="Thang nhom Nhat ban, thang nhôm nhật bản, thang nhôm xịn" />
-<meta name="description" content="Thành Đạt nhà phân phối thang nhôm chất lượng cao, giá cả phải chăng" />
+<meta vary="User-Agent" />
+<meta name="keywords" content="<?php echo $cate_detail[0]['title']?>" />
+	<meta name="title" content="<?php echo $header['title']?>" />
+	<meta name="ROBOTS" content="<?php echo $header['robots']?>" />
+	<meta name="google-site-verification" content="WlnQ-eKKwnhOw3DVTstkNknRMNzlwQ8tHc3znnVab6o" />
+	<link rel="canonical" href="<?php echo full_url_($_SERVER);?>"/>		
+	<meta property="og:url" content="<?php echo full_url_($_SERVER);?>" />
+	<meta property="og:title" content="<?php echo $header['title']?>" />
+	<meta property="og:description" content="<?php echo $header['description']?>" />
+	<meta property="og:image" content="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
+	<meta name="description" content="<?php echo $header['description']?>" />
 
 <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.min.js"></script>
 
@@ -81,7 +90,7 @@ function __doPostBack(eventTarget, eventArgument) {
 <div id="head">
    
         <a href="/">
-            <img id="HeaderControl1_imgLogo" title="Thang nhom, Thang nhôm các loại" class="logo" src="/upload/images/logo/logo-thadaco.jpg" />
+            <img width="288" height="80" id="HeaderControl1_imgLogo" title="<?php echo $header['title']?>" class="logo" src="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
         </a>
 
         <div class="hotline-head">
