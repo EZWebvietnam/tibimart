@@ -81,7 +81,8 @@ $status = array('0'=>'Khách hàng Chưa thanh toán','1'=>'Khách Đã thanh to
                            <th>SĐT</th>
                            <th>Đia chỉ</th>
                            <th>Email</th>
-                           
+						   <th>Tiền</th>
+                           <th>Phí vận chuyển</th>	
                            <td>Thanh toán</td>
                            <th class="publish">Chức năng</th>
                         </tr>
@@ -97,6 +98,8 @@ $status = array('0'=>'Khách hàng Chưa thanh toán','1'=>'Khách Đã thanh to
                         <td><?php echo $ctv_ref['address']?></td>
                       
                         <td><?php echo $ctv_ref['email']?></td>
+						<td><?php echo $ctv_ref['total_price_order']?></td>
+						<td><?php echo $ctv_ref['fee_ship']?></td>
                         <td>
                             <?php if($ctv_ref['status']==0)
                             {?>

@@ -271,6 +271,7 @@ class Product extends MY_Controller
 			{
 				$total_money_cart += $value['total_price'];
 			}
+			
 			//$total_money_cart = $total_money_cart + $total_fee;
 			$data_insert      = array('full_name'        =>$fullname,'address'          =>$address,'phone'            =>$phone,'email'            =>$email,'status'           =>0,'fee_ship'         =>$total_fee,'ship_type'        =>$ship_type,'create_date'      =>strtotime('now'),'total_price_order'=>$total_money_cart);
 			$id_order = $this->orderhomemodel->insert_order($data_insert);
