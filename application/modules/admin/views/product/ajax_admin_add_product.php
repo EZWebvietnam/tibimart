@@ -28,19 +28,7 @@
                     <input id="cost_" type="texbox" name="cost"/>
                 </td>
             </tr>
-            <tr>
-                <td class="label">Năm</td>
-                <td colspan="3">
-                    <select name="year" id="year_">
-						<?php 
-						for($i=date('Y');$i>=1995;$i--)
-						{
-						?>
-						<option value="<?php echo $i?>"><?php echo $i?></option>
-						<?php } ?>
-					</select>
-                </td>
-            </tr>
+            
 			<tr>
                 <td class="label">Loại sản phẩm</td>
                 <td colspan="3">

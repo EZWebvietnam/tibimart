@@ -28,30 +28,6 @@
                     <input id="cost" type="text" value="<?php echo $detail_product[0]['price'] ?>" name="cost"/>
                 </td>
             </tr>
-             
-            
-             <tr>
-                <td class="label">Năm</td>
-                <td colspan="3">
-                    <select name="year" id="year_">
-						<?php 
-						for($i=date('Y');$i>=1995;$i--)
-						{
-							if($detail_product[0]['id'] == $i)
-							{
-								?> 
-								<option selected="" value="<?php echo $i?>"><?php echo $i?></option>
-								<?php
-								} else {
-									?>
-									<option value="<?php echo $i?>"><?php echo $i?></option>
-									<?php
-								}
-							}
-						 ?>
-					</select>
-                </td>
-            </tr>
 			<tr>
                 <td class="label">Loại sản phẩm</td>
                 <td colspan="3">

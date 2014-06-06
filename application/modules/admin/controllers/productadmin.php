@@ -126,7 +126,7 @@ class Productadmin extends MY_Controller {
             exit;
         }
         if ($this->input->post()) {
-            $data_save = array(
+			$data_save = array(
                 'title' => $this->input->post('title'),
                 'price' => intval($this->input->post('cost')),
                 'content' => stripslashes($this->input->post('content')),
@@ -135,6 +135,26 @@ class Productadmin extends MY_Controller {
 				'create_date'=>strtotime('now'),
 				'id_cate'=>$this->input->post('category')
             );
+			if($this->input->post('file')!='')
+			{
+				$new_file = time();
+				$config['image_library'] = 'gd2';
+				$config['source_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$this->input->post('file');
+				$config['new_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$new_file.$this->input->post('file');
+				$config['create_thumb'] = TRUE;
+				$config['maintain_ratio'] = FALSE;
+				$config['width'] = 650;
+				$config['height'] = 270;
+
+				// Load the Library
+				$this->load->library('image_lib', $config);
+				
+				// resize image
+				$this->image_lib->resize();
+				//$data_save['slide_image'] = $new_file;
+			}
+			
+            
             $id = $this->productmodel->add_product($data_save);
 			if($id>0)
 			{
@@ -174,6 +194,21 @@ class Productadmin extends MY_Controller {
         if ($this->input->post()) {
             $file = $this->input->post('file');
             if ($file != '') {
+				$new_file = time();
+				$config['image_library'] = 'gd2';
+				$config['source_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$this->input->post('file');
+				$config['new_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$new_file.$this->input->post('file');
+				$config['create_thumb'] = TRUE;
+				$config['maintain_ratio'] = FALSE;
+				$config['width'] = 650;
+				$config['height'] = 270;
+
+				// Load the Library
+				$this->load->library('image_lib', $config);
+				
+				// resize image
+				$this->image_lib->resize();
+				//$data_save['slide_image'] = $new_file;
                 $data_save = array(
                     'title' => $this->input->post('title'),
                     'price' => $this->input->post('cost'),

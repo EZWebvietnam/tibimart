@@ -192,12 +192,22 @@ if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side frame
 <div id="slide">
     <div class="slider-wrapper theme-default">
         <div id="slider" class="nivoSlider">
-            
-                    <img id="SlideControl1_rpt_img_0" title="&lt;p>
-	&lt;a href=&quot;http://thangnhom.net.vn&quot;>Thang nhôm&lt;/a> Đài Loan&lt;/p>
-" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/upload/images/slide/thangnhom-dailoan.jpg" />
-                
-                    <img id="SlideControl1_rpt_img_1" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/upload/images/slide/thangnhom-nhatban.jpg" />
+            	<?php 
+				foreach($product_slide as $p_slide)
+				{
+					$file_name = explode('.',$p_slide['image']);
+					$file_name = $file_name[0].'_thumb'.$file_name[1];
+					if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$file_name) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$file_name) && $file_name!='')
+					{
+				?>
+                    <img id="SlideControl1_rpt_img_<?php echo $p_slide['id_product']?>" title="&lt;p>
+	&lt;a href=&quot;<?php echo base_url();?>san-pham/<?php echo $p_slide['id_product']?>-<?php echo mb_strtolower(url_title(removesign($p_slide['title'])))?>&quot;><?php echo $p_slide['title']?>&lt;/a> &lt;/p>
+" src="<?php echo base_url();?>file/uploads/product/<?php echo $file_name?>" width="43" height="270" />
+				<?php } else {?>
+				<img id="SlideControl1_rpt_img_<?php echo $p_slide['id_product']?>" title="&lt;p>
+	&lt;a href=&quot;<?php echo base_url();?>san-pham/<?php echo $p_slide['id_product']?>-<?php echo mb_strtolower(url_title(removesign($p_slide['title'])))?>&quot;><?php echo $p_slide['title']?>&lt;/a> &lt;/p>
+" src="<?php echo base_url();?>file/uploads/no_image.gif" width="43" height="270" />
+                <?php } } ?>
                 
         </div>
     </div>
@@ -212,79 +222,60 @@ if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side frame
             
 <div class="tab-news">
     <ul class="tabs">
-            <li><a href="#tinmoi">Tin mới</a></li>
+            <li><a href="#khuyenmai">Khuyến mại</a></li>
         <li><a href="#docnhieu">Đọc nhiều</a></li>
 
-        <li><a href="#khuyenmai">Khuyến mãi</a></li>
+        <li><a href="#faq">Hỏi đáp mới</a></li>
     </ul>
     <div class="clear">
     </div>
     <div class="tab-content">
-      <div id="tinmoi" class="tab_content">
+	 <div id="khuyenmai" class="tab_content">
+		<ul>
+            <?php 
+			foreach($list_sale as $l_sale)
+			{
+			?>
+			<li>
+                        <a id="TabNewsControl1_rpt2_hplTitle_7" title="<?php echo$l_sale['title']?>" href="<?php echo base_url();?>khuyen-mai/<?php echo $l_sale['id']?>-<?php echo mb_strtolower(url_title(removesign($l_sale['title'])))?>"><?php echo$l_sale['title']?></a></li>
+			<?php } ?>
+			</ul>
+        </div>
+      <div id="faq" class="tab_content">
             
                     <ul>
-                
+                	<?php 
+					
+					foreach($list_faq_rand as $faq_r)
+					{
+					
+					?>
                     <li>
-                        <a id="TabNewsControl1_rpt3_hplTitle_0" title="Nét đặc biệt trong thiết kế của Thang nhôm Little – Mỹ" href="http://thangnhom.net.vn/48/net-dac-biet-trong-thiet-ke-cua-thang-nhom-little-%e2%80%93-my.aspx">Nét đặc biệt trong thiết kế của Thang nhôm Little – Mỹ</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt3_hplTitle_1" title="Chọn mua và sử dụng thang nhôm cao trên 5m" href="http://thangnhom.net.vn/47/chon-mua-va-su-dung-thang-nhom-cao-tren-5m.aspx">Chọn mua và sử dụng thang nhôm cao trên 5m</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt3_hplTitle_2" title="Thiết bị bảo vệ kèm theo khi dùng thang nhôm" href="http://thangnhom.net.vn/46/thiet-bi-bao-ve-kem-theo-khi-dung-thang-nhom.aspx">Thiết bị bảo vệ kèm theo khi dùng thang nhôm</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt3_hplTitle_3" title="Những tác phẩm nghệ thuật từ Thang nhôm" href="http://thangnhom.net.vn/45/nhung-tac-pham-nghe-thuat-tu-thang-nhom.aspx">Những tác phẩm nghệ thuật từ Thang nhôm</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt3_hplTitle_4" title="Ưu và nhược điểm của mỗi loại thang" href="http://thangnhom.net.vn/44/uu-va-nhuoc-diem-cua-moi-loai-thang.aspx">Ưu và nhược điểm của mỗi loại thang</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt3_hplTitle_5" title="HASEGAWA – Thương hiệu thang nhôm chất lượng và uy tín" href="http://thangnhom.net.vn/40/hasegawa-%e2%80%93-thuong-hieu-thang-nhom-chat-luong-va-uy-tin.aspx">HASEGAWA – Thương hiệu thang nhôm chất lượng và uy tín</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt3_hplTitle_6" title="Thang nhôm sử dụng trong nhà kho" href="http://thangnhom.net.vn/39/thang-nhom-su-dung-trong-nha-kho.aspx">Thang nhôm sử dụng trong nhà kho</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt3_hplTitle_7" title="Chọn thang nhôm cho người lớn tuổi ?" href="http://thangnhom.net.vn/35/chon-thang-nhom-cho-nguoi-lon-tuoi.aspx">Chọn thang nhôm cho người lớn tuổi ?</a></li>
+                        <a id="TabNewsControl1_rpt3_hplTitle_<?php echo $faq_r['id']?>" title="<?php echo $faq_r['title']?>" href="<?php echo base_url();?>hoi-dap-<?php echo $faq_r['id']?>-<?php echo mb_strtolower(url_title(removesign($faq_r['title'])))?>"><?php echo $faq_r['title']?></a></li>
+					<?php  } ?>                
+                    
                 
                     </ul>
                 
         </div>        <div id="docnhieu" class="tab_content">
             
                     <ul>
-                
+                	
+                    <?php 
+					
+					foreach($list_faq_rand as $faq_r)
+					{
+					
+					?>
                     <li>
-                        <a id="TabNewsControl1_rpt2_hplTitle_0" title="Chọn mua và sử dụng thang nhôm cao trên 5m" href="http://thangnhom.net.vn/47/chon-mua-va-su-dung-thang-nhom-cao-tren-5m.aspx">Chọn mua và sử dụng thang nhôm cao trên 5m</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt2_hplTitle_1" title="Thiết bị bảo vệ kèm theo khi dùng thang nhôm" href="http://thangnhom.net.vn/46/thiet-bi-bao-ve-kem-theo-khi-dung-thang-nhom.aspx">Thiết bị bảo vệ kèm theo khi dùng thang nhôm</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt2_hplTitle_2" title="Những tác phẩm nghệ thuật từ Thang nhôm" href="http://thangnhom.net.vn/45/nhung-tac-pham-nghe-thuat-tu-thang-nhom.aspx">Những tác phẩm nghệ thuật từ Thang nhôm</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt2_hplTitle_3" title="Ưu và nhược điểm của mỗi loại thang" href="http://thangnhom.net.vn/44/uu-va-nhuoc-diem-cua-moi-loai-thang.aspx">Ưu và nhược điểm của mỗi loại thang</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt2_hplTitle_4" title="HASEGAWA – Thương hiệu thang nhôm chất lượng và uy tín" href="http://thangnhom.net.vn/40/hasegawa-%e2%80%93-thuong-hieu-thang-nhom-chat-luong-va-uy-tin.aspx">HASEGAWA – Thương hiệu thang nhôm chất lượng và uy tín</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt2_hplTitle_5" title="Thang nhôm sử dụng trong nhà kho" href="http://thangnhom.net.vn/39/thang-nhom-su-dung-trong-nha-kho.aspx">Thang nhôm sử dụng trong nhà kho</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt2_hplTitle_6" title="Chọn thang nhôm cho người lớn tuổi ?" href="http://thangnhom.net.vn/35/chon-thang-nhom-cho-nguoi-lon-tuoi.aspx">Chọn thang nhôm cho người lớn tuổi ?</a></li>
-                
-                    <li>
-                        <a id="TabNewsControl1_rpt2_hplTitle_7" title="Thang nhôm ghế, thang chữ A cố định" href="http://thangnhom.net.vn/30/thang-nhom-ghe-thang-chu-a-co-dinh.aspx">Thang nhôm ghế, thang chữ A cố định</a></li>
+                        <a id="TabNewsControl1_rpt3_hplTitle_<?php echo $faq_r['id']?>" title="<?php echo $faq_r['title']?>" href="<?php echo base_url();?>hoi-dap-<?php echo $faq_r['id']?>-<?php echo mb_strtolower(url_title(removesign($faq_r['title'])))?>"><?php echo $faq_r['title']?></a></li>
+					<?php  } ?>  
                 
                     </ul>
                 
         </div>
 
-        <div id="khuyenmai" class="tab_content">
-            
-        </div>
+       
       
     </div>
 </div>
@@ -340,6 +331,7 @@ if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side frame
 <div class="clear">
 </div>
 <?php 
+$data_sticky = array();
 foreach($list_cate_home as $l_c_home)
 {
 	$list_product = $this->producthomemodel->list_product_by_cate_home($l_c_home['id_cate']);
@@ -359,9 +351,10 @@ foreach($list_cate_home as $l_c_home)
         </div>
         <?php 
 		$i = 1;
-		$data_sticky = array();
+		
 		foreach($list_product as $l_product)
 		{
+			$price_sale = $this->producthomemodel->get_sale_off_product($l_product['id_product']);
 			if($i%5==0)
 			{
 				?>
@@ -390,7 +383,19 @@ foreach($list_cate_home as $l_c_home)
             <p>
                 <a id="ContentPlaceHolder1_ctl00_ProductListControl1_rpt1_hplTitle_<?php echo $l_product['id_product']?>" data-tooltip="sticky<?php echo $l_product['id_product']?>" href="<?php echo base_url();?>san-pham/<?php echo $l_product['id_product']?>-<?php echo mb_strtolower(url_title(removesign($l_product['title'])))?>"><?php echo$l_product['title']?></a></p>
             Giá: <span class="price">
-                <?php echo number_format($l_product['price'])?> VNĐ</span>
+				<?php 
+				$price = 0;
+				if(empty($price_sale))
+				{
+					$price = $l_product['price'];
+				}
+				else
+				{
+					$price = ($l_product['price'] - $l_product['price'] *($price_sale[0]['percent']/100));
+				}
+				
+				?>
+                <?php echo number_format($price)?> VNĐ</span>
         </div>
         <?php 
 		$data_sticky[] = array('id_product'=>$l_product['id_product'],'stock'=>$l_product['stock'],'content'=>$l_product['content'],'title'=>$l_product['title'],'price'=>$l_product['price']);
@@ -430,6 +435,16 @@ foreach($list_cate_home as $l_c_home)
         <?php 
 		foreach($data_sticky as $stick)
 		{
+				$price_sale = $this->producthomemodel->get_sale_off_product($stick['id_product']);
+				$price = 0;
+				if(empty($price_sale))
+				{
+					$price = $l_product['price'];
+				}
+				else
+				{
+					$price = ($l_product['price'] - $l_product['price'] *($price_sale[0]['percent']/100));
+				}
 		?>
         <div id="sticky<?php echo $stick['id_product']?>"  class="atip">
             <div class="toptool">
@@ -438,7 +453,7 @@ foreach($list_cate_home as $l_c_home)
                 <div class="clear">
                 </div>
                 <div class="price">
-                    <?php echo number_format($stick['price'])?> VNĐ</div>
+                    <?php echo number_format($price)?> VNĐ</div>
                 <div class="status">
                     <span id="ContentPlaceHolder1_ctl01_rptTooltip_lblStatus_0" style="color:#4E7032;font-weight:bold;"><?php if ($stick['stock']>0) { echo 'Có hàng';} else {echo 'Hết hàng';}?></span>
                 </div>

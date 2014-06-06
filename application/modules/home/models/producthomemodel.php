@@ -65,5 +65,31 @@ class Producthomemodel extends CI_Model
 		$query = $this->db->query($sql);
 		return count($query->result_array());
 	}
+	public function get_sale_off_product($id)
+    {
+        $id = intval($id);
+        $sql ="SELECT * FROM sale_off WHERE id_product = $id AND exp_date >= now();";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+	public function get_sale_off_product_()
+    {
+        $sql="SELECT * FROM {$this->_name} ORDER BY rand() LIMIT 4";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+    }
+	public function list_sale()
+	{		 
+        $sql ="SELECT * FROM sale_off";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+	}
+	public function detail_sale($id)
+	{		
+		$id = intval($id); 
+        $sql ="SELECT * FROM sale_off WHERE id = ?";
+        $query = $this->db->query($sql,array($id));
+        return $query->result_array();
+	}
 }
 ?>

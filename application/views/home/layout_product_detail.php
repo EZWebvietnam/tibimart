@@ -142,7 +142,19 @@
                         </div>
                         <div class="right">
                            <span class="price">
-                           <?php echo number_format($product_detail[0]['price'])?> VNĐ</span>
+						   <?php 
+						   $price_sale = $this->producthomemodel->get_sale_off_product($product_detail[0]['id_product']);
+							$price = 0;
+							if(empty($price_sale))
+							{
+								$price = $product_detail[0]['price'];
+							}
+							else
+							{
+								$price = ($product_detail[0]['price'] - $product_detail[0]['price'] *($price_sale[0]['percent']/100));
+							}
+						   ?>
+                           <?php echo number_format($price)?> VNĐ</span>
                            (Chưa VAT)
                         </div>
                         <div class="clear">
@@ -313,6 +325,16 @@
                         <?php 
                         foreach($list_product_cate as $p_cate)
                         {
+							 $price_sale = $this->producthomemodel->get_sale_off_product($p_cate['id_product']);
+							$price = 0;
+							if(empty($price_sale))
+							{
+								$price = $p_cate['price'];
+							}
+							else
+							{
+								$price = ($p_cate['price'] - $p_cate['price'] *($price_sale[0]['percent']/100));
+							}
                         ?>
                            <div class="sanpham_tab">
                               <center>
@@ -331,7 +353,7 @@
                                  <a id="ContentPlaceHolder1_ProductListControl1_rpt1_hplTitle_0" data-tooltip="sticky11-0" href="http://thangnhom.net.vn/thang-nhom-nhat-ban/thang-nhom-hasegawa-japan-rs-12.aspx"><?php echo $p_cate['title'];?></a>
                               </p>
                               Giá: <span class="price">
-                              <?php echo number_format($p_cate['price']);?> VNĐ</span>
+                              <?php echo number_format($price);?> VNĐ</span>
                            </div>
                          <?php } ?>  
                            

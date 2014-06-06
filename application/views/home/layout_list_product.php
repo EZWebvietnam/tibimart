@@ -180,6 +180,16 @@ function __doPostBack(eventTarget, eventArgument) {
 	$data_sticky = array();
 	foreach($list as $l_product)
 	{
+		$price_sale = $this->producthomemodel->get_sale_off_product($l_product['id_product']);
+							$price = 0;
+							if(empty($price_sale))
+							{
+								$price = $l_product['price'];
+							}
+							else
+							{
+								$price = ($l_product['price'] - $l_product['price'] *($price_sale[0]['percent']/100));
+							}
 	?>
         <div class="sanpham_tab">
             <center>
@@ -198,10 +208,10 @@ function __doPostBack(eventTarget, eventArgument) {
             <p>
                 <a id="ContentPlaceHolder1_ctl01_ProductListControl1_rpt1_hplTitle_0" data-tooltip="sticky<?php echo $l_product['id_product']?>" href="<?php echo base_url();?>san-pham/<?php echo $l_product['id_product']?>-<?php echo mb_strtolower(url_title(removesign($l_product['title'])))?>"><?php echo $l_product['title']?></a></p>
             Giá: <span class="price">
-                <?php echo number_format($l_product['price']);?> VNĐ</span>
+                <?php echo number_format($price);?> VNĐ</span>
         </div>
 	<?php 
-	$data_sticky[] = array('id_product'=>$l_product['id_product'],'stock'=>$l_product['stock'],'content'=>$l_product['content'],'title'=>$l_product['title'],'price'=>$l_product['price']);
+	$data_sticky[] = array('id_product'=>$l_product['id_product'],'stock'=>$l_product['stock'],'content'=>$l_product['content'],'title'=>$l_product['title'],'price'=>$price);
 	} ?>
 <div id="ContentPlaceHolder1_ctl01_ProductListControl1_pnlList" class="prd-list">
     

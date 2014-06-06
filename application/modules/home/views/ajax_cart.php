@@ -13,6 +13,17 @@
 						foreach($list_cart as $cart)
 						{
 							
+							$price_sale = $this->producthomemodel->get_sale_off_product($cart['id_product']);
+							$price      = 0;
+							if(empty($price_sale))
+							{
+								$price = $cart['price'];
+							}
+							else
+							{
+								$price = ($cart['price'] - $cart['price'] * ($price_sale[0]['percent'] / 100));
+							}
+							
 						?>
                         <tr align="center">
                            <td style="height:80px;">
@@ -28,7 +39,7 @@
                               <input id="quantity_<?php echo $cart['id']?>" name="quantity" type="text" value="<?php echo $cart['quantity']?>" maxlength="4" id="quantity" style="width:20px;text-align: center" />
                            </td>
                            <td align="right">
-                              <span id="ContentPlaceHolder1_dgShopCart_lblUnitPriceVND_0" class="price"><?php echo number_format($cart['price'])?> VNĐ</span>
+                              <span id="ContentPlaceHolder1_dgShopCart_lblUnitPriceVND_0" class="price"><?php echo number_format($price)?> VNĐ</span>
                            </td>
                            <td align="right">
                               <span id="ContentPlaceHolder1_dgShopCart_lblTotalPalVND_0" class="price"><?php echo number_format($cart['total_price'])?> VNĐ</span>

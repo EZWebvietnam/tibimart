@@ -38,5 +38,12 @@ class Faqhomemodel extends CI_Model
 	{
 		$this->db->insert("{$this->_name}",$data);		
 	}
+	public function list_faq_rand()
+	{
+		
+		$sql="SELECT * FROM {$this->_name} ORDER BY rand() LIMIT 8;";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
 }
 ?>
