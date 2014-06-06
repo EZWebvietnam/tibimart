@@ -188,5 +188,27 @@ class Accountadmin extends MY_Controller
 	{
 		
 	}
+	public function check_account_ajax() {
+        $username = $this->input->post('username');
+
+        $this->load->model('users');
+        $user = $this->users->get_user_by_username($username);
+        if (empty($user)) {
+            echo json_encode(array('error' => '0', 'msg' => '<font color="green">Chưa tồn tại</font>'));
+        } else {
+            echo json_encode(array('error' => '1', 'msg' => '<font color="red">Username đã tồn tại trong hệ thống</font>'));
+        }
+    }
+    public function check_email_ajax() {
+        $email = $this->input->post('email');
+
+        $this->load->model('users');
+        $user = $this->users->get_user_by_email($email);
+        if (empty($user)) {
+            echo json_encode(array('error' => '0', 'msg' => '<font color="green">Chưa tồn tại</font>'));
+        } else {
+            echo json_encode(array('error' => '1', 'msg' => '<font color="red">Email đã tồn tại trong hệ thống</font>'));
+        }
+    }
 }
 ?>

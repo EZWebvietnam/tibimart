@@ -101,14 +101,33 @@ $password = array(
         </table>
     </form>
 </div>
+<?php 
+if($_SERVER['SERVER_NAME'] == 'localhost')
+ {
+      ?> 
+	  <script>
+	  	var app_main_url = 'http://localhost/';
+	  </script>
+	  <?php
+ }
+ else
+ {
+     ?> 
+	   <script>
+	  	var app_main_url = 'http://tibimart.com/beta';
+	  </script>
+	 <?php
+ }
+?>
 <script type="text/javascript">
+
     $(document).ready(function() {
         $('#btn_submit').attr('disabled','disabled');
         $('#username').change(function(){
         var username = $(this).val();
         $.ajax({
                 type: "POST",
-                url: "<?php echo base_url();?>admin/ctvadmin/check_account_ajax",
+                url: app_main_url+"/admin/accountadmin/check_account_ajax",
                 data: {username:username},
                 dataType: "json",
                 success: function(data) {
@@ -131,7 +150,7 @@ $password = array(
         var email = $(this).val();
         $.ajax({
                 type: "POST",
-                url: "<?php echo base_url();?>admin/ctvadmin/check_email_ajax",
+                url: app_main_url+"/admin/accountadmin/check_email_ajax",
                 data: {email:email},
                 dataType: "json",
                 cache: false,

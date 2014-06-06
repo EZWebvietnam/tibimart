@@ -107,6 +107,12 @@ $time_start = microtime_float();
                                                                     Sản phẩm
                                                                 </a>
                                                             </li>
+															<li class="main">
+                                                                <a href="<?php echo base_url(); ?>admin/categoryadmin/list_cate" rel="category" class="v_link">
+                                                                    <div><img src="http://quanlybanhang.360vnit.com/icon/customers.png" alt=""></div>
+                                                                   Danh mục
+                                                                </a>
+                                                            </li>
                                                             <li class="main">
                                                                 <a href="<?php echo base_url(); ?>admin/accountadmin/list_account" rel="account" class="v_link">
                                                                     <div><img src="http://quanlybanhang.360vnit.com/icon/customers.png" alt=""></div>

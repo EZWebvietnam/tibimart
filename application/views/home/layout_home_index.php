@@ -524,7 +524,7 @@ foreach($list_cate_home as $l_c_home)
             <table width="238">
             <tr id="SupportOnlineControl1_tr_Bac">
 	<td class="region">
-                    Phía Bắc
+                   Bán hàng
                 </td>
 </tr>
 
@@ -537,46 +537,9 @@ foreach($list_cate_home as $l_c_home)
             
                     <tr>
                         <td class="nick">
-                            <a href="ymsgr:sendim?kd3.thanhdat"><img border="0" align="middle" alt="Chát với Mr. Sự" src="http://opi.yahoo.com/online?u=kd3.thanhdat&amp;m=g&amp;t=5" /></a>
-                            <span class="name">&nbsp;&nbsp;Mr. Sự</span> <span class="phone">
-                                &nbsp;&nbsp;0906.261.381</span>
-                        </td>
-                    </tr>
-                
-                    <tr>
-                        <td class="nick">
-                            <a href="ymsgr:sendim?hunglc1001"><img border="0" align="middle" alt="Chát với Mr. Hưng" src="http://opi.yahoo.com/online?u=hunglc1001&amp;m=g&amp;t=5" /></a>
-                            <span class="name">&nbsp;&nbsp;Mr. Hưng</span> <span class="phone">
-                                &nbsp;&nbsp;0912.385.909</span>
-                        </td>
-                    </tr>
-                
-            <tr id="SupportOnlineControl1_tr_Nam">
-	<td class="region">
-                    Phía Nam
-                </td>
-</tr>
-
-            
-            <tr>
-            <td style="height:2px;">
-           
-            </td>
-            </tr>
-            
-                     <tr>
-                        <td class="nick">
-                            <a href="ymsgr:sendim?dai.thanhdat"><img border="0" align="middle" alt="Chát với Mr. Đại" src="http://opi.yahoo.com/online?u=dai.thanhdat&amp;m=g&amp;t=5" /></a>
-                            <span class="name">&nbsp;&nbsp;Mr. Đại</span> <span class="phone">
-                                &nbsp;&nbsp;09.456.11011</span>
-                        </td>
-                    </tr>
-                
-                     <tr>
-                        <td class="nick">
-                            <a href="ymsgr:sendim?nham.thadaco"><img border="0" align="middle" alt="Chát với Mr Nhậm" src="http://opi.yahoo.com/online?u=nham.thadaco&amp;m=g&amp;t=5" /></a>
-                            <span class="name">&nbsp;&nbsp;Mr Nhậm</span> <span class="phone">
-                                &nbsp;&nbsp;0966.688.169</span>
+                            <a href="ymsgr:sendim?antawavn"><img border="0" align="middle" alt="Chát với Mr. Thi" src="http://opi.yahoo.com/online?u=antawavn&amp;m=g&amp;t=5" /></a>
+                            <span class="name">&nbsp;&nbsp;Mr. Thi</span> <span class="phone">
+                                &nbsp;&nbsp;0906.888.545</span>
                         </td>
                     </tr>
                 
