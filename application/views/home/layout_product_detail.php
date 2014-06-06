@@ -495,12 +495,7 @@
                   </div>
                   <div class="clear">
                   </div>
-                  <div class="box-none-title">
-                     <a id="AdsControl1_rptAdvertise_hpl_0" href="http://thangnhom.net.vn/m8/Thanh-toan-va-van-chuyen.aspx"><img alt="Máy quẹt thẻ" src="http://danguitar.vn/upload/images/ads/mayquetthe.jpg?width=200&quality=100" /></a>
-                     <a id="AdsControl1_rptAdvertise_hpl_1"><img alt="Thang gấp" src="/upload/images/ads/thang-gap-28.jpg?width=200&quality=100" /></a>
-                     <a id="AdsControl1_rptAdvertise_hpl_2"><img alt="" src="/upload/images/ads/thang-nhom-43.jpg?width=200&quality=100" /></a>
-                     <a id="AdsControl1_rptAdvertise_hpl_3"><img alt="" src="/upload/images/ads/20000697.jpg?width=200&quality=100" /></a>
-                  </div>
+                  
                   <div class="block">
                      <div class="title">
                         <h3>
@@ -523,6 +518,7 @@ Histats.track_hits();} catch(err){};
                </div>
                <div class="clear">
                </div>
+			   <!--
                <div class="thumb-slider">
                   <ul id="mycarousel" class="jcarousel-skin-tango">
                      <li>
@@ -547,7 +543,7 @@ Histats.track_hits();} catch(err){};
                         <a id="LogoControl1_rptAdvertise2_hpl1_6" href="http://www.microsoft.com/sqlserver/"><img alt="công nghệ Sql Server" src="/upload/images/ads/sql-server-logo.png?width=160&height=80&quality=100" height="80" width="160" /></a>
                      </li>
                   </ul>
-               </div>
+               </div>-->
                <div class="clear">
                </div>
             </div>

@@ -178,6 +178,7 @@ function __doPostBack(eventTarget, eventArgument) {
     
     <?php 
 	$data_sticky = array();
+	$i =1 ;
 	foreach($list as $l_product)
 	{
 		$price_sale = $this->producthomemodel->get_sale_off_product($l_product['id_product']);
@@ -210,9 +211,18 @@ function __doPostBack(eventTarget, eventArgument) {
             Giá: <span class="price">
                 <?php echo number_format($price);?> VNĐ</span>
         </div>
+		<?php 
+		if($i%4==0)
+		{
+			?> 
+			<div class="clear">
+</div>
+			<?php
+		}
+		?>
 	<?php 
 	$data_sticky[] = array('id_product'=>$l_product['id_product'],'stock'=>$l_product['stock'],'content'=>$l_product['content'],'title'=>$l_product['title'],'price'=>$price);
-	} ?>
+	$i++;} ?>
 <div id="ContentPlaceHolder1_ctl01_ProductListControl1_pnlList" class="prd-list">
     
     <div class="clear">
@@ -500,7 +510,7 @@ Histats.track_hits();} catch(err){};
                 </div>
                 <div class="clear">
                 </div>
-                
+              <!--  
 <div class="thumb-slider">
     <ul id="mycarousel" class="jcarousel-skin-tango">
         
@@ -526,7 +536,7 @@ Histats.track_hits();} catch(err){};
                     <a id="LogoControl1_rptAdvertise2_hpl1_6" href="http://www.microsoft.com/sqlserver/"><img alt="công nghệ Sql Server" src="/upload/images/ads/sql-server-logo.png?width=160&height=80&quality=100" height="80" width="160" /></a></li>
             
     </ul>
-</div>
+</div>-->
 
                 <div class="clear">
                 </div>

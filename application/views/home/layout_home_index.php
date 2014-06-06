@@ -343,8 +343,7 @@ foreach($list_cate_home as $l_c_home)
         <div class="title">
             <h2 id="ContentPlaceHolder1_ctl00_div_TitleProduct">
                <?php echo $l_c_home['title']?></h2>
-                 <div id="ContentPlaceHolder1_ctl00_div_MoreProduct" class="more">
-            <a id="ContentPlaceHolder1_ctl00_hplMoreProduct" href="http://thangnhom.net.vn/thang-nhom-nhat-ban.aspx">Xem thêm</a></div>
+                
         </div>
       
         <div class="clear">
@@ -647,7 +646,7 @@ Histats.track_hits();} catch(err){};
                 </div>
                 <div class="clear">
                 </div>
-                
+    <!--            
 <div class="thumb-slider">
     <ul id="mycarousel" class="jcarousel-skin-tango">
         
@@ -673,7 +672,7 @@ Histats.track_hits();} catch(err){};
                     <a id="LogoControl1_rptAdvertise2_hpl1_6" href="http://www.microsoft.com/sqlserver/"><img alt="công nghệ Sql Server" src="/upload/images/ads/sql-server-logo.png?width=160&height=80&quality=100" height="80" width="160" /></a></li>
             
     </ul>
-</div>
+</div> -->
 
                 <div class="clear">
                 </div>

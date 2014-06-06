@@ -376,6 +376,7 @@ Histats.track_hits();} catch(err){};
                </div>
                <div class="clear">
                </div>
+			   <!--
                <div class="thumb-slider">
                   <ul id="mycarousel" class="jcarousel-skin-tango">
                      <li>
@@ -400,7 +401,7 @@ Histats.track_hits();} catch(err){};
                         <a id="LogoControl1_rptAdvertise2_hpl1_6" href="http://www.microsoft.com/sqlserver/"><img alt="công nghệ Sql Server" src="/upload/images/ads/sql-server-logo.png?width=160&height=80&quality=100" height="80" width="160" /></a>
                      </li>
                   </ul>
-               </div>
+               </div>-->
                <div class="clear">
                </div>
             </div>
