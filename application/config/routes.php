@@ -43,6 +43,7 @@ $route['trang-chu'] = "home/home/index";
 $route['huong-dan-thanh-toan'] = "home/home/payment";
 $route['gio-hang']="home/product/cart";
 $route['hoi-dap']="home/faq/list_faq";
+$route['lien-he']="home/home/contact";
 $route['khuyen-mai/(:any)-(:any)']="home/product/sale_detail/$1";
 $route['hoi-dap/page/(:any)']="home/faq/list_faq";
 $route['gui-cau-hoi']="home/faq/faq_post";

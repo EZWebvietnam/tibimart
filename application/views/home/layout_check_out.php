@@ -165,14 +165,31 @@
                <div id="large">
                   <ul id="crumbs">
                      <li><a href="/">Trang chủ</a></li>
+                     <?php 
+                     if(!isset($contact_))
+                     {
+					 
+                     ?>
                      <li>Checkout</li>
+                     <?php } else {?>
+                     <li>Liên hệ</li>
+                     <?php } ?>
                   </ul>
                   <div class="clear">
                   </div>
                   <div class="module">
                      <div class="title" style="border-top: none">
                         <h3>
+                        <?php 
+                     if(!isset($contact_))
+                     {
+					 
+                     ?>
+                        
                            Thông tin đơn hàng
+                           <?php } else { ?>
+                           Liên hệ
+                           <?php } ?>
                         </h3>
                      </div>
                      <div class="clear">

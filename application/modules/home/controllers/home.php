@@ -21,29 +21,6 @@ class Home extends MY_Controller {
 		$this->load->view('home/layout_home_index',$this->data);
     }
 
-    public function contact() {
-        if ($this->input->post()) {
-            $full_name = $this->input->post('full_name');
-            $email = $this->input->post('email');
-            $content = $this->input->post('noi_dung');
-            if ($full_name != '' && $email != '' && $content != '') {
-                $data_save = array();
-                $data_save = array('full_name' => $full_name, 'email' => $email, 'noi_dung' => $content);
-                $this->load->model('faq');
-                $id = $this->faq->insert_contact($data_save);
-                if ($id > 0) {
-                    redirect('..' . ROT_DIR);
-                }
-            }
-        } else {
-            $this->load->model('productmodel');
-            $this->data['image']=$this->_create_captcha();
-            $this->data['list_product_sale'] = $this->productmodel->get_list_product_sale_off();
-            $this->data['main_content'] = 'home_view/contact';
-            $this->load->view('home/layout_detail', $this->data);
-        }
-    }
-
     public function check_email() {
         $this->load->model('users');
         $email = $this->input->post('email');
@@ -120,15 +97,7 @@ class Home extends MY_Controller {
         redirect('/');
     }
 
-    function _send_email($type, $to, $email, &$data, $title) {
-        /*$this->load->library('email');
-        $this->load->library('maillinux');*/
-        $this->load->library('mailer');
-        $from = MAIL_ADMIN;
-        $subject = $title;
-        $messsage = $this->load->view('email/' . $type . '-html', $data, TRUE);
-        $this->mailer->sendmail($email, $email, $subject, $messsage);
-    }
+    
     private function _create_captcha() {
         $this->load->helper('captcha');
         $options = array('img_path' => PATH_FOLDER . ROT_DIR . '/captcha/', 'img_url' => base_url() . "captcha/", 'img_width' => '150', 'img_height' => '40', 'expiration' => 7200);
@@ -187,5 +156,32 @@ class Home extends MY_Controller {
 		$this->data['main_content']='thanh_toan_view';
 		$this->load->view('home/layout_faq_detail',$this->data);
 	}
+	public function contact()
+	{
+		if($this->input->post())
+		{
+			
+			$data_mail = array('email'=>$this->input->post('email'),'full_name'=>$this->input->post('fullname'),'phone'=>$this->input->post('phone'),'noi_dung'=>loaibohtmltrongvanban($this->input->post('noi_dung')));
+			$this->_send_email('contact','tibimarthcm@gmail.com','tibimarthcm@gmail.com',$data_mail,'Liên hệ');
+		}
+		
+		
+			$this->data['title'] = 'Liên hệ';
+			$this->data['gui_cau_hoi'] = 1;
+			$this->data['contact_'] = 1;
+			$this->data['main_content']='contact_view';
+			$this->load->view('home/layout_check_out',$this->data);
+		
+		
+	}
+	function _send_email($type, $to, $email, &$data, $title) {
+        /*$this->load->library('email');*/
+        $this->load->library('maillinux');
+       // $this->load->library('mailer');
+        $from = MAIL_ADMIN;
+        $subject = $title;
+        $messsage = $this->load->view('home/email/' . $type . '-html', $data, TRUE);
+        $this->maillinux->SendMail('tibimart@nhucauvieclam.net', $email, $subject, $messsage);
+    }
 }
 ?>

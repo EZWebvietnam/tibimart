@@ -24,10 +24,10 @@
                      <table cellpadding="0" cellspacing="0" align="center">
                         <tbody>
                            <tr>
-                              <td colspan="3" align="center" style="padding:20px 0"><a href="http://www.hathanhauto.com" style="font-size:12px;color:#444444;text-decoration:none" target="_blank">@ <?php echo date('Y');?> Mitsuvnautoparts.com</a></td>
+                              <td colspan="3" align="center" style="padding:20px 0"><a href="http://www.hathanhauto.com" style="font-size:12px;color:#444444;text-decoration:none" target="_blank">@ <?php echo date('Y');?> Tibimart.com</a></td>
                            </tr>
                            <tr>
-                              <td style="padding-right:30px;line-height:1.5em"><b>Mitsuvnautoparts.com – THẾ GIỚI PHỤ TÙNG Ô TÔ NHẬP KHẨU-DẦU NHỚT PHỤ GIA Ô TÔ.</b><br>263 Âu Dương Lân - Phường 2 - Quận 8 - TPHCM - Điện thoại: 082.218.9762</td>
+                              <td style="padding-right:30px;line-height:1.5em"><b>Tibimart.com – Tiện ích trong từng sản phẩm.</b><br>Số 40, Đường 13, Quốc lộ 13, Phường Hiệp Bình Chánh, Quận Thủ Đức – TPHCM</td>
                            </tr>
                         </tbody>
                      </table>
