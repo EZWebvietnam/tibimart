@@ -145,7 +145,7 @@
                     <a id="MenuTopControl1_rptTopMenu2_hplLink_2" title="Tin tức" href="<?php echo base_url();?>hoi-dap">Hỏi đáp</a></li>
             
                 <li id="MenuTopControl1_rptTopMenu2_li_3">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_3" title="Thanh toán và vận chuyển" href="http://thangnhom.net.vn/m8/Thanh-toan-va-van-chuyen.aspx">Thanh toán và vận chuyển</a></li>
+                    <a id="MenuTopControl1_rptTopMenu2_hplLink_3" title="Thanh toán và vận chuyển" href="<?php echo base_url();?>huong-dan-thanh-toan">Thanh toán và vận chuyển</a></li>
             
             
                 <li id="MenuTopControl1_rptTopMenu2_li_5">
@@ -323,7 +323,7 @@ Histats.track_hits();} catch(err){};
                      <a id="MenuTop2Control1_rptTopMenu2_hplLink_2" title="Tin tức" href="http://thangnhom.net.vn/c7/tin-tuc.aspx">Tin tức</a>
                   </li>
                   <li id="MenuTop2Control1_rptTopMenu2_li_3">
-                     <a id="MenuTop2Control1_rptTopMenu2_hplLink_3" title="Thanh toán và vận chuyển" href="http://thangnhom.net.vn/m8/Thanh-toan-va-van-chuyen.aspx">Thanh toán và vận chuyển</a>
+                     <a id="MenuTop2Control1_rptTopMenu2_hplLink_3" title="Thanh toán và vận chuyển" href="<?php echo base_url();?>huong-dan-thanh-toan">Thanh toán và vận chuyển</a>
                   </li>
                   <li id="MenuTop2Control1_rptTopMenu2_li_4">
                      <a id="MenuTop2Control1_rptTopMenu2_hplLink_4" title="Bản đồ" href="http://thangnhom.net.vn/Maps.aspx">Bản đồ</a>

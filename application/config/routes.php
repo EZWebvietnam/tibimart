@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "home/index";
 $route['trang-chu'] = "home/home/index";
+$route['huong-dan-thanh-toan'] = "home/home/payment";
 $route['gio-hang']="home/product/cart";
 $route['hoi-dap']="home/faq/list_faq";
 $route['khuyen-mai/(:any)-(:any)']="home/product/sale_detail/$1";

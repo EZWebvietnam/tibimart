@@ -68,5 +68,51 @@ class Categoryadmin extends MY_Controller
         $array = array('error' => 0, 'msg' => "Xóa thành công");
         echo json_encode($array);
     }
+    public function add()
+    {
+    	if($this->input->post())
+    	{
+			$radio = $this->input->post('radio');
+			$title = $this->input->post('title');
+			$data_save = array();
+			$data_save = array('title'=>$title,'show_home'=>$radio);
+			$id = $this->categorymodel->add($data_save);
+			if($id>0)
+			{
+				 $array = array('error' => 0, 'msg' => "Them thanh cong");
+       			 echo json_encode($array);
+			}
+			else
+			{
+				 $array = array('error' => 0, 'msg' => "Them that bai");
+       			 echo json_encode($array);
+			}
+		}
+		else
+		{
+			 $this->load->view('category/ajax_admin_add_category', $this->data);
+		}
+		
+	}
+	public function edit($id = null)
+	{
+		if($this->input->post())
+    	{
+			$radio = $this->input->post('radio');
+			$title = $this->input->post('title');
+			$data_save = array();
+			$data_save = array('title'=>$title,'show_home'=>$radio);
+			
+			$id = $this->categorymodel->update_cate($id,$data_save);
+			$array = array('error' => 0, 'msg' => "Update thanh cong");
+       		echo json_encode($array);
+			
+		}
+		else
+		{
+			$this->data['cate_detail'] = $this->categorymodel->cate_detail($id);
+			 $this->load->view('category/ajax_admin_edit_category', $this->data);
+		}
+	}
 }
 ?>

@@ -22,6 +22,11 @@ class Categorymodel extends CI_Model
         $query = $this->db->query($sql);
         return count($query->result_array());
     }
+     public function cate_detail($id) {
+        $sql = "SELECT * FROM cate_product WHERE id_cate = ?";
+        $query = $this->db->query($sql,array($id));
+        return $query->result_array();
+    }
 	public function delete_cate($id) {
         $this->db->delete('cate_product', array('id_cate' => $id));
     }
@@ -30,7 +35,7 @@ class Categorymodel extends CI_Model
 		$this->db->insert('cate_product',$data);
 		return $this->db->insert_id();
 	}
-	public function edit($id,array $data);
+	public function update_cate($id,array $data)
 	{
 		$this->db->where('id_cate',$id);
 		$this->db->update('cate_product',$data);

@@ -18,5 +18,11 @@ class Orderhomemodel extends CI_Model
 		$this->db->insert("order_detail",$data);
 		return $this->db->insert_id();
 	}
+	public function load_payment()
+	{
+		$this->db->select();
+		$query = $this->db->get('payment');
+		return $query->result_array();
+	}
 }
 ?>
