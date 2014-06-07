@@ -271,13 +271,19 @@
             </td>
             </tr>
             
+                    <?php 
+            		foreach($list_yahoo as $yahoo_)
+            		{
+					
+            		?>
                     <tr>
                         <td class="nick">
-                            <a href="ymsgr:sendim?antawavn"><img border="0" align="middle" alt="Chát với Mr. Thi" src="http://opi.yahoo.com/online?u=antawavn&amp;m=g&amp;t=5" /></a>
-                            <span class="name">&nbsp;&nbsp;Mr. Thi</span> <span class="phone">
-                                &nbsp;&nbsp;0906.888.545</span>
+                            <a href="ymsgr:sendim?<?php echo $yahoo_['nick']?>"><img border="0" align="middle" alt="Chát với Mr. Thi" src="http://opi.yahoo.com/online?u=<?php echo $yahoo_['nick']?>&amp;m=g&amp;t=5" /></a>
+                            <span class="name">&nbsp;&nbsp;<?php echo $yahoo_['name']?></span> <span class="phone">
+                                &nbsp;&nbsp;<?php echo $yahoo_['phone']?></span>
                         </td>
                     </tr>
+                	<?php } ?>
                 
         </table>
                         </div>

@@ -132,7 +132,7 @@
                   </div>
                   <div class="details-info">
                      <h1>
-                        Thang nhôm Hasegawa-Japan RS-12
+                        <?php echo $product_detail[0]['title'] ?>
                      </h1>
                      <div class="clear">
                      </div>
@@ -250,7 +250,7 @@
                         <div class="tag">
                         </div>
                         <div class="wordTag">
-                           <a href="/tag/thang.aspx">thang</a>, <a href="/tag/thang-gap-nhom.aspx">Thang gấp nhôm</a>, <a href="/tag/thang-gia-dinh.aspx">thang gia đình</a>, <a href="/tag/thang-nhom-gap.aspx">thang nhôm gấp</a>, <a href="/tag/thang-nhom-japan-thang-sra-thang-rs-thang-rut-thang-gap-thang-gia-dinh.aspx">thang nhôm japan</a>, <a href="/tag/thangnhom.aspx">thangnhom</a>, <a href="/tag/the-gioi-thang.aspx">thế giới thang</a>
+                           
                         </div>
                      </div>
                      <div class="tagRight">
@@ -426,13 +426,19 @@
             </td>
             </tr>
             
+                   <?php 
+            		foreach($list_yahoo as $yahoo_)
+            		{
+					
+            		?>
                     <tr>
                         <td class="nick">
-                            <a href="ymsgr:sendim?antawavn"><img border="0" align="middle" alt="Chát với Mr. Thi" src="http://opi.yahoo.com/online?u=antawavn&amp;m=g&amp;t=5" /></a>
-                            <span class="name">&nbsp;&nbsp;Mr. Thi</span> <span class="phone">
-                                &nbsp;&nbsp;0906.888.545</span>
+                            <a href="ymsgr:sendim?<?php echo $yahoo_['nick']?>"><img border="0" align="middle" alt="Chát với Mr. Thi" src="http://opi.yahoo.com/online?u=<?php echo $yahoo_['nick']?>&amp;m=g&amp;t=5" /></a>
+                            <span class="name">&nbsp;&nbsp;<?php echo $yahoo_['name']?></span> <span class="phone">
+                                &nbsp;&nbsp;<?php echo $yahoo_['phone']?></span>
                         </td>
                     </tr>
+                	<?php } ?>
                 
         </table>
                         </div>

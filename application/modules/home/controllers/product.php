@@ -10,6 +10,7 @@ class Product extends MY_Controller
 		parent::count_cart();
 		parent::load_faq();
 		parent::load_header();
+		parent::load_yahoo();
 	}
 	public function product_detail($id = null)
 	{

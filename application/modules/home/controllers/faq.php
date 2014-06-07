@@ -8,6 +8,7 @@ class Faq extends MY_Controller
 		parent::count_cart();
 		parent::load_faq();
 		parent::load_header();
+		parent::load_yahoo();
 		$this->load->model('faqhomemodel');
 	}
 	public function list_faq()
