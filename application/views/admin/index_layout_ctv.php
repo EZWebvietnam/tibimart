@@ -146,8 +146,8 @@ $time_start = microtime_float();
                                                             </li>
                                                             <li class="main">
                                                                 <a href="<?php echo base_url(); ?>admin/paymentadmin/list_payment" rel="payment" class="v_link">
-                                                                    <div><img src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/icon/order_detail.png" alt=""></div>
-                                                                   Thanh toán
+                                                                    <div><img src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/icon/bank.png" alt=""></div>
+                                                                   Tài khoản NH
                                                                 </a>
                                                             </li>
 															<li class="main">

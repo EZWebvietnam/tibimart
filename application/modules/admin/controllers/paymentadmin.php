@@ -54,7 +54,15 @@ class Paymentadmin extends MY_Controller
 			$stk = $this->input->post('stk');
 			$file = $this->input->post('file');
 			$data_save = array();
-			$data_save = array('name'=>$name,'name_account'=>$name_account,'account_number'=>$stk,'image'=>$file);
+			if($file!='')
+			{
+				$data_save = array('name'=>$name,'name_account'=>$name_account,'account_number'=>$stk,'image'=>$file);
+			}
+			else 
+			{
+				$data_save = array('name'=>$name,'name_account'=>$name_account,'account_number'=>$stk);
+			}
+			
 			$id = $this->paymentmodel->edit($id,$data_save);
 				$array = array('error' => 0, 'msg' => "Update thanh cong");
        			echo json_encode($array);
