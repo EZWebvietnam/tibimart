@@ -95,7 +95,7 @@
     </script>
 </head>
 <body>
-<script type="text/javascript" src="https://mylivechat.com/chatinline.aspx?hccid=82196418"></script>
+<!--<script type="text/javascript" src="https://mylivechat.com/chatinline.aspx?hccid=82196418"></script>-->
 
 
 <script type="text/javascript">
