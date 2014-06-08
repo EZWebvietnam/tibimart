@@ -66,5 +66,25 @@ class Faqmodel extends CI_Model
 	{
 		$this->db->delete('support',array('id'=>$id));
 	}
+	//Adress Setting
+	public function list_address()
+	{
+		$this->db->select();
+		$query = $this->db->get("about");
+		return $query->result_array();
+	}
+	public function edit_address($id, array $data)
+	{
+		$this->db->where('id',$id);
+		$this->db->update('about',$data);
+	}
+	public function detail_address($id)
+	{
+		$this->db->select();
+		$this->db->where('id',$id);
+		$query = $this->db->get("about");
+		return $query->result_array();
+		
+	}
 }
 ?>

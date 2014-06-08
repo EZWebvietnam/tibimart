@@ -11,6 +11,7 @@ class Product extends MY_Controller
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
+		parent::about();
 	}
 	public function product_detail($id = null)
 	{

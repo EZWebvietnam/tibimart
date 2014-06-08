@@ -73,5 +73,10 @@ class MY_Controller extends CI_Controller
 		$this->load->model('faqhomemodel');
 		$this->data['list_yahoo']=$this->faqhomemodel->list_support();
 	}
+	public function about()
+	{
+		$this->load->model('faqhomemodel');
+		$this->data['about'] = $this->faqhomemodel->about();	
+	}
 }
 ?>

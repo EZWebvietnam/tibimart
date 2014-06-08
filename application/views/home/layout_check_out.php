@@ -118,9 +118,8 @@
             </a>
             <div class="hotline-head">
                <div class="hotline">
-                  <span>Phía Bắc:</span> 043 7671380 - 0912.385.909 - 0906.261.381<br />
-                  <span>Phía Nam:</span> 08 3514 4875 - 09.456.11011
-               </div>
+	<span>Phía Bắc:</span> <?php echo $about[1]['phone']?><br />
+	<span>Phía Nam:</span> <?php echo $about[0]['phone']?></div>
                <div class="opentime">
                   Giờ mở cửa: <b>8h00 - 18h00</b> <i>(tất cả các ngày trong tuần)</i><br />
                   
@@ -372,13 +371,13 @@ Histats.track_hits();} catch(err){};
                   <tr>
                      <td>
                         <p>
-                           Trụ sở: Số 71 Đường bờ sông Quan Hoa - Phường Quan Hoa - Cầu Giấy - Hà Nội<br />
+                           Phía Bắc :<?php echo $about[1]['address']?><br />
                            
                         </p>
                      </td>
                      <td>
                         <p style="padding-bottom: 0">
-                           <b>Tại TP.HCM:</b> Số 40, Đường 13, Quốc lộ 13, Phường Hiệp Bình Chánh, Quận Thủ Đức – TPHCM<br />
+                           <b>Tại TP.HCM:</b> <?php echo $about[0]['address']?><br />
                         </p>
                        
                      </td>

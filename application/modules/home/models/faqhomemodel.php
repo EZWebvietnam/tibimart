@@ -51,5 +51,11 @@ class Faqhomemodel extends CI_Model
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+	public function about()
+	{
+		$sql="SELECT * FROM about";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
 }
 ?>

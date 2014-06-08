@@ -157,6 +157,12 @@ $time_start = microtime_float();
                                                                   Yahoo
                                                                 </a>
                                                             </li>
+                                                            <li class="main">
+                                                                <a href="<?php echo base_url(); ?>admin/addressadmin/address" rel="address" class="v_link">
+                                                                    <div><img width="32" height="32" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/icon/address.png" alt=""></div>
+                                                                  Địa chỉ
+                                                                </a>
+                                                            </li>
 															<li class="main">
                                                                 <a href="<?php echo base_url(); ?>admin/saleadmin/list_sale" rel="sale" class="v_link">
                                                                     <div><img width="32" height="32" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/icon/sale.png" alt=""></div>
