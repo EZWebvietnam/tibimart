@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Ban do chi duong</title>
+    <title>Bản đồ chỉ đường - Tính phí vận chuyển</title>
     <style>
       html, body, #map-canvas {
         height: 100%;
@@ -61,6 +61,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </head>
   <body onload="calcRoute();">
     <div id="panel">
+    <b>Tổng đoạn đường: <?php echo round($data['distance']) ?>KM- Phí vận chuyển: <?php echo round($data['fee_ship']);?>VNĐ</b>
     </div>
     <div id="map-canvas"></div>
   </body>

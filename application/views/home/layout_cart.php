@@ -431,7 +431,7 @@ Histats.track_hits();} catch(err){};
                      </td>
                      <td>
                         <p style="padding-bottom: 0">
-                           <b>Tại TP.HCM:</b> <?php echo $about[0]['address']?<br />
+                           <b>Tại TP.HCM:</b> <?php echo $about[0]['address']?> <br />
                         </p>
                        
                      </td>

@@ -297,7 +297,16 @@ class Product extends MY_Controller
 		$long = LONG;
 		$lng = $this->input->get('lng');
 		$lat = $this->input->get('lat');
-		$data= array('lat_di'  =>$lat,'long_di' =>$lng,'lat_den' =>$lat_,'long_den'=>$long);
+		$dis       = distance($lat_,$long,$lat,$lng,'K');
+		if($dis < 5)
+		{
+			$fee_ship = 0;
+		}
+		else
+		{
+			$fee_ship = ($dis - 5) * 5000;
+		}
+		$data= array('lat_di'  =>$lat,'long_di' =>$lng,'lat_den' =>$lat_,'long_den'=>$long,'distance'=>$dis,'fee_ship'=>$fee_ship);
 		$this->data['data'] = $data;
 		$this->load->view('map_view',$this->data);
 	}
