@@ -24,7 +24,7 @@
             <tr>
                 <td class="label">Ngày gửi</td>
                 <td colspan="3">
-                    <?php echo $detail[0]['create_date']?>
+                    <?php echo strtotime('d/m/Y',$detail[0]['create_date']);?>
                 </td>
             </tr>
             <tr>
@@ -73,10 +73,11 @@
             , submitHandler: function(form) {
                 var page = 1;
                 dataString = $("#adminform").serialize();
+                var content = CKEDITOR.instances['editor2'].getData();
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: dataString,
+                    data: {content:content},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

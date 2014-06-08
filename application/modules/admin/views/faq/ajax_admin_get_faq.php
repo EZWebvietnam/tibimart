@@ -93,7 +93,7 @@ $status = array('0'=>'Chưa trả lời','1'=>'Đã trả lời ')
                         <td><?php echo $ctv_ref['name']?></td>
                         <td><?php echo $ctv_ref['email']?></td>
                         <td><?php echo $ctv_ref['question']?></td>
-                        <td><?php echo $ctv_ref['answer']?></td>
+                        <td><?php echo sub_string(loaibohtmltrongvanban($ctv_ref['answer']),200);?></td>
                         <td><?php echo $status[$ctv_ref['status']]?></td>
                         <td align="center">
                             <a class="grouped_elements" href="<?php echo base_url();?>admin/faqadmin/edit/<?php echo $ctv_ref['id']?>" title="Trả lời"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/edit.png"></a>
