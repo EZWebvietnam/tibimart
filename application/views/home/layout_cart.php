@@ -344,11 +344,11 @@
                         <center>
                           <!-- Histats.com  START  (standard)-->
 <script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
-<a href="http://www.histats.com" target="_blank" title="web stats analysis" ><script  type="text/javascript" >
-try {Histats.start(1,2696468,4,103,102,47,"00010000");
+<a href="http://www.histats.com" target="_blank" title="free web stats" ><script  type="text/javascript" >
+try {Histats.start(1,2696468,4,432,112,75,"00011111");
 Histats.track_hits();} catch(err){};
 </script></a>
-<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2696468&101" alt="web stats analysis" border="0"></a></noscript>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2696468&101" alt="free web stats" border="0"></a></noscript>
 <!-- Histats.com  END  -->
                         </center>
                      </div>
@@ -425,13 +425,13 @@ Histats.track_hits();} catch(err){};
                   <tr>
                      <td>
                         <p>
-                           Phía Bắc: <?php echo $about[1]['address']?><br />
+                           Phía Bắc: <?php echo nl2br($about[1]['address']);?><br />
                            
                         </p>
                      </td>
                      <td>
                         <p style="padding-bottom: 0">
-                           <b>Tại TP.HCM:</b> <?php echo $about[0]['address']?> <br />
+                           <b>Phía Nam:</b> <?php echo nl2br($about[0]['address'])?><br />
                         </p>
                        
                      </td>

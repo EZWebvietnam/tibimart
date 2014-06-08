@@ -15,10 +15,9 @@
 	<strong>TIBIMART.COM</strong><br>
 	<br>
 	Địa chỉ giao dịch:<br>
-	- <b>Tại Hà Nội:</b> Số 71 Đường bờ sông Quan Hoa - Phường Quan Hoa - Cầu Giấy - Hà Nội<br>
-	Điện thoại: (04) 3767.1380 - (04) 3767.1381 - 0902122585<br>
-	- <b>Tại TP.HCM:</b> <span style="font-family:"><span style="font-family: Arial;"><span style="font-size: small;"><span style="line-height: 115%;">Số 40, Đường 13, Quốc lộ 13, Phường Hiệp Bình Chánh, Quận Thủ Đức – TPHCM</span></span></span></span><br>
-	Điện thoại: 0906.888.545</p>
+	- <b>Phía Bắc:</b> <?php echo nl2br($about[1]['address']);?><br>
+	- <b>Phía Nam:</b> <span style="font-family:"><span style="font-family: Arial;"><span style="font-size: small;"><span style="line-height: 115%;"><?php echo nl2br($about[0]['address'])?></span></span></span></span><br>
+	</p>
 <p style="text-align: center;">
 	</p>
 <p>

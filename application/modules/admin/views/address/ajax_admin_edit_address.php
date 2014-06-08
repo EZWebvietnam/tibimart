@@ -18,13 +18,14 @@
             <tr>
                 <td class="label">Địa chỉ</td>
                 <td colspan="3">
-                    <input id="address" type="text" value="<?php echo $address_detail[0]['address'] ?>" name ="address"/>
+                <textarea style="margin: 2px; width: 407px; height: 202px;" id="address" name ="address"><?php echo $address_detail[0]['address'] ?></textarea>
+                    
                 </td>
             </tr>
             <tr>
                 <td class="label">Điện thoại</td>
                 <td colspan="3">
-                    <input id="phone" type="text" value="<?php echo $address_detail[0]['phone'] ?>" name ="phone"/>
+                    <input style="width: 407px;" id="phone" type="text" value="<?php echo $address_detail[0]['phone'] ?>" name ="phone"/>
                 </td>
             </tr>
             <tr>

@@ -60,7 +60,7 @@ class Settingadmin extends MY_Controller {
     public function edit() {
         if ($this->input->post()) {
             $doc = new DOMDocument();
-            $link = $_SERVER['DOCUMENT_ROOT'] . ROT_DIR . 'setting.xml';
+            $link = PATH_FOLDER.ROT_DIR . 'setting.xml';
             $doc->load($link);
             $doc->encoding = 'utf-8';
             $featuredde1 = $doc->getElementsByTagName('root');
@@ -106,7 +106,7 @@ class Settingadmin extends MY_Controller {
             $data_msg = array('error' => 0, 'msg' => 'Update Setting thanh cong');
             echo json_encode($data_msg);
         } else {
-            $link = $_SERVER['DOCUMENT_ROOT'] . ROT_DIR . 'setting.xml';
+            $link = PATH_FOLDER . ROT_DIR . 'setting.xml';
             $doc = new DOMDocument();
             $doc->load($link);
 
@@ -145,7 +145,7 @@ class Settingadmin extends MY_Controller {
 
     public function create_xml() {
         $doc = new DOMDocument();
-        $link = $_SERVER['DOCUMENT_ROOT'] . ROT_DIR . 'setting.xml';
+        $link = PATH_FOLDER . ROT_DIR . 'setting.xml';
         $doc->load($link);
         $doc->encoding = 'utf-8';
         $featuredde1 = $doc->getElementsByTagName('root');

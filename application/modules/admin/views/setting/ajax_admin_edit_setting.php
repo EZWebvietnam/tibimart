@@ -73,7 +73,7 @@
                 <td class="label">Logo</td>
                 <td colspan="3">
                     <?php 
-                    if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/logo/'.$setting['logo']) && is_file($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/logo/'.$setting['logo'])&&$setting['logo']!='')
+                    if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/logo/'.$setting['logo']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/logo/'.$setting['logo'])&&$setting['logo']!='')
                     {
                     ?>
                     <img src="<?php echo base_url();?>file/uploads/logo/<?php echo $setting['logo']?>" width="100" height="100"/>

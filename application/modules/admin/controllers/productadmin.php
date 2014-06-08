@@ -137,21 +137,8 @@ class Productadmin extends MY_Controller {
             );
 			if($this->input->post('file')!='')
 			{
-				$new_file = time();
-				$config['image_library'] = 'gd2';
-				$config['source_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$this->input->post('file');
-				$config['new_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$new_file.$this->input->post('file');
-				$config['create_thumb'] = TRUE;
-				$config['maintain_ratio'] = FALSE;
-				$config['width'] = 650;
-				$config['height'] = 270;
-
-				// Load the Library
-				$this->load->library('image_lib', $config);
+				$this->resize_image(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$this->input->post('file'));
 				
-				// resize image
-				$this->image_lib->resize();
-				//$data_save['slide_image'] = $new_file;
 			}
 			
             
@@ -194,6 +181,7 @@ class Productadmin extends MY_Controller {
         if ($this->input->post()) {
             $file = $this->input->post('file');
             if ($file != '') {
+            	/*
 				$new_file = time();
 				$config['image_library'] = 'gd2';
 				$config['source_image'] = PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$this->input->post('file');
@@ -202,13 +190,14 @@ class Productadmin extends MY_Controller {
 				$config['maintain_ratio'] = FALSE;
 				$config['width'] = 650;
 				$config['height'] = 270;
-
+				
 				// Load the Library
 				$this->load->library('image_lib', $config);
 				
 				// resize image
 				$this->image_lib->resize();
-				//$data_save['slide_image'] = $new_file;
+				*/
+				$file = $this->resize_image(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$this->input->post('file'));
                 $data_save = array(
                     'title' => $this->input->post('title'),
                     'price' => $this->input->post('cost'),
@@ -233,6 +222,20 @@ class Productadmin extends MY_Controller {
             $this->load->view('product/ajax_admin_edit_product', $this->data);
         }
     }
+    public function resize_image($file_path) {
+
+    $this->load->library('image_lib');
+    $img_cfg['image_library'] = 'gd2';
+    $img_cfg['source_image'] = $file_path;
+    $img_cfg['maintain_ratio'] = FALSE;
+    $config['create_thumb'] = TRUE;
+    $img_cfg['new_image'] = $file_path;
+    $img_cfg['quality'] = 100;
+	$img_cfg['width'] = 650;
+	$img_cfg['height'] = 270;
+    $this->image_lib->initialize($img_cfg);
+    $this->image_lib->resize();
+}
 
 }
 ?>
