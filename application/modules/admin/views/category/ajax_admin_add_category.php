@@ -22,10 +22,36 @@
                     <input id="title_" type="texbox" name="title"/>
                 </td>
             </tr>
+			 <tr>
+                <td class="label">Parent Lable</td>
+                <td colspan="3">
+                    <select name="parent_lable" id="parent_lable">
+	                   <option value="1">Có</option>
+	                   <option value="0">Không</option>	
+                   </select>
+                </td>
+            </tr>
+			<tr>
+				<?php 
+				$lable = $this->categorymodel->list_lable();
+				?>
+                <td class="label">Thuộc Lable</td>
+                <td colspan="3">
+                    <select name="lable" id="lable" disabled="">
+					<?php 
+					foreach($lable as $l_ble)
+					{
+					
+					?>
+	                   <option value="<?php echo $l_ble['id_cate']?>"><?php echo $l_ble['title']?></option>
+					<?php } ?>
+                   </select>
+                </td>
+            </tr>
             <tr>
                 <td class="label">Hiện trang chủ</td>
                 <td colspan="3">
-                   <select name="radio" id="radio">
+                   <select name="radio" id="radio" disabled="">
 	                   <option value="1">Có</option>
 	                   <option value="0">Không</option>	
                    </select>
@@ -41,6 +67,20 @@
 <script type="text/javascript">
     $(document).ready(function() {
         //$('#cost_').priceFormat();
+		$('#parent_lable').change(function(){
+			var lable = $(this).val();	
+			if(lable == 1)
+			{
+				$('#lable').attr('disabled','disabled');
+				$('#radio').attr('disabled','disabled');
+			}
+			else
+			{
+				$('#lable').attr('disabled',false);
+				$('#radio').attr('disabled',false);
+			}
+			
+		});
         $("#adminform").validate({
             rules: {
                 title: "required",
@@ -65,7 +105,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title_').val(),radio:$('#radio').val()},
+                    data: {title:$('#title_').val(),radio:$('#radio').val(),parent_lable:$('#parent_lable').val(),lable:$('#lable').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

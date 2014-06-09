@@ -1,71 +1,42 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head><title>Chào mừng đến với <?php echo $site_name; ?>!</title></head>
-<body>
-<div style="max-width: 800px; margin: 0; padding: 30px 0;">
-<table width="80%" border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td width="5%"></td>
-<td align="left" width="95%" style="font: 13px/18px Arial, Helvetica, sans-serif;">
-<h2 style="font: normal 20px/23px Arial, Helvetica, sans-serif; margin: 0; padding: 0 0 18px; color: black;">Xin chào <?php echo $name; ?>!</h2>
-Cảm ơn bạn đã tin tưởng đặt hàng dịch vụ từ <a href="<?php echo base_url();?>">Việt Mông Cổ</a><br />Dưới đây là thông tin đơn hàng của bạn:
-<br />
-<table border="1" bordercolor="#000000" style="background-color:#FFFFFF" width="100%" cellpadding="3" cellspacing="3">
-	<tr>
-		<td>Tên sản phẩm</td>
-		<td>Số lượng</td>
-		<td>Đơn giá</td>
-                <td>Thành tiền</td>
-                <td>Chi tiết SP</td>
-	</tr>
-        <?php 
-       
-        foreach($order_detail as $order)
-        {
-            $detail_product = $this->productmodel->product_detail($order['id_product']);
-        ?>
-	<tr>
-		<td><?php echo $detail_product[0]['title']?></td>
-		<td><?php echo $order['quantity']?></td>
-		<td><?php echo $order['price']?></td>
-                <td><?php echo $order['quantity']*$order['price']?></td>
-                <td>
-                    <?php 
-                    if($detail_product[0]['position']!=0)
-                    {
-                    ?>
-                    <a href="<?php echo base_url();?>san-pham/<?php echo $order['id_product']?>-<?php echo mb_strtolower(url_title(removesign($detail_product[0]['title'])))?>">Chi tiết Sản phẩm</a>
-                    <?php } else { ?>
-                    <a href="<?php echo base_url();?>">Chi tiết Sản phẩm</a>
-                    <?php } ?>
-                </td>
-	</tr>
-        <?php } ?>
-</table>
-<br/>
-Chúng tôi sẽ liên hệ và phục vụ bạn trong vòng 24h.<br/>
-<b style="font-size:20px">Hotline: 0918.870.781</b>
-Bắt đầu từ giờ phút này bạn được tham gia vào nhóm Khách Hàng của Việt Mông Cổ  trên Facebook để được thảo luận:<br/>
-Bạn hãy xin tham gia nhóm tại link sau: <a target="__blank" href='https://www.facebook.com/groups/khachhangvietmongco/'>https://www.facebook.com/groups/khachhangvietmongco/</a>
-<br />
-<span style="font-size:20px"><b>Dưới đây là các tài khoản của Việt Mông Cổ để bạn lựa chọn thanh toán (Nếu có)</b></span><br/>
-Khi thanh toán chuyển khoản bạn nhớ ghi Họ Tên và điện thoại<br />
-của mình vào ô nội dung chuyển tiền để chúng tôi tiện theo dõi<br />
-Chuyển tiền xong thì bạn hãy thông báo về cho chúng tôi để xác nhận:<br />
-<b>Hotline:  0918.870.781</b><br />
---------------------------------------------------<br />
-<b><font color="red">Số tài khoản : 20001010917643</font><br />
-<font color="blue">Tên tài khoản: NGUYỄN ĐÌNH HÁN<br />
-Ngân hàng TMCP Hàng Hải  - Chi nhánh Hải Dương<br /></font>
-----------------<br /></b>
-<b><font color="red">Số tài khoản : 0591000200817<br /></font>
-<font color="blue">Tên tài khoản: NGUYỄN THỊ HUỆ<br />
-Ngân hàng Vietcombank - chi nhánh Hưng Yên<br /></b>
-Cảm ơn bạn đã tin tưởng và sử dụng dịch vụ của Việt Mông Cổ!<br /></font>
-The <?php echo $site_name; ?> Team
-</td>
-</tr>
-</table>
+<div id=":1yk" class="ii gt m14597004f6943eeb adP adO">
+   <div id=":1yj" class="a3s" style="overflow: hidden;">
+      <div style="background:#f6f6f6;padding:35px 20px 20px 20px">
+         <table cellspacing="0" cellpadding="0" width="100%" align="center">
+            <tbody>
+               <tr style="height:75px;background:#127fc0">
+                  <td style="padding:0 15px"><a href="<?php echo base_url();?>" style="color:#fff;font-weight:bold;display:block;float:left;font-size:28px;line-height:75px;text-decoration:none" target="_blank">TibiMart.com</a> <span style="font-size:24px;color:#fff;padding-left:260px;display:block;line-height:75px"></span></td>
+               </tr>
+               <tr style="background:#fff">
+                  <td style="color:#444444;border:1px solid #dddddd;padding:0 20px">
+                     <p style="font-size:18px;color:#444444;font-weight:bold">Đặt hàng thành công</p>
+                     <p>Xin chào !,</p>
+                     <p>Quý khách đã thực hiện chức năng đặt hàng tại TibiMart.com</p>
+                     <p>
+					 	
+					 </p>
+                    
+                     <p>Chúc quý khách hàng có một ngày tốt lành tại  <a href="<?php echo base_url();?>" style="font-size:14px;color:#004c92;text-decoration:none" target="_blank">TibiMart.com</a>! </p>
+                     <p>Trân trọng,<br>Đội ngũ tibimart.com.</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <table cellpadding="0" cellspacing="0" align="center">
+                        <tbody>
+                           <tr>
+                              <td colspan="3" align="center" style="padding:20px 0"><a href="http://www.hathanhauto.com" style="font-size:12px;color:#444444;text-decoration:none" target="_blank">@ <?php echo date('Y');?> Tibimart.com</a></td>
+                           </tr>
+                           <tr>
+                              <td style="padding-right:30px;line-height:1.5em"><b>Tibimart.com – Tiện ích trong từng sản phẩm.</b><br>Số 40, Đường 13, Quốc lộ 13, Phường Hiệp Bình Chánh, Quận Thủ Đức – TPHCM</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div class="yj6qo"></div>
+      <div class="adL"> </div>
+   </div>
 </div>
-</body>
-</html>

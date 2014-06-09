@@ -7,7 +7,7 @@ class Categorymodel extends CI_Model
     }
     public function list_category()
     {
-        $sql="SELECT * FROM cate_product";
+        $sql="SELECT * FROM cate_product WHERE lable <> 0";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -39,6 +39,12 @@ class Categorymodel extends CI_Model
 	{
 		$this->db->where('id_cate',$id);
 		$this->db->update('cate_product',$data);
+	}
+	public function list_lable()
+	{
+		$sql="SELECT * FROM cate_product WHERE lable = 0";
+        $query = $this->db->query($sql);
+        return $query->result_array();
 	}
 }
 ?>

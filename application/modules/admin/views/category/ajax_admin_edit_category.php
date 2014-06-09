@@ -14,6 +14,16 @@
 <div class="m-pop">
     <script type="text/javascript" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/js/core/price_format.js"></script>
     <form action="<?php echo base_url(); ?>admin/categoryadmin/edit/<?php echo $cate_detail[0]['id_cate']?>" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="adminform">
+	<?php 
+	if($cate_detail[0]['lable'] == 0)
+	{
+		$dis = "disabled";
+	}
+	else
+	{
+		$dis = "";
+	}
+	?>
         <table class="form" style="width: 1200px;">
 
             <tr>
@@ -22,13 +32,50 @@
                     <input id="title_" type="texbox" name="title" value="<?php echo $cate_detail[0]['title']?>"/>
                 </td>
             </tr>
+			<tr>
+                <td class="label">Parent Lable</td>
+                <td colspan="3">
+                    <select name="parent_lable" id="parent_lable">
+	                   <option value="1">Có</option>
+	                   <option value="0">Không</option>	
+                   </select>
+                </td>
+            </tr>
+			<tr>
+				<?php 
+				$lable = $this->categorymodel->list_lable();
+				?>
+                <td class="label">Thuộc Lable</td>
+                <td colspan="3">
+                    <select name="lable" id="lable" <?php echo $dis?>>
+					<?php 
+					foreach($lable as $l_ble)
+					{
+						if($l_ble['id_cate']!= $cate_detail[0]['id_cate'])
+						{
+						
+						if($l_ble['id_cate'] == $cate_detail[0]['lable'])
+						{
+							$select = "selected";	
+						}
+						else
+						{
+							$select = "";	
+						}
+					?>
+	                   <option <?php echo $select?> value="<?php echo $l_ble['id_cate']?>"><?php echo $l_ble['title']?></option>
+					<?php 	
+						} } ?>
+                   </select>
+                </td>
+            </tr>
             <tr>
                 <td class="label">Hiện trang chủ</td>
                 <?php 
                 $array = array('1'=>'Có','0'=>'Không');
                 ?>
                 <td colspan="3">
-                   <select name="radio" id="radio">
+                   <select name="radio" id="radio" <?php echo $dis?>>
                    <?php 
                    foreach($array as $k=>$v)
                    {
@@ -56,6 +103,20 @@
 <script type="text/javascript">
     $(document).ready(function() {
         //$('#cost_').priceFormat();
+		$('#parent_lable').change(function(){
+			var lable = $(this).val();	
+			if(lable == 1)
+			{
+				$('#lable').attr('disabled','disabled');
+				$('#radio').attr('disabled','disabled');
+			}
+			else
+			{
+				$('#lable').attr('disabled',false);
+				$('#radio').attr('disabled',false);
+			}
+			
+		});
         $("#adminform").validate({
             rules: {
                 title: "required",
@@ -80,7 +141,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title_').val(),radio:$('#radio').val()},
+                    data: {title:$('#title_').val(),radio:$('#radio').val(),parent_lable:$('#parent_lable').val(),lable:$('#lable').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

@@ -219,28 +219,34 @@
                </div>
                <div id="small">
                   <div class="block">
+                     <?php 
+                        $this->load->model('catehomemodel');
+                        			foreach($list_cate as $l_cate)
+                        			{
+                        				$cate_ = $this->catehomemodel->list_cate_lable($l_cate['id_cate']);
+                        			?>
                      <div class="menu-ver">
                         <div class="title">
                            <h3>
-                              Danh mục sản phẩm
+                              <?php echo $l_cate['title']?>
                            </h3>
                         </div>
                         <div class="bd">
                            <ul id="menu-ver">
-                		<?php 
-						foreach($list_cate as $l_cate)
-						{
-						?>
-                        <li>
-                            <a id="MenuVerticalControl1_rptParent_hplLinkParent_0" href="<?php echo base_url();?>san-pham/c/<?php echo $l_cate['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($l_cate['title'])));?>"><?php echo $l_cate['title']?></a>
-                            
-                        </li>
-						<?php } ?>
-                    
-            </ul>
+                              <?php 
+                                 foreach($cate_ as $cate_l)
+                                 {
+                                 ?>
+                              <li>
+                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_0" href="<?php echo base_url();?>san-pham/c/<?php echo $cate_l['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate_l['title'])));?>"><?php echo $cate_l['title']?></a>
+                              </li>
+                              <?php	
+                                 }
+                                 ?>
+                           </ul>
                         </div>
                      </div>
-                     
+                     <?php } ?>
                   </div>
                   <div class="clear">
                   </div>

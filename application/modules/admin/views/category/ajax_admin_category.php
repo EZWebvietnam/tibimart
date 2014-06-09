@@ -85,16 +85,20 @@
                         <tr>
                            <th class="checkbox"><input type="checkbox" name="sa" id="sa" onclick="check_chose('sa', 'ar_id[]', 'category_khoahoc')"></th>
                            <th class="id">Tên</th>
+						   <th class="id">Loại</th>
                            <th class="publish">Chức năng</th>
                         </tr>
                      </thead>
                      <?php 
+
                         foreach($list_cate as $product_ref)
                         {
                         ?>
                      <tr class="row1 ">
                         <td align="center"><input  type="checkbox" name="ar_id[]" value="<?php echo $product_ref['id_cate']?>"></td>
+						
                         <td><?php echo $product_ref['title']?></td>
+						<td><?php if($product_ref['lable'] == 0 ) {echo 'Lable';} else { echo 'Danh mục';}?></td>
                         <td align="center"><a class="grouped_elements" href="<?php echo base_url();?>admin/categoryadmin/edit/<?php echo $product_ref['id_cate']?>" title="Sửa"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/edit.png"></a>
                             
                             
