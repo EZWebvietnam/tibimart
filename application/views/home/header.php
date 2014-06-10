@@ -56,7 +56,7 @@
                      href="<?php echo base_url();?>hoi-dap">Hỏi đáp</a>
                   </li>
                   <li><a
-                     href="/application/index/contact">Liên
+                     href="<?php echo base_url();?>lien-he">Liên
                      hệ</a>
                   </li>
                </ul>

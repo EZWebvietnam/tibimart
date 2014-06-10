@@ -170,7 +170,7 @@ class Home extends MY_Controller {
 			$this->data['gui_cau_hoi'] = 1;
 			$this->data['contact_'] = 1;
 			$this->data['main_content']='contact_view';
-			$this->load->view('home/layout_check_out',$this->data);
+			$this->load->view('home/layout_contact',$this->data);
 		
 		
 	}
