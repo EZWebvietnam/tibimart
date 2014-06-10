@@ -34,6 +34,7 @@ class Faq extends MY_Controller
         $this->data['page'] = $page;
         $this->data['total'] = $config['total_rows'];
         $this->data['list'] = $array_sv;
+		$this->data['cate_detail_'][0]['title']='Hỏi đáp';
 		 $this->load->view('home/layout_faq',$this->data);
 	}
 	public function faq_detail($id = null)

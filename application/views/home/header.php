@@ -55,41 +55,6 @@
                   <li><a
                      href="<?php echo base_url();?>hoi-dap">Hỏi đáp</a>
                   </li>
-                  <li class="dropdown">
-                     <a href="#">Dịch vụ <b class="caret"></b></a>
-                     <ul class="dropdown-menu">
-                        <li><a
-                           href="/application/service/write">Viết
-                           Kịch Bản</a>
-                        </li>
-                        <li><a
-                           href="/application/service/marketing">Online
-                           Marketing</a>
-                        </li>
-                        <li><a
-                           href="/application/service/pr">Viết
-                           Bài PR</a>
-                        </li>
-                        <li><a
-                           href="/application/service/collaborator">Cộng
-                           tác viên đa năng</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="dropdown">
-                     <a href="#">Gian hàng<b class="caret"></b></a>
-                     <ul class="dropdown-menu">
-                        <li><a
-                           href="/application/product/list">Gian
-                           Hàng Thường</a>
-                        </li>
-                        <li><a
-                           href="/application/product/countdown">Gian
-                           Hàng Đếm Ngược</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <li><a href="/khuyen-mai.html">Khuyến mãi</a></li>
                   <li><a
                      href="/application/index/contact">Liên
                      hệ</a>
