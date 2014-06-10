@@ -120,7 +120,7 @@
                            Tin tức
                         </h2>
                         <div style="text-align: right; margin:0">
-                           <a id="ContentPlaceHolder1_hplRSS" class="rss" href="/GetRSS.aspx?catid=7">RSS </a>
+                           
                            <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$hdfID" id="ContentPlaceHolder1_RatingControl1_hdfID" value="7" />
                            <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$HdfModuls" id="ContentPlaceHolder1_RatingControl1_HdfModuls" value="article_r" />
                            <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$hdfTotalRating" id="ContentPlaceHolder1_RatingControl1_hdfTotalRating" value="2" />
@@ -133,10 +133,8 @@
                                  </script>
                                  <div class="demoarea" style="width:200px; float:left; margin-top:2px">
                                     <div id="ContentPlaceHolder1_RatingControl1_up1">
-                                       <div id="ContentPlaceHolder1_RatingControl1_ratingControl" style="float: left; padding-right: 5px">
-                                          <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$ratingControl_RatingExtender_ClientState" id="ContentPlaceHolder1_RatingControl1_ratingControl_RatingExtender_ClientState" value="8" /><a href="javascript:void(0)" id="ContentPlaceHolder1_RatingControl1_ratingControl_A" title="8" style="text-decoration:none"><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_1" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_2" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_3" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_4" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_5" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_6" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_7" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_8" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_9" class="rating ratingEmpty" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_10" class="rating ratingEmpty" style="float:left;">&nbsp;</span></a>
-                                       </div>
-                                       <span id="ContentPlaceHolder1_RatingControl1_ltrRating" style="line-height: 12px; color: #7F7F7F">2 đánh giá</span>
+                                       
+                                       
                                     </div>
                                  </div>
                                  <div style="width: 150px; float: right">
@@ -416,16 +414,15 @@ Histats.track_hits();} catch(err){};
                   </tr>
                   <tr>
                      <td>
-                        <p>
-                           Phía Bắc: <?php echo nl2br($about[1]['address']);?><br />
-                           
-                        </p>
+					 	<img width="350" height="200" src="http://matongsonlam.com.vn/themes/ecom_theme/images/footer_flower.png">
                      </td>
                      <td>
+					  	<p>
+                           <b>Phía Bắc:</b> <?php echo nl2br($about[1]['address']);?><br />
+                        </p>
                         <p style="padding-bottom: 0">
                            <b>Phía Nam:</b> <?php echo nl2br($about[0]['address'])?><br />
                         </p>
-                       
                      </td>
                   </tr>
                   <tr>

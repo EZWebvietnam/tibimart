@@ -310,16 +310,15 @@ Histats.track_hits();} catch(err){};
                   </tr>
                   <tr>
                      <td>
-                        <p>
-                           Phía Bắc: <?php echo nl2br($about[1]['address']);?><br />
-                           
-                        </p>
+					 	<img width="350" height="200" src="http://matongsonlam.com.vn/themes/ecom_theme/images/footer_flower.png">
                      </td>
                      <td>
+					  	<p>
+                           <b>Phía Bắc:</b> <?php echo nl2br($about[1]['address']);?><br />
+                        </p>
                         <p style="padding-bottom: 0">
                            <b>Phía Nam:</b> <?php echo nl2br($about[0]['address'])?><br />
                         </p>
-                       
                      </td>
                   </tr>
                   <tr>

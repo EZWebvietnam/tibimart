@@ -1320,7 +1320,9 @@ a.sale {
 
 
 /* Hotline Head */
-.hotline-head{background: url("../images/bg-head.jpg") 0 0 no-repeat transparent;width: 622px;height: 103px;float:right; margin-top:10px}
+.hotline-head{
+	/*background: url("../images/bg-head.jpg") 0 0 no-repeat transparent;*/
+	width: 622px;height: 103px;float:right; margin-top:10px}
 .hotline-head .hotline{padding: 7px 0 7px 170px; color:#db4040; font-weight:bold}
 .hotline-head .hotline span{color:#8e0303;}
 .hotline-head .opentime{padding-left:170px}

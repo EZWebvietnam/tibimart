@@ -16,9 +16,7 @@ class Home extends MY_Controller {
 		$this->load->model('catehomemodel');
 		$this->load->model('producthomemodel');
 		$this->load->model('faqhomemodel');
-		$this->data['list_sale']=$this->producthomemodel->list_sale();
-		$this->data['list_faq_rand'] = $this->faqhomemodel->list_faq_rand();
-		$this->data['product_slide']=$this->producthomemodel->get_sale_off_product_();
+		$this->data['list_product_random'] = $this->producthomemodel->list_random_product();
 		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
 		$this->load->view('home/layout_home_index',$this->data);
     }
@@ -178,12 +176,13 @@ class Home extends MY_Controller {
 	}
 	function _send_email($type, $to, $email, &$data, $title) {
         /*$this->load->library('email');*/
-        $this->load->library('maillinux');
-       // $this->load->library('mailer');
+       // $this->load->library('maillinux');
+        $this->load->library('mailer');
         $from = MAIL_ADMIN;
         $subject = $title;
         $messsage = $this->load->view('home/email/' . $type . '-html', $data, TRUE);
-        $this->maillinux->SendMail('tibimart@nhucauvieclam.net', $email, $subject, $messsage);
+        //$this->maillinux->SendMail('tibimart@nhucauvieclam.net', $email, $subject, $messsage);
+		$this->mailer->sendmail($email,$email,$subject,$messsage);
     }
 }
 ?>

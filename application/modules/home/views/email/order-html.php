@@ -10,11 +10,25 @@
                   <td style="color:#444444;border:1px solid #dddddd;padding:0 20px">
                      <p style="font-size:18px;color:#444444;font-weight:bold">Đặt hàng thành công</p>
                      <p>Xin chào !,</p>
-                     <p>Quý khách đã thực hiện chức năng đặt hàng tại TibiMart.com</p>
+                     <p>Hệ thống nhận được một đơn đặt hàng TibiMart.com</p>
                      <p>
-					 	
+					 	Thông tin đơn hàng:
 					 </p>
-                    
+                    <p>
+					 	Họ tên:<?php echo $full_name;?>
+					 </p>	
+					 <p>
+					 	Địa chỉ:<?php echo $address;?>
+					 </p>
+					 <p>
+					 	Điện thoại:<?php echo $phone;?>
+					 </p>
+					 <p>
+					 	Tổng số tiền:<?php echo $total_price_order;?>
+					 </p>
+					 <p>
+					 	Mọi thông tin chi tiết xin đăng nhập phần quản trị tại link <a href="<?php echo base_url();?>quan-tri">Quản trị</a>
+					 </p>
                      <p>Chúc quý khách hàng có một ngày tốt lành tại  <a href="<?php echo base_url();?>" style="font-size:14px;color:#004c92;text-decoration:none" target="_blank">TibiMart.com</a>! </p>
                      <p>Trân trọng,<br>Đội ngũ tibimart.com.</p>
                   </td>

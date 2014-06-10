@@ -1,620 +1,143 @@
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title><?php echo $cate_detail[0]['title']?></title>
-<meta vary="User-Agent" />
-<meta name="keywords" content="<?php echo $cate_detail[0]['title']?>" />
-	<meta name="title" content="<?php echo $header['title']?>" />
-	<meta name="ROBOTS" content="<?php echo $header['robots']?>" />
-	<meta name="google-site-verification" content="WlnQ-eKKwnhOw3DVTstkNknRMNzlwQ8tHc3znnVab6o" />
-	<link rel="canonical" href="<?php echo full_url_($_SERVER);?>"/>		
-	<meta property="og:url" content="<?php echo full_url_($_SERVER);?>" />
-	<meta property="og:title" content="<?php echo $header['title']?>" />
-	<meta property="og:description" content="<?php echo $header['description']?>" />
-	<meta property="og:image" content="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
-	<meta name="description" content="<?php echo $header['description']?>" />
-
-<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.min.js"></script>
-
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Language" content="vn" />
-    
-    <link href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/css/style.css" rel="stylesheet" type="text/css" />
-            <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.min.js"></script>
-            <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/BannerFloat.js"></script>
-            <link href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-            <link href="" rel="author" />
-            <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jCarousel/jquery.jcarousel.min.js"></script>
-            <link rel="stylesheet" href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jCarousel/skin.css" type="text/css" />
-            <link rel="stylesheet" href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/nivo-slider/themes/default/default.css" type="text/css" media="screen" />
-            <link rel="stylesheet" href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
-            <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.hoveraccordion.min.js"></script>
-            <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/tooltip/stickytooltip.js"></script>
-			<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/paging.js"></script>
-  
-    <script type="text/javascript">
-
-        function mycarousel_initCallback(carousel) {
-            carousel.buttonNext.bind('click', function () {
-                carousel.startAuto(0);
-            });
-            carousel.buttonPrev.bind('click', function () {
-                carousel.startAuto(0);
-            });
-            carousel.clip.hover(function () {
-                carousel.stopAuto();
-            }, function () {
-                carousel.startAuto();
-            });
-        };
-        jQuery(document).ready(function () {
-            jQuery('#mycarousel').jcarousel({
-                auto: 0,
-                wrap: 'last',
-                initCallback: mycarousel_initCallback
-            });
-        });
-     
-
-    </script>
-</head>
-<body>
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['form1'];
-if (!theForm) {
-    theForm = document.form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
-
-
-<script src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/WebResource.axd?d=yH_knO62dgSkZMJdrAv-q4eO7fAzdf6_1UFo6wJYLFlP9s8LZlN3GXfPR3q9ohlmcUtdXiM7vLnAlTZho5JPp7NQfPs1&amp;t=635217244340000000" type="text/javascript"></script>
-
-
-<script src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/ScriptResource.axd?d=FT0sZ6DJXh88_he9K3y35Ha_j3Oy-HTL25Wn9D-sv3b8ZQ7IsY5mzvxKrithbaC10wEBLvEgFkg5z3OVAApfG2fYwU4YHufYH1sHNpboiljAPH2GlE4rzCNjbyknYJFFENJ_kQ2&amp;t=3a1336b1" type="text/javascript"></script>
-
-<script src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/ScriptResource.axd?d=InATtBY9SMXMN6YiHFOAM3tAqg1Ul9dJyaVMGpekziepxg5Nux7tpo7AKWKfCViLmDyrDq2aKjc2WLg2ULQfV9mnOL-b-ZbflY-jU7Tc9CNluJbfak0H4M5MutuktCg9szivHV5PsyAZvTZro1cEUOyWnpU1&amp;t=3a1336b1" type="text/javascript"></script>
-    <div id="container">
-        
-<div id="head">
-   
-        <a href="/">
-            <img width="288" height="80" id="HeaderControl1_imgLogo" title="<?php echo $header['title']?>" class="logo" src="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
-        </a>
-
-        <div class="hotline-head">
-
-        <div class="hotline">
-	<span>Phía Bắc:</span> <?php echo $about[1]['phone']?><br />
-	<span>Phía Nam:</span> <?php echo $about[0]['phone']?></div>
-<div class="opentime">
-	Giờ mở cửa: <b>8h00 - 18h00</b> <i>(tất cả các ngày trong tuần)</i><br />
-	</div>
-
-
-           
-        </div>
-
-    <div class="ads">
-        
-    </div>
-</div>
-
-        <div class="clear">
-        </div>
-        <div class="menu-hoz">
-            
-<div class="menu-horizontal">
-    <ul>
-        
-                <li id="MenuTopControl1_rptTopMenu2_li_0" class="first">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_0" title="Trang chủ" href="<?php echo base_url();?>">Trang chủ</a></li>
-            
-                <li id="MenuTopControl1_rptTopMenu2_li_1">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_1" title="Giới thiệu" href="<?php echo base_url();?>san-pham">Sản phẩm</a></li>
-            
-                <li id="MenuTopControl1_rptTopMenu2_li_2">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_2" title="Tin tức" href="<?php echo base_url();?>hoi-dap">Hỏi đáp</a></li>
-            
-                <li id="MenuTopControl1_rptTopMenu2_li_3">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_3" title="Thanh toán và vận chuyển" href="<?php echo base_url();?>huong-dan-thanh-toan">Thanh toán và vận chuyển</a></li>
-            
-            
-                <li id="MenuTopControl1_rptTopMenu2_li_5">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_5" title="Liên hệ với chúng tôi" href="<?php echo base_url();?>lien-he">Liên hệ</a></li>
-            
-    </ul>
-</div>
-
-            
-<div class="search">
-    <input name="ctl00$SearchBoxControl1$txtSearch" type="text" value="tìm kiếm..." maxlength="27" id="SearchBoxControl1_txtSearch" class="inputbox" onfocus="if(this.value==&#39;tìm kiếm...&#39;) this.value=&#39;&#39;;" onblur="if(this.value==&#39;&#39;) this.value=&#39;tìm kiếm...&#39;;" />
-  <input type="submit" name="ctl00$SearchBoxControl1$btnSearch" value="" id="SearchBoxControl1_btnSearch" />
-</div>
-
-        </div>
-        <div class="clear">
-        </div>
-        <div id="content">
-         
-            <div class="wraper">
-                <div id="large">
-                    
-    <ul id="crumbs">
-        <li><a href="/">Trang chủ</a></li>
-        <li><a href="<?php echo full_url_($_SERVER);?>"><?php echo $cate_detail[0]['title'];?></a></li>
-    </ul>
-    <div class="clear">
-    </div>
-    
-    <div class="clear">
-    </div>
-    <div class="clear">
-    </div>
-    <div id="ContentPlaceHolder1_pnl">
-	
-    
-<div class="module">
-    <div class="title" style="border-top: none">
-        <h1>
-            <?php echo $cate_detail[0]['title'];?>
-        </h1>
-        
-        
-    </div>
-    <div class="clear">
-    </div>
-    
-    <?php 
-	$data_sticky = array();
-	$i =1 ;
-	foreach($list as $l_product)
-	{
-		$price_sale = $this->producthomemodel->get_sale_off_product($l_product['id_product']);
-							$price = 0;
-							if(empty($price_sale))
-							{
-								$price = $l_product['price'];
-							}
-							else
-							{
-								$price = ($l_product['price'] - $l_product['price'] *($price_sale[0]['percent']/100));
-							}
-	?>
-        <div class="sanpham_tab">
-            <center>
-                <a id="ContentPlaceHolder1_ctl01_ProductListControl1_rpt1_hplImg_0" data-tooltip="sticky<?php echo $l_product['id_product']?>" href="<?php echo base_url();?>san-pham/<?php echo $l_product['id_product']?>-<?php echo mb_strtolower(url_title(removesign($l_product['title'])))?>">
-				<?php 
-				if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$l_product['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$l_product['image']) && $l_product['image']!='')
-				{
-				?>
-				<img id="ContentPlaceHolder1_ctl01_ProductListControl1_rpt1_img_<?php echo $l_product['id_product']?>" src="<?php echo base_url();?>file/uploads/product/<?php echo $l_product['image']?>" width="160" height="160" alt="<?php echo $l_product['title']?>" />
-				<?php } else {?>
-				<img id="ContentPlaceHolder1_ctl01_ProductListControl1_rpt1_img_<?php echo $l_product['id_product']?>" src="<?php echo base_url();?>file/uploads/no_image.gif" alt="<?php echo $l_product['title']?>" />
-				<?php } ?>
-				</a>
-            </center>
-         
-            <p>
-                <a id="ContentPlaceHolder1_ctl01_ProductListControl1_rpt1_hplTitle_0" data-tooltip="sticky<?php echo $l_product['id_product']?>" href="<?php echo base_url();?>san-pham/<?php echo $l_product['id_product']?>-<?php echo mb_strtolower(url_title(removesign($l_product['title'])))?>"><?php echo $l_product['title']?></a></p>
-            Giá: <span class="price">
-                <?php echo number_format($price);?> VNĐ</span>
-        </div>
-		<?php 
-		if($i%4==0)
-		{
-			?> 
-			<div class="clear">
-</div>
-			<?php
-		}
-		?>
-	<?php 
-	$data_sticky[] = array('id_product'=>$l_product['id_product'],'stock'=>$l_product['stock'],'content'=>$l_product['content'],'title'=>$l_product['title'],'price'=>$price);
-	$i++;} ?>
-<div id="ContentPlaceHolder1_ctl01_ProductListControl1_pnlList" class="prd-list">
-    
-    <div class="clear">
-    </div>
-</div>
-   
-
-<div class="clear">
-</div>
-<div id="ContentPlaceHolder1_ctl01_ProductListControl1_div_paging" style="padding: 30px 10px 10px 0px; float: right;">
-    <table id="tblPaging">
-		<tr id="trPaging">
-			<script type="text/javascript">
-			var url = window.location.href;
-			var res = url.split("/page/");
-                                $(function() {
-                                    $('#trPaging').html(LoadPagging(<?php echo $page ?>, <?php echo $total ?>,res[0],<?php echo $total_page ?>));
-                                });
-                            </script>
-		</tr>
-	</table>
-	
-</div>
-
-</div>
-
-</div>
-    <div id="mystickytooltip" class="stickytooltip">
-        <div id="ContentPlaceHolder1_pnlTooltip">
-	<?php 
-		foreach($data_sticky as $stick)
-		{
-		?>
-        <div id="sticky<?php echo $stick['id_product']?>"  class="atip">
-            <div class="toptool">
-                <div class="product-name">
-                    <?php echo $stick['title']?></div>
-                <div class="clear">
-                </div>
-                <div class="price">
-                    <?php echo number_format($stick['price'])?> VNĐ</div>
-                <div class="status">
-                    <span id="ContentPlaceHolder1_ctl01_rptTooltip_lblStatus_0" style="color:#4E7032;font-weight:bold;"><?php if ($stick['stock']>0) { echo 'Có hàng';} else {echo 'Hết hàng';}?></span>
-                </div>
+<?php 
+include('header.php');
+?>
+      <div class="content">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-3">
+               <div class="navbar navbar-default background-orange">
+                  <ul class="nav nav-stacked">
+			   <?php 
+			   foreach($list_cate as $cate)
+			   {
+			   		$cate_detail = $this->catehomemodel->list_cate_lable($cate['id_cate']);
+			   ?>
+                  <li <?Php if(!empty($cate_detail)) {?> class="dropdown  dropdown-submenu" <?php } ?>>
+                     <a href="<?php echo base_url();?>san-pham/c/<?php echo $cate['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate['title']))) ?>">
+                     <?php echo $cate['title'];?>	               </a>
+                     <ul class="dropdown-menu">
+					 	<?php foreach($cate_detail as $c_dt)
+						{?>
+                        <li><a href="<?php echo base_url();?>san-pham/c/<?php echo $c_dt['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($c_dt['title']))) ?>"><?php echo $c_dt['title'];?> </a></li>
+						<?Php } ?>
+                     </ul>
+                  </li>
+               <?php } ?>   
+               </ul>
+               </div>
+			   <div class="navbar navbar-default">
+               <ul class="nav nav-stacked">
+			   <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftibimarthcm&amp;width=261&amp;height=300&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=771797639499496" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:261px; height:300px;" allowtransparency="true"></iframe>
+               </ul>
             </div>
-            <div class="clear">
-            </div>
-            
-            <div class="clear">
-            </div>
-            <div class="contenttool">
-                <div class=tab_content id=chitiet style=display:><p><a href=http://www.xeday.vn/products/19/Thang-nhom.aspx><span style=color:#000000;> <?php echo $stick['title']?></span></a></p>
-				<p><strong>&nbsp;Mô tả sản phấm.</strong><br/><br/>
-				<?php echo sub_string(loaibohtmltrongvanban($stick['content']),200);?>
-				</p></div><p>&nbsp;</p>
-            </div>
-        </div>
-		<?php } ?>
-
-</div>
-    </div>
-    <input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$hdfID" id="ContentPlaceHolder1_RatingControl1_hdfID" value="0" />
-<input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$HdfModuls" id="ContentPlaceHolder1_RatingControl1_HdfModuls" value="p_cate_r" />
-<input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$hdfTotalRating" id="ContentPlaceHolder1_RatingControl1_hdfTotalRating" value="15" />
-<div class="ratinglike">
-    <div style="padding: 5px 0 0px 0; width: 370px; float: right;">
-        <script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ContentPlaceHolder1$RatingControl1$ScriptManager1', 'form1', ['tctl00$ContentPlaceHolder1$RatingControl1$up1','ContentPlaceHolder1_RatingControl1_up1'], [], [], 90, 'ctl00');
-//]]>
-</script>
-
-        <div class="demoarea" style="width:200px; float:left; margin-top:2px">
-            <div id="ContentPlaceHolder1_RatingControl1_up1">
-	
-                    <div id="ContentPlaceHolder1_RatingControl1_ratingControl" style="float: left; padding-right: 5px">
-		<input type="hidden" name="ctl00$ContentPlaceHolder1$RatingControl1$ratingControl_RatingExtender_ClientState" id="ContentPlaceHolder1_RatingControl1_ratingControl_RatingExtender_ClientState" value="7" /><a href="javascript:void(0)" id="ContentPlaceHolder1_RatingControl1_ratingControl_A" title="7" style="text-decoration:none"><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_1" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_2" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_3" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_4" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_5" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_6" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_7" class="rating ratingFill" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_8" class="rating ratingEmpty" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_9" class="rating ratingEmpty" style="float:left;">&nbsp;</span><span id="ContentPlaceHolder1_RatingControl1_ratingControl_Star_10" class="rating ratingEmpty" style="float:left;">&nbsp;</span></a>
-	</div>
-                    <span id="ContentPlaceHolder1_RatingControl1_ltrRating" style="line-height: 12px; color: #7F7F7F">15 đánh giá</span>
-                
-</div>   </div>
-            <div style="width: 150px; float: right">
-                <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style ">
-        <a class="addthis_button_google_plusone_share"></a><a class="addthis_button_facebook">
-        </a><a class="addthis_button_zingme"></a><a class="addthis_button_twitter"></a><a
-            class="addthis_button_blogger"></a><a class="addthis_button_email"></a><a class="addthis_button_compact">
-            </a>
-    </div>
-    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=tuanson"></script>
-    <!-- AddThis Button END -->
-            </div>
-        </div>
-        <div style="display:none" xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:Review">
-                    <span property="v:itemreviewed">Thang nhôm Hasegawa - Nhật bản</span> Đánh giá bởi <span property="v:reviewer">
-                        hơn 5600 khách hàng</span>. Kết quả bình chọn: <span property="v:rating">
-                            7</span> <span property="v:best">10</span>
-                </div>
- 
-</div>
-
-    <div class="clear">
-    </div>
-    
-    <div class="clear">
-    </div>
-
-                </div>
-                <div id="small">
-                  
-                    
-<div class="block">
-                     <?php 
-                        $this->load->model('catehomemodel');
-                        			foreach($list_cate as $l_cate)
-                        			{
-                        				$cate_ = $this->catehomemodel->list_cate_lable($l_cate['id_cate']);
-                        			?>
-                     <div class="menu-ver">
-                        <div class="title">
-                           <h3>
-                              <?php echo $l_cate['title']?>
-                           </h3>
-                        </div>
-                        <div class="bd">
-                           <ul id="menu-ver">
-                              <?php 
-                                 foreach($cate_ as $cate_l)
-                                 {
-                                 ?>
-                              <li>
-                                 <a id="MenuVerticalControl1_rptParent_hplLinkParent_0" href="<?php echo base_url();?>san-pham/c/<?php echo $cate_l['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate_l['title'])));?>"><?php echo $cate_l['title']?></a>
-                              </li>
-                              <?php	
-                                 }
-                                 ?>
-                           </ul>
-                        </div>
-                     </div>
-                     <?php } ?>
-                  </div>
-
-
-                    <div class="clear">
-                    </div>
-                      
-<a href="<?php echo base_url();?>gio-hang" class="cart"><span class="text">Giỏ hàng của quý khách</span> <span class="quantity">
-    <?php echo $count_cart;?></span> </a>
-                    <div class="clear">
-                    </div>
-                    
-<div class="block">
-    <div class="support">
-        <div class="title">
-            <h3>
-                Hỗ trợ trực tuyến</h3>
-        </div>
-        <div class="bd">
-            <table width="238">
-            <tr id="SupportOnlineControl1_tr_Bac">
-	<td class="region">
-                   Bán hàng
-                </td>
-</tr>
-
-            
-            <tr>
-            <td style="height:2px;">
-           
-            </td>
-            </tr>
-            
-                   <?php 
+			<div class="navbar navbar-default">
+               <ul class="nav nav-stacked">
+			   HỖ TRỢ TRỰC TUYẾN  <br>
+			   <?php 
             		foreach($list_yahoo as $yahoo_)
             		{
 					
             		?>
-                    <tr>
-                        <td class="nick">
-                            <a href="ymsgr:sendim?<?php echo $yahoo_['nick']?>"><img border="0" align="middle" alt="Chát với Mr. Thi" src="http://opi.yahoo.com/online?u=<?php echo $yahoo_['nick']?>&amp;m=g&amp;t=5" /></a>
+                   <a href="ymsgr:sendim?<?php echo $yahoo_['nick']?>"><img border="0" align="middle" alt="Chát với Mr. Thi" src="http://opi.yahoo.com/online?u=<?php echo $yahoo_['nick']?>&amp;m=g&amp;t=1" /></a>
                             <span class="name">&nbsp;&nbsp;<?php echo $yahoo_['name']?></span> <span class="phone">
-                                &nbsp;&nbsp;<?php echo $yahoo_['phone']?></span>
-                        </td>
-                    </tr>
+                                &nbsp;&nbsp;<?php echo $yahoo_['phone']?></span><br>                    
                 	<?php } ?>
-                
-        </table>
-        </div>
-    </div>
-</div>
-
-                    
-                     <div class="clear">
-                    </div>
-                    
-<div style="margin-top: 5px">
-    <div id="FaceBookControl1_pnlFacebook">
-	<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftibimarthcm&amp;width=240&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=771797639499496" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:290px;" allowTransparency="true"></iframe>
-    
-</div>
-</div>
-
-                    <div class="clear">
-                    </div>
-                    
-<div class="block">
-    <div class="title">
-        <h3>
-            Hỏi đáp</h3>
-    </div>
-    <div class="news-box">
-        
-                 <?php 
-		foreach($list_faq_rand as $faq_rand)
-		{
-		?>
-                <div id="NewsBoxControl1_rptArticleList_div_<?php echo $faq_rand['id']?>" class="first">
-                    <a id="NewsBoxControl1_rptArticleList_hplImage_0" title="<?php echo $faq_rand['title']?>" href="<?php echo base_url();?>hoi-dap-<?php echo $faq_rand['id']?>-<?php echo mb_strtolower(url_title(removesign($faq_rand['title'])))?>">
-					<img id="NewsBoxControl1_rptArticleList_img_0" src="<?php echo base_url();?>file/uploads/faq.png" height="50" alt="<?php echo $faq_rand['title']?>" style="width:50px;" />
-					</a>
-                    <a id="NewsBoxControl1_rptArticleList_hplTitle_0" title="<?php echo $faq_rand['title']?>" href="<?php echo base_url();?>hoi-dap-<?php echo $faq_rand['id']?>-<?php echo mb_strtolower(url_title(removesign($faq_rand['title'])))?>"><?php echo $faq_rand['title']?></a>
-                </div>
-            <?php } ?>
-            
-                
-            
-            
-    </div>
-</div>
-
-                    <div class="clear">
-                    </div>
-                    
-
-
-                    
-<div class="block">
-    <div class="title">
-        <h3>
-            Thống kê truy cập
-        </h3>
-    </div>
-    <div class="link">
-        <center>
-           <!-- Histats.com  START  (standard)-->
-<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
-<a href="http://www.histats.com" target="_blank" title="free web stats" ><script  type="text/javascript" >
-try {Histats.start(1,2696468,4,432,112,75,"00011111");
-Histats.track_hits();} catch(err){};
-</script></a>
-<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2696468&101" alt="free web stats" border="0"></a></noscript>
-<!-- Histats.com  END  -->
-        </center>
-    </div>
-</div>
-
-                </div>
-                <div class="clear">
-                </div>
-              <!--  
-<div class="thumb-slider">
-    <ul id="mycarousel" class="jcarousel-skin-tango">
-        
-                <li>
-                    <a id="LogoControl1_rptAdvertise2_hpl1_0" href="http://thadaco.vn" target="_new"><img alt="" src="/upload/images/ads/logo.png?width=160&height=80&quality=100" height="80" width="160" /></a></li>
-            
-                <li>
-                    <a id="LogoControl1_rptAdvertise2_hpl1_1" href="http://nhaccu.com.vn"><img alt="" src="/upload/images/ads/tidaco.png?width=160&height=80&quality=100" height="80" width="160" /></a></li>
-            
-                <li>
-                    <a id="LogoControl1_rptAdvertise2_hpl1_2" href="http://thangnhom.net.vn/thang-nhom-tungshing.aspx"><img alt="" src="/upload/images/ads/tungshing.jpg?width=160&height=80&quality=100" height="80" width="160" /></a></li>
-            
-                <li>
-                    <a id="LogoControl1_rptAdvertise2_hpl1_3" href="http://thangnhom.net.vn/thang-nhom-dai-loan.aspx"><img alt="" src="/upload/images/ads/PAL(1).gif" height="80" width="160" /></a></li>
-            
-                <li>
-                    <a id="LogoControl1_rptAdvertise2_hpl1_4" href="http://thangnhom.net.vn/thang-nhom-nhat-ban.aspx"><img alt="" src="/upload/images/ads/hasigawa.gif" height="80" width="160" /></a></li>
-            
-                <li>
-                    <a id="LogoControl1_rptAdvertise2_hpl1_5" href="http://www.microsoft.com/net" target="_new"><img alt="công nghệ asp.net" src="/upload/images/ads/NetLogo.jpg?width=160&height=80&quality=100" height="80" width="160" /></a></li>
-            
-                <li>
-                    <a id="LogoControl1_rptAdvertise2_hpl1_6" href="http://www.microsoft.com/sqlserver/"><img alt="công nghệ Sql Server" src="/upload/images/ads/sql-server-logo.png?width=160&height=80&quality=100" height="80" width="160" /></a></li>
-            
-    </ul>
-</div>-->
-
-                <div class="clear">
-                </div>
+               </ul>
             </div>
-        </div>
-    
-<div class="menu-hoz1">
-    <div class="menu-horizontal1">
-        <ul>
-        
-                <li id="MenuTopControl1_rptTopMenu2_li_0" class="first">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_0" title="Trang chủ" href="<?php echo base_url();?>">Trang chủ</a></li>
-            
-                <li id="MenuTopControl1_rptTopMenu2_li_1">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_1" title="Giới thiệu" href="<?php echo base_url();?>san-pham">Sản phẩm</a></li>
-            
-                <li id="MenuTopControl1_rptTopMenu2_li_2">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_2" title="Tin tức" href="<?php echo base_url();?>hoi-dap">Hỏi đáp</a></li>
-            
-                <li id="MenuTopControl1_rptTopMenu2_li_3">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_3" title="Thanh toán và vận chuyển" href="<?php echo base_url();?>huong-dan-thanh-toan">Thanh toán và vận chuyển</a></li>
-            
-            
-                <li id="MenuTopControl1_rptTopMenu2_li_5">
-                    <a id="MenuTopControl1_rptTopMenu2_hplLink_5" title="Liên hệ với chúng tôi" href="<?php echo base_url();?>lien-he">Liên hệ</a></li>
-            
-    </ul>
-    </div>
-</div>
-
-        <div class="clear">
-        </div>  
-        <div class="clear">
-        </div>
-        
-<div id="footer">
-            <table border="0" width="100%">
-               <tbody>
-                  <tr>
-                     <td align="center" colspan="2">
-                        <b>TIBIMART.COM</b>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <p>
-                           Phía Bắc: <?php echo nl2br($about[1]['address']);?><br />
-                           
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-9">
+               <div class="row">
+                  <h1>
+                     <?php echo $cate_detail_[0]['title']?> </small>		
+                  </h1>
+                  <div class="row">
+			<?php 
+			$i = 1;
+			foreach($list as $product_rand)
+			{
+				$product_sale = $this->producthomemodel->get_sale_off_product($product_rand['id_product']);
+			?>
+               <div class="col-md-4 col-lg-4 col-sm-4">
+                  <div class="thumbnail " >
+                     <div class="myhovercontent">
+					 	<?php 
+						if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_rand['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_rand['image']) && $product_rand['image']!='')
+						{
+						?>
+                        <img class="text-center" src="<?php echo base_url();?>file/uploads/product/<?php echo $product_rand['image']?>"   height="150" "alt="">
+						<?php } else { ?>
+						<img class="text-center" src="<?php echo base_url();?>file/uploads/no_image.gif"   height="150" "alt="">
+						<?php } ?>
+						<?php 
+						if(!empty($product_sale))
+						   {
+						   	
+						?>
+                        <div class="discount_star">-<?php echo $product_sale[0]['percent'];?>%</div>
+						<?php } ?>
+                     </div>
+                     <div  class="contenthover">
+                        <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title'])));?>">
+                        </a>
+                     </div>
+                     <div class="caption">
+                        <h4 class='text-center text-primary'>
+                           <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title'])));?>">
+                           <?php echo sub_string($product_rand['title'],20);?>   					       </a>
+                        </h4>
+                        <p class="bottom-align">
+                           <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title'])));?>" class="btn btn-warning" role="button">
+                           <i class="glyphicon glyphicon-shopping-cart"></i>Mua
+                           </a>
+                           <span class="text-muted pull-right">
+                           <?Php 
+						   if(!empty($product_sale))
+						   {
+						   	$price = 	$product_rand['price'] - $product_rand['price']* $product_sale[0]['percent'];
+						   }
+						   else
+						   {
+						   	$price = $product_rand['price'];
+						   }
+						   ?>
+                           <span class="text-info"><strong><?php echo number_format($price)?> ₫</strong></span>
+                           </span>
                         </p>
-                     </td>
-                     <td>
-                        <p style="padding-bottom: 0">
-                           <b>Phía Nam:</b> <?php echo nl2br($about[0]['address'])?><br />
-                        </p>
-                       
-                     </td>
-                  </tr>
-                  <tr>
-                     <td align="center" colspan="2">
-                        <p style="padding-bottom: 0">
-                           <span style="font-size: small;"><span style="font-family: Arial;">Desgin by <a href="https://www.facebook.com/ezwebvietnam">EZWeb Việt Nam</a> </span></span>
-                        </p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-            <p>
-               &nbsp;
-            </p>
+                     </div>
+                  </div>
+               </div>
+			   <?php 
+			   if($i%3==0)
+			   {
+			   ?>
+               <br>
+			   <?php
+			   } 
+              $i++;} ?>
+            </div>
+                  
+                  
+                  
+               </div>
+            </div>
          </div>
-        
- <div id="divBannerFloatLeft">
-     
-</div>
- <div id="divBannerFloatRight">
-     
-</div>
-
-    </div>
-    <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-21718856-13']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 982332647;
-var google_custom_params = window.google_tag_params;
-var google_remarketing_only = true;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/982332647/?value=0&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-</body>
-</html>
+         <div class="row">
+            <div class="text-center">
+               <div>
+                  <ul class="pagination">
+                     <script type="text/javascript">
+					var url = window.location.href;
+					var res = url.split("/page/");
+		                                $(function() {
+		                                    $('ul.pagination').html(LoadPagging(<?php echo $page?>, <?php echo $total?>,res[0],<?php echo $total_page?>));
+		                                });
+		                            </script>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/jquery.contenthover.min.js"></script><script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/script.js"></script>
+         <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/jquery.contenthover.min.js"></script>                
+         <?php 
+		 include('footer.php');
+		 ?>

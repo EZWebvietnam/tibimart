@@ -15,7 +15,7 @@ class Product extends MY_Controller
 	}
 	public function product_detail($id = null)
 	{
-		//print_r($_POST);exit;
+		
 		if(empty($id))
 		{
 			show_404();
@@ -49,7 +49,7 @@ class Product extends MY_Controller
 			}
 
 			$this->data['product_detail'] = $product_detail;
-			$this->data['list_product_cate'] = $this->producthomemodel->list_product_by_cate_detail($product_detail[0]['id_cate']);
+			
 			$this->load->view('home/layout_product_detail',$this->data);
 		}
 		else
@@ -106,7 +106,7 @@ class Product extends MY_Controller
 		$config['uri_segment'] = 5;
 		$page = $this->uri->segment(5);
 		$config['per_page'] = 12;
-		$this->data['cate_detail'] = $this->catehomemodel->cate_detail($id_cate);
+		$this->data['cate_detail_'] = $this->catehomemodel->cate_detail($id_cate);
 		$config['total_rows'] = $this->producthomemodel->count_product_list($id_cate);
 		if($page == ''){
 			$page = 1;
@@ -132,7 +132,7 @@ class Product extends MY_Controller
 		$config['uri_segment'] = 5;
 		$page = $this->uri->segment(3);
 		$config['per_page'] = 12;
-		$this->data['cate_detail'][0]['title'] = 'Sản phẩm';
+		$this->data['cate_detail_'][0]['title'] = 'Sản phẩm';
 		$config['total_rows'] = $this->producthomemodel->count_product_list_all();
 		if($page == ''){
 			$page = 1;
@@ -283,7 +283,11 @@ class Product extends MY_Controller
 				$this->orderhomemodel->insert_order_detail($data_save_order_detail);
 				$data_save_order_detail = array();
 			}
+			
+			$this->_send_email('order','nguyentruonggiang91@gmail.com','nguyentruonggiang91@gmail.com',$data_insert,'Thông tin đơn hàng');
+			
 			$this->cartmodel->delete_cart_ip($ip);
+			
 			redirect('../'.ROT_DIR);
 		}
 		$this->data['title'] = 'Thông tin đặt hàng';
@@ -318,5 +322,14 @@ class Product extends MY_Controller
 		$this->data['main_content'] = 'sale_detail';
 		$this->load->view('home/layout_faq_detail',$this->data);
 	}
+	function _send_email($type, $to, $email, &$data, $title) {
+        /*$this->load->library('email');*/
+        //$this->load->library('maillinux');
+       $this->load->library('mailer');
+        $from = MAIL_ADMIN;
+        $subject = $title;
+        $messsage = $this->load->view('home/email/' . $type . '-html', $data, TRUE);
+       $this->mailer->sendmail($email,$email,$subject,$messsage);
+    }
 }
 ?>
