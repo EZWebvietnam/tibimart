@@ -77,16 +77,16 @@ include('header.php');
 						<?php } ?>
                      </div>
                      <div  class="contenthover">
-                        <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title'])));?>">
+                        <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title_product'])));?>">
                         </a>
                      </div>
                      <div class="caption">
                         <h4 class='text-center text-primary'>
-                           <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title'])));?>">
-                           <?php echo sub_string($product_rand['title'],20);?>   					       </a>
+                           <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title_product'])));?>">
+                           <?php echo sub_string($product_rand['title_product'],20);?>   					       </a>
                         </h4>
                         <p class="bottom-align">
-                           <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title'])));?>" class="btn btn-warning" role="button">
+                           <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title_product'])));?>" class="btn btn-warning" role="button">
                            <i class="glyphicon glyphicon-shopping-cart"></i>Mua
                            </a>
                            <span class="text-muted pull-right">

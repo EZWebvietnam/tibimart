@@ -108,9 +108,11 @@ class Categoryadmin extends MY_Controller
 	{
 		if($this->input->post())
     	{
+			
 			$title = $this->input->post('title');
 			$parent_lable = $this->input->post('parent_lable');
 			$data_save = array();
+			$data_save = array('title'=>$title);
 			if($parent_lable == 1)
 			{
 				$data_save['lable'] = 0;
@@ -120,9 +122,9 @@ class Categoryadmin extends MY_Controller
 			{
 				$data_save['lable'] = $this->input->post('lable');
 				$radio = $this->input->post('radio');
-			}
-			$data_save = array('title'=>$title,'show_home'=>$radio);
 			
+			}
+			$data_save['show_home'] = $radio;
 			$id = $this->categorymodel->update_cate($id,$data_save);
 			$array = array('error' => 0, 'msg' => "Update thanh cong");
        		echo json_encode($array);

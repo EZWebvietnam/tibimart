@@ -48,14 +48,14 @@ class Producthomemodel extends CI_Model
 		$id_cate = intval($id_cate);
 		$number = intval($number);
 		$offset = intval($offset);
-		$sql="SELECT * FROM {$this->_name} INNER JOIN cate_product ON product.id_cate = cate_product.id_cate WHERE product.id_cate = ? OR cate_product.lable = ?  LIMIT ?,?";
+		$sql="SELECT *,product.title as title_product FROM {$this->_name} INNER JOIN cate_product ON product.id_cate = cate_product.id_cate WHERE product.id_cate = ? OR cate_product.lable = ?  LIMIT ?,?";
 		$query = $this->db->query($sql,array($id_cate,$id_cate,$offset,$number));
 		return $query->result_array();
 	}
 	public function count_product_list($id_cate)
 	{
 		$id_cate = intval($id_cate);
-		$sql="SELECT * FROM {$this->_name} INNER JOIN cate_product ON product.id_cate = cate_product.id_cate WHERE product.id_cate = ? OR cate_product.lable = ?";
+		$sql="SELECT *,product.title as title_product FROM {$this->_name} INNER JOIN cate_product ON product.id_cate = cate_product.id_cate WHERE product.id_cate = ? OR cate_product.lable = ?";
 		$query = $this->db->query($sql,array($id_cate,$id_cate));
 		return count($query->result_array());
 	}
@@ -63,7 +63,7 @@ class Producthomemodel extends CI_Model
 	{
 		$number = intval($number);
 		$offset = intval($offset);
-		$sql="SELECT * FROM {$this->_name} LIMIT ?,?";
+		$sql="SELECT *,product.title as title_product FROM {$this->_name} LIMIT ?,?";
 		$query = $this->db->query($sql,array($offset,$number));
 		return $query->result_array();
 	}
