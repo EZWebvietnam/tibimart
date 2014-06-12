@@ -57,5 +57,11 @@ class Faqhomemodel extends CI_Model
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+	public function rand_image()
+	{
+		$sql="SELECT * FROM image ORDER BY id DESC LIMIT 4";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
 }
 ?>

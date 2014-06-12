@@ -86,5 +86,33 @@ class Faqmodel extends CI_Model
 		return $query->result_array();
 		
 	}
+	//Image Slide
+	public function list_image($number,$offset)
+    {
+		$sql = "SELECT * FROM image LIMIT ?,?";
+		$query = $this->db->query($sql,array($offset,$number));
+		return $query->result_array();
+	}
+	public function count_image()
+	{
+		$sql = "SELECT * FROM image";
+		$query = $this->db->query($sql);
+		return count($query->result_array());
+	}
+	public function insert_img(array $data)
+	{
+		$this->db->insert('image',$data);
+		return $this->db->insert_id();
+	}
+	public function delete_image($id)
+	{
+		$this->db->delete('image',array('id'=>$id));
+	}
+	public function image_detail($id)
+	{
+		$sql = "SELECT * FROM image WHERE id = ?";
+		$query = $this->db->query($sql,array($id));
+		return $query->result_array();	
+	}
 }
 ?>

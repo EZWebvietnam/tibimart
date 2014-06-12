@@ -3,37 +3,42 @@ include('header.php');
 ?>
       <div class="content">
       <div class="container">
-      <div class="image-slide thumbnail">
+	  <?php 
+	  if(!empty($rand_image))
+	  {
+	  	
+	  ?>
+      <div class="image-slide thumbnail" style="height:410px; !important;">
          <div id="carousel-slideshow-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                <li data-target="#carousel-slideshow-generic" data-slide-to="0" class="active"></li>
-               <li data-target="#carousel-slideshow-generic" data-slide-to="1" class=""></li>
-               <li data-target="#carousel-slideshow-generic" data-slide-to="2" class=""></li>
-               <li data-target="#carousel-slideshow-generic" data-slide-to="3" class=""></li>
+			   <?php 
+			   if(count($rand_image)>1)
+			   {
+			   	for($i = 1;$i<count($rand_image);$i++)
+				{
+			   ?>
+               <li data-target="#carousel-slideshow-generic" data-slide-to="<?php echo $i;?>" class=""></li>
+			   <?php } } ?>
             </ol>
             <!-- Wrapper for slides -->
-            <div class="carousel-inner">
+            <div class="carousel-inner" style="height:400px; !important;">
                <div class="item  active">
                   <a href="" target="_blank">
-                  <img src="/img/slideshow/1396249907_533915337b01e.jpg" width="1140" height="400" alt="Content marketi">
+                  <img src="<?php echo base_url();?>file/uploads/slide/<?php echo $rand_image[0]['image']?>" width="1140" height="400" alt="Content marketi">
                   </a>
                </div>
+			   <?php 
+			   for($i = 1;$i<count($rand_image);$i++)
+			   {
+			   ?>
                <div class="item ">
                   <a href="" target="_blank">
-                  <img src="/img/slideshow/1396261072_533940d028d2d.png" width="1140" height="400" alt="KICH BAN">
+                  <img src="<?php echo base_url();?>file/uploads/slide/<?php echo $rand_image[$i]['image']?>" width="1140" height="400" alt="KICH BAN">
                   </a>
                </div>
-               <div class="item ">
-                  <a href="http://www.bongdaso.com/news.aspx" target="_blank">
-                  <img src="/img/slideshow/1396265048_5339505899bcb.jpg" width="1140" height="400" alt="copywriter">
-                  </a>
-               </div>
-               <div class="item ">
-                  <a href="" target="_blank">
-                  <img src="/img/slideshow/1396265377_533951a1938d5.png" width="1140" height="400" alt="CTV da nang">
-                  </a>
-               </div>
+               <?php } ?>
             </div>
             <!-- Controls -->
             <a class="left carousel-control" href="#carousel-slideshow-generic" data-slide="prev">
@@ -43,7 +48,10 @@ include('header.php');
             <span class="glyphicon glyphicon-chevron-right"></span>
             </a>
          </div>
-      </div>
+		  </div>
+		 <?php } ?>
+     
+	  <!--
       <div class="row">
          <h1 class="text-center slogan"><img src="img/slogan.png" /></h1>
          <div class="col-md-2 col-md-offset-1 text-center">
@@ -91,7 +99,7 @@ include('header.php');
                <a href="/application/service/collaborator" class="">Cộng tác viên đa năng</a>
             </h4>
          </div>
-      </div>
+      </div>-->
       <div class="row">
          <div id="product-sidebar" class="col-md-3 col-lg-3 col-sm-3">
             <div class="navbar navbar-default background-orange">

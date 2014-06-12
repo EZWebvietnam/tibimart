@@ -10,6 +10,7 @@ class Home extends MY_Controller {
 		parent::load_header();
 		parent::load_yahoo();
 		parent::about();
+		parent::rand_image();
     }
 
     public function index() {
