@@ -34,17 +34,20 @@ include('header.php')
                </form>
             </div>
             <div class="col-sm-4">
-               <h3>OvHand</h3>
-               <h4>Kết nối từ đôi tay</h4>
+               <h3>TiBiMart</h3>
+               <h4>Tiện ích trong từng sản phẩm</h4>
+			   <p><b>Phía Bắc:</b></p>
                <p>
-                  120/86A/26 Thích Quảng Đức, Phường 5, Q. Phú Nhuận, TP.HCM          
+                 <?php echo nl2br($about[1]['address']);?>     
                </p>
-               <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: 0909.524.879</p>
-               <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>: <a href="mailto:contact@ovhand.com">contact@ovhand.com</a></p>
-               <p><i class="fa fa-comment"></i> <abbr title="Yahoo">Yahoo</abbr>:danhvvx</p>
-               <p><i class="fa fa-skype"></i> <abbr title="Skype">Skype</abbr>:danhvvx</p>
+               <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: <?php echo $about[1]['phone']?></p>
+               <p><b>Phía Nam:</b></p>
+               <p>
+                 <?php echo nl2br($about[0]['address']);?>     
+               </p>
+               <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: <?php echo $about[0]['phone']?></p>
                <ul class="list-unstyled list-inline list-social-icons">
-                  <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/ovhand" data-toggle="tooltip" data-placement="top" title="OvHand Facebook"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                  <li class="tooltip-social facebook-link"><a target="__blank" href="https://www.facebook.com/tibimarthcm" data-toggle="tooltip" data-placement="top" title="TibiMart Facebook"><i class="fa fa-facebook-square fa-2x"></i></a></li>
                </ul>
             </div>
          </div>

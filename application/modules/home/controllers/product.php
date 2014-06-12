@@ -49,7 +49,7 @@ class Product extends MY_Controller
 			}
 
 			$this->data['product_detail'] = $product_detail;
-			
+			$this->data['main_content'] = 'detail_product_view';
 			$this->load->view('home/layout_product_detail',$this->data);
 		}
 		else
@@ -293,7 +293,7 @@ class Product extends MY_Controller
 		$this->data['title'] = 'Thông tin đặt hàng';
 		$this->data['gui_cau_hoi'] = 0;
 		$this->data['main_content'] = 'checkout';
-		$this->load->view('home/layout_check_out',$this->data);
+		$this->load->view('home/layout_product_detail',$this->data);
 	}
 	public function direction()
 	{

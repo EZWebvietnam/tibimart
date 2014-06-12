@@ -73,6 +73,7 @@
             </div>
          </div>
          <?php } ?>
+		 Muốn gửi câu hỏi ? <a href="<?php echo base_url();?>gui-cau-hoi">Click vào đây</a>
       </div>
    </div>
 </div>

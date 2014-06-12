@@ -1,4 +1,89 @@
-<form method="post">
+  <link href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/css/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+ <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+   <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/js/jquery.ui.addresspicker.js"></script>
+   <style>
+  	#map {
+  border: 1px solid #DDD; 
+  width:300px;
+  height: 300px;
+  margin: 10px 0 10px 0;
+  -webkit-box-shadow: #AAA 0px 0px 15px;
+}
+  </style>
+  <?php
+	  if($_SERVER['SERVER_NAME'] == 'localhost')
+		 {
+		      ?> 
+			  <script>
+			  	var app_main_url ="http://localhost/tibimart";
+			  </script>
+			  <?php
+		 }
+		 else
+		 {
+		    ?> 
+			 <script>
+			  	var app_main_url ="http://tibimart.com";
+			  </script>
+			<?php
+		 }
+		 ?>
+<script>
+  $(function() {
+    var addresspicker = $( "#addresspicker" ).addresspicker({
+      componentsFilter: 'country:FR'
+    });
+    var addresspickerMap = $( "#addresspicker_map" ).addresspicker({
+      regionBias: "fr",
+      updateCallback: showCallback,
+      mapOptions: {
+        zoom: 4,
+        center: new google.maps.LatLng(46, 2),
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      },
+      elements: {
+        map:      "#map",
+        lat:      "#lat",
+        lng:      "#lng",
+      }
+    });
+
+    var gmarker = addresspickerMap.addresspicker( "marker");
+    gmarker.setVisible(true);
+    addresspickerMap.addresspicker( "updatePosition");
+
+    $('#reverseGeocode').change(function(){
+      $("#addresspicker_map").addresspicker("option", "reverseGeocode", ($(this).val() === 'true'));
+    });
+
+    function showCallback(geocodeResult, parsedGeocodeResult){
+      $('#callback_result').text(JSON.stringify(parsedGeocodeResult, null, 4));
+    }
+    // Update zoom field
+    var map = $("#addresspicker_map").addresspicker("map");
+    google.maps.event.addListener(map, 'idle', function(){
+      $('#zoom').val(map.getZoom());
+    });
+
+  });
+  </script>
+  <script>
+	  	jQuery(document).ready(function(){
+			$('#chi_duong').click(function(){
+				var lat = $('#lat').val();
+				var lng = $('#lng').val();
+				url =app_main_url+'/chi-duong/?lng='+lng+'&lat='+lat;
+				window.open(url,'_blank');
+		});
+		});
+	  	
+		
+	  </script>
+<div class="col-md-9 col-lg-9 col-sm-9">
+            <form method="post">
                      <div style="padding: 5px;">
                         <div style="padding: 20px; overflow: hidden">
                            <p style="padding-top: 10px; padding-bottom: 20px">
@@ -85,4 +170,5 @@
                            </div>
                         </div>
                      </div>
-					 </form>
+					 </form>   
+            </div>

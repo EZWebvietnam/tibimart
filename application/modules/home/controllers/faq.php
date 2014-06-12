@@ -70,8 +70,7 @@ class Faq extends MY_Controller
 			$this->data['title']='Gửi câu hỏi';
 			$this->data['gui_cau_hoi'] = 1;
 			$this->data['main_content']='postfaq';
-			$this->load->view('home/layout_check_out',$this->data);
-		
+			$this->load->view('home/layout_product_detail',$this->data);
 	}
 }
 ?>

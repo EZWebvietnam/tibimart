@@ -2,20 +2,25 @@
 <html lang="en">
    <head>
       <meta charset="utf-8">
-      <meta name="robots" content="index, follow">
-      <meta name="keywords" content="ovhand, ovhand group, ovhand, kich ban, viet kich ban, online marketing, seeding, forum seeding, quản lý fanpage, viet bai pr, quang cao, social marketing, tieu pham van nghe">
-      <meta name="description" content="OvHand Group, chuyên viết kịch bản tiểu phẩm văn nghệ, viết bài pr quảng cáo, online marketing, forum seeding, quản lý Fanpage, sinh viên, gia sư, phát tờ rơi">
-      <meta name="author" content="OvHand">
-      <meta name="country" content="VN">
-      <meta name="web_author" content="nguyenloi85 ">
-      <title>OvHand - Kết Nối Từ Đôi Tay</title>
+      <title><?php echo $header['title']?></title>
+      <meta vary="User-Agent" />
+	<meta name="title" content="<?php echo $header['title']?>" />
+	<meta name="ROBOTS" content="<?php echo $header['robots']?>" />
+	<meta name="google-site-verification" content="WlnQ-eKKwnhOw3DVTstkNknRMNzlwQ8tHc3znnVab6o" />
+	<link rel="canonical" href="<?php echo full_url_($_SERVER);?>"/>		
+	<meta property="og:url" content="<?php echo full_url_($_SERVER);?>" />
+	<meta property="og:title" content="<?php echo $header['title']?>" />
+	<meta property="og:description" content="<?php echo $header['description']?>" />
+	<meta property="og:image" content="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
+	<meta name="keywords" content="<?php echo $header['keywords']?>" />
+	<meta name="description" content="<?php echo $header['description']?>" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <link href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/css/ovhand.min.css" media="screen" rel="stylesheet" type="text/css">
       <link href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/css/ovhand-theme.min.css" media="screen" rel="stylesheet" type="text/css">
       <link href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
       <link href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/css/style.css" media="screen" rel="stylesheet" type="text/css">
-      <link href="/img/ico/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+      <link href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/favicon.ico" rel="shortcut icon" type="image/x-icon" />
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/jquery.min.js"></script>
 	  <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/paging.js"></script>   </head>
    <body>
@@ -23,21 +28,18 @@
          <div class="container">
             <div class="row">
                <div class="col-md-3 col-sm-4 col-lg-3 logo">
-                  <a href="/"><img
-                     src="/img/logo90.png" /></a>
+                  <a href="/"><img width="152" height="90"
+                     src="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" /></a>
                </div>
                <div class="col-md-9 col-sm-8 col-lg-9">
                   <div class="pull-right">
                      <ul class="nav nav-pills">
                         <li class="active"><a href="#"><i
-                           class="glyphicon glyphicon-phone"></i>&nbsp;Hotline : 0909.524.879</a></li>
+                           class="glyphicon glyphicon-phone"></i>&nbsp;Hotline : <?php echo $about[0]['phone']?></a></li>
                         <li><a
-                           href="/application/product/showcart"><i
+                           href="<?php echo base_url();?>gio-hang"><i
                            class="glyphicon glyphicon-shopping-cart"></i>&nbsp;Giỏ hàng</a></li>
-                        <li><a href="/application/account/login"><i
-                           class="glyphicon glyphicon-log-in"></i>&nbsp;Đăng nhập</a></li>
-                        <li><a href="/application/account/register"><i
-                           class="glyphicon glyphicon-user"></i>&nbsp;Đăng ký</a></li>
+                        
                      </ul>
                   </div>
                </div>

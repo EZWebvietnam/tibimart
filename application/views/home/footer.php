@@ -4,75 +4,34 @@
          <div class="well voffset2">
             <div class="row">
                <div class="col-lg-3 col-md-3 col-sm-6">
-                  <h3>OvHand là gì?</h3>
+                  <h3>TibiMart là gì?</h3>
                   <p class="text-justify text-muted">Chúng tôi chuyên cung cấp các
                      sản phẩm, dịch vụ theo tiêu chí tiện lợi, thiết thực và giá cả
-                     tốt nhất cho quý khách hàng. Với OvHand, mỗi khách hàng là một
+                     tốt nhất cho quý khách hàng. Với TibiMart, mỗi khách hàng là một
                      người bạn thâm giao.
                   </p>
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6 ovhand-extra-2">
-                  <h3>Hướng dẫn</h3>
-                  <ul class="list-unstyled ">
-                     <li><a
-                        href="/application/guide/buy">Hướng
-                        dẫn mua hàng</a>
-                     </li>
-                     <li><a
-                        href="/application/guide/pay">Hướng
-                        dẫn thanh toán</a>
-                     </li>
-                     <li><a
-                        href="/application/guide/return">Phương
-                        thức đổi, trả</a>
-                     </li>
-                     <li><a
-                        href="/application/guide/support">Hỗ
-                        trợ khách hàng</a>
-                     </li>
-                     <li>
-                        <a href="/application/guide/maintain">
-                        Chính sách bảo hành
-                        </a>
-                     </li>
-                     <li>
-                        <a href="/application/guide/payback">
-                        Chính sách đổi/trả hàng và hoàn tiền
-                        </a>
-                     </li>
-                     <li>
-                        <a href="/application/guide/security">
-                        Chính sách bảo mật thông tin 
-                        </a>
-                     </li>
-                     <li>
-                        <a href="/application/guide/owner">
-                        Chủ sở hữu website 
-                        </a>
-                     </li>
+                  <h3>Phía Bắc</h3>
+                  <ul class="list-unstyled">
+                     <li><span class="glyphicon glyphicon-envelope"></span>&nbsp;tibimarthcm@gmail.com</li>
+                     <li><span class="glyphicon glyphicon-phone"></span>&nbsp;<?php echo $about[1]['phone']?></li>
+                     <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($about[1]['address']);?></li>
                   </ul>
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6 ovhand-extra-3">
-                  <h3>Liên lạc với OvHand</h3>
+                  <h3>Phía Nam</h3>
                   <ul class="list-unstyled">
-                     <li><span class="glyphicon glyphicon-envelope"></span>&nbsp;contact@ovhand.com</li>
-                     <li><span class="glyphicon glyphicon-phone"></span>&nbsp;0909.524.879</li>
-                     <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;120/86A/26 Thích Quảng Đức, Phường 5, Q. Phú Nhuận, TP.HCM</li>
+                     <li><span class="glyphicon glyphicon-envelope"></span>&nbsp;tibimarthcm@gmail.com</li>
+                     <li><span class="glyphicon glyphicon-phone"></span>&nbsp;<?php echo $about[0]['phone']?></li>
+                     <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($about[0]['address']);?></li>
                   </ul>
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6">
-                  <h3>Hỗ trợ trực tuyến</h3>
-                  <ul class="list-unstyled">
-                     <li><a href="skype:danhvvx?chat"> <img
-                        src="/img/chatbutton_16px.png" />
-                        </a> <a href="ymsgr:sendim?danhvvx"
-                           style="text-decoration: none"> <img border=0
-                           src="http://mail.opi.yahoo.com/online?u=danhvvx&m=g&t=1">
-                        </a>
-                     </li>
-                  </ul>
+                  
+                 
                   <h3>Facebook</h3>
-                  <a href="https://www.facebook.com/ovhand" data-toggle="tooltip" data-placement="top" title="OvHand Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+                  <a target="_blank" href="https://www.facebook.com/tibimarthcm" data-toggle="tooltip" data-placement="top" title="Tibimart Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
                </div>
             </div>
          </div>
@@ -82,8 +41,8 @@
       <div id="footer">
          <div class="container">
             <p class="text-muted text-center">
-               &copy;2014 bản quyền thuộc về Ovhand. Website đã được làm bởi <a
-                  href='mailto:nguyenloi85@gmail.com'>nguyenloi85</a>
+               &copy;<?php echo date('Y');?> bản quyền thuộc về TiBiMart. Website đã được làm bởi <a target="_blank"
+                  href='https://www.facebook.com/ezwebvietnam'>EZWeb Việt Nam</a>
             </p>
          </div>
       </div>
