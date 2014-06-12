@@ -320,7 +320,7 @@ class Product extends MY_Controller
 		$this->data['detail_sale'] = $detail_sale;
 		$this->data['faq_detail'][0]['title'] = $detail_sale[0]['title'];
 		$this->data['main_content'] = 'sale_detail';
-		$this->load->view('home/layout_faq_detail',$this->data);
+		$this->load->view('home/layout_product_detail',$this->data);
 	}
 	function _send_email($type, $to, $email, &$data, $title) {
         /*$this->load->library('email');*/

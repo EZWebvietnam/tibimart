@@ -54,6 +54,9 @@
                   <li><a
                      href="<?php echo base_url();?>san-pham">Sản phẩm</a>
                   </li>
+				  <li><a
+                     href="<?php echo base_url();?>khuyen-mai">Khuyến mại</a>
+                  </li>
                   <li><a
                      href="<?php echo base_url();?>hoi-dap">Hỏi đáp</a>
                   </li>

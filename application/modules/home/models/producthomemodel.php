@@ -99,5 +99,17 @@ class Producthomemodel extends CI_Model
         $query = $this->db->query($sql,array($id));
         return $query->result_array();
 	}
+	public function list_sale_list($number,$offset)
+	{		 
+        $sql ="SELECT * FROM sale_off LIMIT ?,?";
+        $query = $this->db->query($sql,array($offset,$number));
+        return $query->result_array();
+	}
+	public function count_sale_list()
+	{		 
+        $sql ="SELECT * FROM sale_off";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+	}
 }
 ?>
