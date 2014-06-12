@@ -209,7 +209,7 @@ class Productadmin extends MY_Controller {
                 $data_save = array(
                     'title' => $this->input->post('title'),
                     'price' => $this->input->post('cost'),
-                    'image' => $this->input->post('content'),
+                    'content' => $this->input->post('content'),
 					'id_cate'=>$this->input->post('category')
                 );
             }

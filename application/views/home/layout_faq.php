@@ -7,23 +7,33 @@
    <div class="col-md-3 col-lg-3 col-sm-3">
       <div class="navbar navbar-default background-orange">
          <ul class="nav nav-stacked">
-            <?php 
-               foreach($list_cate as $cate)
-               {
-               		$cate_detail = $this->catehomemodel->list_cate_lable($cate['id_cate']);
-               ?>
-            <li <?Php if(!empty($cate_detail)) {?> class="dropdown  dropdown-submenu" <?php } ?>>
-               <a href="<?php echo base_url();?>san-pham/c/<?php echo $cate['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate['title']))) ?>">
-               <?php echo $cate['title'];?>	               </a>
-               <ul class="dropdown-menu">
-                  <?php foreach($cate_detail as $c_dt)
-                     {?>
-                  <li><a href="<?php echo base_url();?>san-pham/c/<?php echo $c_dt['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($c_dt['title']))) ?>"><?php echo $c_dt['title'];?> </a></li>
-                  <?Php } ?>
+			   <?php 
+			   $this->load->model('producthomemodel');
+			   foreach($list_cate as $cate)
+			   {
+			   		$cate_detail = $this->catehomemodel->list_cate_lable($cate['id_cate']);
+			   ?>
+                  <li <?Php if(!empty($cate_detail)) {?> class="dropdown  dropdown-submenu" <?php } ?>>
+                     <a href="<?php echo base_url();?>san-pham/c/<?php echo $cate['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($cate['title']))) ?>">
+                     <?php echo $cate['title'];?>	               </a>
+                     <ul class="dropdown-menu">
+					 	<?php foreach($cate_detail as $c_dt)
+						{
+							if($c_dt['product']==0)
+							{
+							?>
+                        <li><a href="<?php echo base_url();?>san-pham/c/<?php echo $c_dt['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($c_dt['title']))) ?>"><?php echo $c_dt['title'];?> </a></li>
+						<?Php } else {
+							
+							$product_detail = $this->producthomemodel->product_detail($c_dt['product']);
+							
+							?> 
+						<li><a href="<?php echo base_url();?>san-pham/<?php echo $product_detail[0]['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_detail[0]['title']))) ?>"><?php echo $c_dt['title'];?> </a></li>
+						<?php }} ?>
+                     </ul>
+                  </li>
+               <?php } ?>   
                </ul>
-            </li>
-            <?php } ?>   
-         </ul>
       </div>
       <div class="navbar navbar-default">
          <ul class="nav nav-stacked">

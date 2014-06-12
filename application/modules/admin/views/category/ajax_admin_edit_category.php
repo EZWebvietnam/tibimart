@@ -24,6 +24,9 @@
 		$dis = "";
 	}
 	?>
+	<?php 
+                $array = array('1'=>'Có','0'=>'Không');
+                ?>
         <table class="form" style="width: 1200px;">
 
             <tr>
@@ -32,12 +35,45 @@
                     <input id="title_" type="texbox" name="title" value="<?php echo $cate_detail[0]['title']?>"/>
                 </td>
             </tr>
+            
 			<tr>
                 <td class="label">Parent Lable</td>
                 <td colspan="3">
                     <select name="parent_lable" id="parent_lable">
-	                   <option value="1">Có</option>
-	                   <option value="0">Không</option>	
+	                  <?php 
+	                  if($cate_detail[0]['lable']!=0)
+	                  {
+					  
+	                  ?>
+	                  <option value="0" selected="">Không</option>
+	                  <option value="1" >Có</option>
+	                  <?php } else {?>
+	                  <option value="0" >Không</option>
+	                  <option value="1" selected="">Có</option>
+	                  <?php } ?>
+                   </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Chạy trực tiếp vào sản phẩm</td>
+                <?php 
+                $this->load->model('productmodel');
+                $list_product = $this->productmodel->list_product_cate();
+                ?>
+                <td colspan="3">
+                    <select name="id_product" id="id_product" <?php echo $dis;?>>
+	                   <option value="0">Không chạy trực tiếp</option>
+	                   <?php 
+	                   foreach($list_product as $l_product)
+	                   {
+					   	if($cate_detail[0]['product'] == $l_product['id_product'])
+					   	{
+						
+	                   ?>
+	                   <option selected="" value="<?php echo $l_product['id_product']?>"><?php echo $l_product['title']?></option>	
+	                   <?php } else {?>
+	                    <option value="<?php echo $l_product['id_product']?>"><?php echo $l_product['title']?></option>	
+	                   <?php }} ?>
                    </select>
                 </td>
             </tr>
@@ -71,9 +107,7 @@
             </tr>
             <tr>
                 <td class="label">Hiện trang chủ</td>
-                <?php 
-                $array = array('1'=>'Có','0'=>'Không');
-                ?>
+                
                 <td colspan="3">
                    <select name="radio" id="radio" <?php echo $dis?>>
                    <?php 
@@ -109,11 +143,13 @@
 			{
 				$('#lable').attr('disabled','disabled');
 				$('#radio').attr('disabled','disabled');
+				$('#id_product').attr('disabled','disabled');
 			}
 			else
 			{
 				$('#lable').attr('disabled',false);
 				$('#radio').attr('disabled',false);
+				$('#id_product').attr('disabled',false);
 			}
 			
 		});
@@ -141,7 +177,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title_').val(),radio:$('#radio').val(),parent_lable:$('#parent_lable').val(),lable:$('#lable').val()},
+                    data: {title:$('#title_').val(),radio:$('#radio').val(),parent_lable:$('#parent_lable').val(),lable:$('#lable').val(),id_product:$('#id_product').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

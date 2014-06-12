@@ -8,6 +8,7 @@ include('header.php');
                <div class="navbar navbar-default background-orange">
                   <ul class="nav nav-stacked">
 			   <?php 
+			   $this->load->model('producthomemodel');
 			   foreach($list_cate as $cate)
 			   {
 			   		$cate_detail = $this->catehomemodel->list_cate_lable($cate['id_cate']);
@@ -17,9 +18,18 @@ include('header.php');
                      <?php echo $cate['title'];?>	               </a>
                      <ul class="dropdown-menu">
 					 	<?php foreach($cate_detail as $c_dt)
-						{?>
+						{
+							if($c_dt['product']==0)
+							{
+							?>
                         <li><a href="<?php echo base_url();?>san-pham/c/<?php echo $c_dt['id_cate']?>-<?php echo mb_strtolower(url_title(removesign($c_dt['title']))) ?>"><?php echo $c_dt['title'];?> </a></li>
-						<?Php } ?>
+						<?Php } else {
+							
+							$product_detail = $this->producthomemodel->product_detail($c_dt['product']);
+							
+							?> 
+						<li><a href="<?php echo base_url();?>san-pham/<?php echo $product_detail[0]['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_detail[0]['title']))) ?>"><?php echo $c_dt['title'];?> </a></li>
+						<?php }} ?>
                      </ul>
                   </li>
                <?php } ?>   

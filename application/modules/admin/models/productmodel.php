@@ -18,6 +18,13 @@ class Productmodel extends CI_Model
         $query = $this->db->query($sql);
         return count($query->result_array());
     }
+    //
+    public function list_product_cate()
+    {
+        $sql ="SELECT * FROM product";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
     public function delete_product($id)
     {
         $this->db->delete('product',array('id_product'=>$id));
