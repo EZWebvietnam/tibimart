@@ -52,4 +52,6 @@ include('header.php')
             </div>
          </div>
          <!-- /.row -->                
-         <?php include('footer.php');?>
+         <?php 
+		 include('widget.php');
+		 include('footer.php');?>

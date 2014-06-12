@@ -67,10 +67,10 @@
                </ul>
                <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
                   <form class="navbar-form" role="search"
-                     action="/application/product/search">
+                     action="tim-kiem" method="get">
                      <div class="input-group">
                         <input type="text" class="form-control" placeholder="Tìm kiếm"
-                           name="search" id="srch-term"
+                           name="key" id="srch-term"
                            value="">
                         <div class="input-group-btn">
                            <button class="btn btn-default" type="submit">

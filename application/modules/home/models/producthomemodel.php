@@ -111,5 +111,19 @@ class Producthomemodel extends CI_Model
         $query = $this->db->query($sql);
         return count($query->result_array());
 	}
+	public function list_product_list_search($key,$number,$offset)
+	{
+		$number = intval($number);
+		$offset = intval($offset);
+		$sql="SELECT *,product.title as title_product FROM {$this->_name} WHERE title LIKE '%$key%' OR content LIKE '%$key%' LIMIT ?,?";
+		$query = $this->db->query($sql,array($offset,$number));
+		return $query->result_array();
+	}
+	public function count_product_list_search($key)
+	{
+		$sql="SELECT * FROM {$this->_name} WHERE title LIKE'%$key%' OR content LIKE '%$key%'";
+		$query = $this->db->query($sql);
+		return count($query->result_array());
+	}
 }
 ?>

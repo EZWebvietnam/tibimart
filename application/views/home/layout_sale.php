@@ -32,18 +32,32 @@
       </div>
       <div class="navbar navbar-default">
          <ul class="nav nav-stacked">
-            HỖ TRỢ TRỰC TUYẾN  <br>
-            <?php 
-               foreach($list_yahoo as $yahoo_)
-               {
-               
-               ?>
-            <a href="ymsgr:sendim?<?php echo $yahoo_['nick']?>"><img border="0" align="middle" alt="Chát với Mr. Thi" src="http://opi.yahoo.com/online?u=<?php echo $yahoo_['nick']?>&amp;m=g&amp;t=1" /></a>
-            <span class="name">&nbsp;&nbsp;<?php echo $yahoo_['name']?></span> <span class="phone">
-            &nbsp;&nbsp;<?php echo $yahoo_['phone']?></span><br>                    
-            <?php } ?>
-         </ul>
+			   <center><b><font size="3">HỖ TRỢ TRỰC TUYẾN</font></b></center>  <br>
+			   <?php 
+            		foreach($list_yahoo as $yahoo_)
+            		{
+					
+            		?>
+                   <a href="ymsgr:sendim?<?php echo $yahoo_['nick']?>"><img border="0" align="middle" alt="Chát với Mr. Thi" src="http://opi.yahoo.com/online?u=<?php echo $yahoo_['nick']?>&amp;m=g&amp;t=1" /></a>
+                            <b><font color="red"><span class="name">&nbsp;&nbsp;<?php echo $yahoo_['name']?></span> <span class="phone">
+                                &nbsp;&nbsp;<?php echo $yahoo_['phone']?></span></font></b><br>                    
+                	<?php } ?>
+               </ul>
       </div>
+	  <div class="navbar navbar-default">
+			<center>
+               <ul class="nav nav-stacked">
+			   <!-- Histats.com  START  (standard)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="free web stats" ><script  type="text/javascript" >
+try {Histats.start(1,2696468,4,432,112,75,"00011111");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2696468&101" alt="free web stats" border="0"></a></noscript>
+<!-- Histats.com  END  --> 
+               </ul>
+			   </center>
+            </div>
    </div>
    <div class="col-md-9 col-lg-9 col-sm-9">
       <div class="row">
@@ -94,5 +108,6 @@
 <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/jquery.contenthover.min.js"></script><script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/script.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/jquery.contenthover.min.js"></script>                
 <?php 
+include('widget.php');
    include('footer.php');
    ?>

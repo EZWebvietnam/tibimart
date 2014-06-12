@@ -126,5 +126,6 @@ include('header.php');
 	  }
 	  </script>        
 <?php 
+include('widget.php');
 include('footer.php');
 ?>

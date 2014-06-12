@@ -42,7 +42,7 @@ $route['default_controller'] = "home/index";
 $route['trang-chu'] = "home/home/index";
 $route['huong-dan-thanh-toan'] = "home/home/payment";
 $route['gio-hang']="home/product/cart";
-
+$route['tim-kiem']="home/product/list_product_search/$1";
 $route['hoi-dap']="home/faq/list_faq";
 $route['lien-he']="home/home/contact";
 $route['khuyen-mai']="home/faq/list_sale";
