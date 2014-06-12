@@ -37,7 +37,7 @@
 						   {
 						   	$price = $product_detail[0]['price'];
 						   }
-							if(!empty($product_detail_sale))
+							if(!empty($product_detail_sale) && $product_detail_sale[0]['percent']!=0)
 							{
 							
 						   ?>
@@ -90,6 +90,14 @@
                <!--</div>-->
                <div class="row voffset2">
                   <div class="col-md-12 col-lg-12 col-sm-12">
+                  	<?php 
+                  	if(!empty($product_detail_sale))
+                  	{
+					
+                  	?>
+                  	Khuyến mại:<br>
+                  	<img width="100" height="100" src="<?php echo base_url();?>file/uploads/sale_off.jpg"/><b><i>Sản phẩm này nằm trong chương trình khuyến mại <?php echo $product_detail_sale[0]['title']?>. Vui lòng click <a target="__blank" href="<?php echo base_url();?>khuyen-mai/km<?php echo $product_detail_sale[0]['id']?>-<?php echo mb_strtolower(url_title(removesign($product_detail_sale[0]['title'])))?>"><?php echo $product_detail_sale[0]['title']?></a> để biết thêm thông tin chi tiết</i></b>
+                  	<?php } ?>
                     <?php echo $product_detail[0]['content']?>
                   </div>
                </div>

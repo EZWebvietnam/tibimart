@@ -93,7 +93,7 @@ Histats.track_hits();} catch(err){};
 						<img class="text-center" src="<?php echo base_url();?>file/uploads/no_image.gif"   height="150" "alt="">
 						<?php } ?>
 						<?php 
-						if(!empty($product_sale))
+						if(!empty($product_sale) && $product_sale[0]['percent']!=0)
 						   {
 						   	
 						?>

@@ -197,7 +197,7 @@ class Productadmin extends MY_Controller {
 				// resize image
 				$this->image_lib->resize();
 				*/
-				$file = $this->resize_image(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$this->input->post('file'));
+				$file = $this->input->post('file');
                 $data_save = array(
                     'title' => $this->input->post('title'),
                     'price' => $this->input->post('cost'),

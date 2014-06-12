@@ -84,7 +84,8 @@ class Product extends MY_Controller
 				$data_save = array('id_product' =>$id_product,'quantity'   =>$quantity,'price'      =>$price,'total_price'=>$total_price,'ip'         =>$ip,'create_date'=>strtotime('now'));
 				$this->cartmodel->update_cart($cart_detail[0]['id'],$data_save);
 			}
-			redirect($_SERVER['HTTP_REFERER']);
+			//redirect($_SERVER['HTTP_REFERER']);
+			redirect(base_url().'thanh-toan');
 		}
 	}
 	public function list_product($id_cate = null)
