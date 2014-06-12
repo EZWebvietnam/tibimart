@@ -284,7 +284,7 @@ class Product extends MY_Controller
 				$data_save_order_detail = array();
 			}
 			
-			$this->_send_email('order','nguyentruonggiang91@gmail.com','nguyentruonggiang91@gmail.com',$data_insert,'Thông tin đơn hàng');
+			$this->_send_email('order','tibimarthcm@gmail.com','tibimarthcm@gmail.com',$data_insert,'Thông tin đơn hàng');
 			
 			$this->cartmodel->delete_cart_ip($ip);
 			
