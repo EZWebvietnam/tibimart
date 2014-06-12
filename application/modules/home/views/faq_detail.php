@@ -3,7 +3,7 @@
  <?php echo $faq_detail[0]['question'];?>
  <strong>TRẢ LỜI</strong><br />
   <?php echo $faq_detail[0]['answer'];?>
-  <iframe src="//www.facebook.com/plugins/like.php?href=<?php echo full_url_($_SERVER);?>;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=21&amp;appId=771797639499496" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+  <div class="fb-like" data-href="<?php echo full_url_($_SERVER);?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                   <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <g:plusone></g:plusone>
  </div>
