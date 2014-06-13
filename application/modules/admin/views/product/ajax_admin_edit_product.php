@@ -31,7 +31,7 @@
 			<tr>
                 <td class="label">Loại sản phẩm</td>
                 <td colspan="3">
-                    <select name="category" id="category">
+                    <select name="category" id="id_category">
 					<?php 
 					foreach($list_cate as $cate)
 					{
@@ -97,7 +97,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title').val(),category:$('#category').val(),cost:$('#cost').val(),file:$('#file').val(),content:content},
+                    data: {title:$('#title').val(),category:$('#id_category').val(),cost:$('#cost').val(),file:$('#file').val(),content:content},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,
