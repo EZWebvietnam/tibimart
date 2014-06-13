@@ -68,7 +68,20 @@ class Productadmin extends MY_Controller {
             show_404();
             exit;
         }
-        $this->productmodel->delete_product($id);
+		$detail = $this->productmodel->view_product($id);
+		if(empty($detail))
+		{
+			show_404();
+			exit;
+		}
+		else
+		{
+        	$this->productmodel->delete_product($id);
+			if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$detail[0]['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$detail[0]['image']) && $detail[0]['image']!='')
+			{
+				unlink(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$detail[0]['image']);
+			}
+		}
         $array = array('error' => 0, 'msg' => "Xóa thành công");
         echo json_encode($array);
     }
@@ -85,8 +98,17 @@ class Productadmin extends MY_Controller {
         }
         $array = $this->input->post('ar_id');
         foreach ($array as $k => $v) {
+			$detail = $this->productmodel->view_product($v);
             $this->productmodel->delete_product($v);
             $this->productmodel->delete_user_product($v);
+			if(!empty($detail))
+			{
+				if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$detail[0]['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$detail[0]['image']) && $detail[0]['image']!='')
+				{
+					unlink(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$detail[0]['image']);
+				}
+			}
+			
         }
         $array = array('error' => 0, 'msg' => "Xóa thành công");
         echo json_encode($array);
@@ -181,6 +203,10 @@ class Productadmin extends MY_Controller {
         if ($this->input->post()) {
             $file = $this->input->post('file');
             if ($file != '') {
+				if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$detail[0]['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$detail[0]['image']) && $detail[0]['image']!='')
+				{
+					unlink(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$detail[0]['image']);
+				}
             	/*
 				$new_file = time();
 				$config['image_library'] = 'gd2';
