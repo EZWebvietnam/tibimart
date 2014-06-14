@@ -17,6 +17,7 @@ class Catehomemodel extends CI_Model
 	}
 	public function list_cate_lable($id_lable)
 	{
+		$id_lable = intval($id_lable);
 		$this->db->select();
 		$this->db->where('lable',$id_lable);
 		$this->db->order_by('title ASC');

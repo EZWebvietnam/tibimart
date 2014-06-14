@@ -12,12 +12,14 @@ class Cartmodel extends CI_Model
     }
     public function check_cart($ip,$id_product)
     {
+    	$id_product = intval($id_product);
         $sql ='SELECT * FROM cart WHERE ip = ? AND id_product = ?';
         $query = $this->db->query($sql,array($ip,$id_product));
         return $query->result_array();
     }
     public function check_cart_id($id)
     {
+    	$id = intval($id);
         $sql ='SELECT * FROM cart WHERE id  = ?';
         $query = $this->db->query($sql,array($id));
         return $query->result_array();
