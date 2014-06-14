@@ -11,6 +11,7 @@ class Catehomemodel extends CI_Model
 	{
 		$this->db->select();
 		$this->db->where('lable',0);
+		$this->db->order_by('title ASC');
 		$query = $this->db->get("$this->_name");
 		return $query->result_array();
 	}
@@ -18,6 +19,7 @@ class Catehomemodel extends CI_Model
 	{
 		$this->db->select();
 		$this->db->where('lable',$id_lable);
+		$this->db->order_by('title ASC');
 		$query = $this->db->get("$this->_name");
 		return $query->result_array();
 	}
