@@ -16,7 +16,7 @@ include('header.php');
 			   <?php 
 			   if(count($rand_image)>1)
 			   {
-			   	for($i = 1;$i<count($rand_image);$i++)
+			   	for($i = 1;$i<=count($rand_image);$i++)
 				{
 			   ?>
                <li data-target="#carousel-slideshow-generic" data-slide-to="<?php echo $i;?>" class=""></li>
@@ -30,12 +30,12 @@ include('header.php');
                   </a>
                </div>
 			   <?php 
-			   for($i = 1;$i<count($rand_image);$i++)
+			   foreach($rand_image as $image_slide)
 			   {
 			   ?>
                <div class="item ">
                   <a href="" target="_blank">
-                  <img src="<?php echo base_url();?>file/uploads/slide/<?php echo $rand_image[$i]['image']?>" width="1140" height="400" alt="KICH BAN">
+                  <img src="<?php echo base_url();?>file/uploads/slide/<?php echo $image_slide['image']?>" width="1140" height="400" alt="TIBIMART">
                   </a>
                </div>
                <?php } ?>
