@@ -52,6 +52,7 @@ class Faq extends MY_Controller
 		}
 		$faq_detail = $this->faqhomemodel->faq_detail($id);
 		$this->data['faq_detail'] = $faq_detail;
+		$this->data['header']['title'] = $faq_detail[0]['title'].'-Tibimart.com';
 		$this->data['main_content']='faq_detail';
 		$this->load->view('home/layout_product_detail',$this->data);
 	}

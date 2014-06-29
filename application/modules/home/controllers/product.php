@@ -47,7 +47,8 @@ class Product extends MY_Controller
 				show_404();
 				exit;
 			}
-
+			
+			$this->data['header']['title'] = $product_detail[0]['title'].'-Tibimart.com';
 			$this->data['product_detail'] = $product_detail;
 			$this->data['main_content'] = 'detail_product_view';
 			$this->load->view('home/layout_product_detail',$this->data);
@@ -347,6 +348,7 @@ class Product extends MY_Controller
 		$detail_sale = $this->producthomemodel->detail_sale($id);
 		$this->data['detail_sale'] = $detail_sale;
 		$this->data['faq_detail'][0]['title'] = $detail_sale[0]['title'];
+		$this->data['header']['title'] = $detail_sale[0]['title'].'-Tibimart.com';
 		$this->data['main_content'] = 'sale_detail';
 		$this->load->view('home/layout_product_detail',$this->data);
 	}
