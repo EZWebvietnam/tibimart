@@ -114,7 +114,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
  {
      ?> 
 	   <script>
-	  	var app_main_url = 'http://tibimart.com/beta';
+	  	var app_main_url = 'http://tibimart.com';
 	  </script>
 	 <?php
  }
