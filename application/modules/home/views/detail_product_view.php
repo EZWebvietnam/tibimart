@@ -9,11 +9,11 @@
 					 ?>
                         <img class="text-center"
                            src="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image']?>"
-                           height="300" width="300"/>
+                           height="385" width="400"/>
 						<?php } else { ?>
 						<img class="text-center"
-                           src="<?php echo base_url();?>file/uploads/no_image.gif" width="300"
-                           height="300" />
+                           src="<?php echo base_url();?>file/uploads/no_image.gif" width="400"
+                           height="385" />
 						<?php } ?>
                      </div>
                      

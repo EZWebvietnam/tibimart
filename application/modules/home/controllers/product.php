@@ -120,6 +120,7 @@ class Product extends MY_Controller
 		}
 		$num_pages = ceil($config['total_rows'] / $config['per_page']);
 		$array_sv  = $this->producthomemodel->list_product_list($id_cate,$config['per_page'], $page1);
+		$this->data['header']['title'] = $this->data['cate_detail_'][0]['title'].'- Tibimart.com';
 		$this->data['total_page'] = $num_pages;
 		$this->data['offset'] = $page1;
 		$this->data['page'] = $page;
@@ -147,6 +148,7 @@ class Product extends MY_Controller
 		}
 		$num_pages = ceil($config['total_rows'] / $config['per_page']);
 		$array_sv  = $this->producthomemodel->list_product_list_all($config['per_page'], $page1);
+		$this->data['header']['title'] = 'Sản phẩm - Tibimart.com';
 		$this->data['total_page'] = $num_pages;
 		$this->data['offset'] = $page1;
 		$this->data['page'] = $page;
