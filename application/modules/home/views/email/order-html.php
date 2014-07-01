@@ -27,6 +27,9 @@
 					 	Tổng số tiền:<?php echo $total_price_order;?>
 					 </p>
 					 <p>
+					 	Ghi chú: <?php echo $note;?>
+					 </p>
+					 <p>
 					 	Mọi thông tin chi tiết xin đăng nhập phần quản trị tại link <a href="<?php echo base_url();?>quan-tri">Quản trị</a>
 					 </p>
                      <p>Chúc quý khách hàng có một ngày tốt lành tại  <a href="<?php echo base_url();?>" style="font-size:14px;color:#004c92;text-decoration:none" target="_blank">TibiMart.com</a>! </p>

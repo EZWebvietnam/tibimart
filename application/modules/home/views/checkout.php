@@ -157,6 +157,14 @@
                                           <a id="chi_duong" href="#">Chỉ đường</a>
                                        </td>
                                     </tr>
+									<tr>
+                                       <td style="height: 30px">
+                                         Ghi chú:
+                                       </td>
+                                       <td>
+                                          <textarea name="ghi_chu" style="margin: 0px; width: 305px; height: 136px;"></textarea>
+                                       </td>
+                                    </tr>
                                     <tr>
                                        <td>
                                        </td>

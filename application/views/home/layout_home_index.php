@@ -166,6 +166,31 @@ Histats.track_hits();} catch(err){};
 			   </center>
             </div>
          </div>
+		 <div id="mystickytooltip" class="stickytooltip">
+        <div id="ContentPlaceHolder1_pnlTooltip">
+		<div id="sticky1-1"  class="atip">
+            <div class="toptool">
+                <div class="product-name">
+                    Thang nhôm Hasegawa-Japan RS-21</div>
+                <div class="clear">
+                </div>
+                <div class="price">
+                    2.350.000 VNĐ</div>
+                <div class="status">
+                    <span id="ContentPlaceHolder1_ctl01_rptTooltip_lblStatus_0" style="color:#4E7032;font-weight:bold;">Có hàng</span>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            
+            <div class="clear">
+            </div>
+            <div class="contenttool">
+                <div class=tab_content id=chitiet style=display:><p><a href=http://www.xeday.vn/products/19/Thang-nhom.aspx><span style=color:#000000;>Thang nhôm</span></a><span style=color:#000000;> Hasegawa-Ja</span>pan RS-21</p><p><strong>&nbsp;Mô tả sản phấm.</strong><br /><br />- Thang gấp 2 đoạn&nbsp; Hasegawa&nbsp; RS-21&nbsp; trọng lượng 10.4 kg, chiều cao duỗi thẳng 4.19m,<br />chiều cao chữ A 1.99m, tải trọng cho phép 100kg, tiêu chuẩn Japan .<br /><br /><span style=color:#ff0000;><strong>- Sản xuất : Trung Quốc</strong></span></p></div><p>&nbsp;</p>
+            </div>
+        </div>
+
+</div></div>
          <div class="col-lg-9 col-sm-9 col-md-9" id="feature-product">
             <h1 class="text-center text-color-orange">SẢN PHẨM NỔI BẬT</h1>
 			<div class="row">

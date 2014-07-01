@@ -286,6 +286,7 @@ class Product extends MY_Controller
 			$fullname  = $this->input->post('fullname');
 			$phone     = $this->input->post('phone');
 			$address   = $this->input->post('address');
+			$note   = $this->input->post('address');
 			$lat       = LAT;
 			$long      = LONG;
 			$dis       = distance($this->input->post('lat'),$this->input->post('lng'),$lat,$long,'K');
@@ -306,7 +307,7 @@ class Product extends MY_Controller
 			}
 			
 			//$total_money_cart = $total_money_cart + $total_fee;
-			$data_insert      = array('full_name'        =>$fullname,'address'          =>$address,'phone'            =>$phone,'email'            =>$email,'status'           =>0,'fee_ship'         =>$total_fee,'ship_type'        =>$ship_type,'create_date'      =>strtotime('now'),'total_price_order'=>$total_money_cart);
+			$data_insert      = array('full_name'        =>$fullname,'address'          =>$address,'phone'            =>$phone,'email'            =>$email,'status'           =>0,'fee_ship'         =>$total_fee,'ship_type'        =>$ship_type,'create_date'      =>strtotime('now'),'total_price_order'=>$total_money_cart,'note'=>$note);
 			$id_order = $this->orderhomemodel->insert_order($data_insert);
 			foreach($list_cart as $value)
 			{
