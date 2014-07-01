@@ -64,5 +64,25 @@ class Addressadmin extends MY_Controller
 			$this->load->view('address/ajax_admin_add_address',$this->data);
 		}
 	}
+	public function delete($id)
+    {
+        if(empty($id))
+        {
+            show_404();
+            exit;
+        }
+       	$this->faqmodel->delete_address($id);
+        $array = array('error' => 0, 'msg' => "Xóa thành công");
+        echo json_encode($array);
+    }
+    public function deletes()
+    {
+        $array = $this->input->post('ar_id');
+        foreach ($array as $k => $v) {
+        	$this->faqmodel->delete_address($v);
+        }
+        $array = array('error' => 0, 'msg' => "Xóa thành công");
+        echo json_encode($array);
+    }
 }
 ?>
