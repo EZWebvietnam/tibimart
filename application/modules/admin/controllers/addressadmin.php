@@ -41,5 +41,28 @@ class Addressadmin extends MY_Controller
 			$this->load->view('address/ajax_admin_edit_address',$this->data);
 		}	
 	}
+	public function add()
+	{
+		if($this->input->post())
+		{
+			$address = $this->input->post('address');
+			$phone = $this->input->post('phone');
+			$khu_vuc = $this->input->post('khu_vuc');
+			$data_save = array('address'=>$address,'phone'=>$phone,'type'=>$khu_vuc);
+			$id = $this->faqmodel->insert_address($data_save);
+			if($id>0)
+			{
+				echo json_encode(array('error'=>'0','msg'=>'Thêm thành công'));	
+			}
+			else
+			{
+				echo json_encode(array('error'=>'1','msg'=>'Thêm thất bại'));
+			}
+		}
+		else
+		{
+			$this->load->view('address/ajax_admin_add_address',$this->data);
+		}
+	}
 }
 ?>

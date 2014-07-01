@@ -52,8 +52,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                <div class="col-md-9 col-sm-8 col-lg-9">
                   <div class="pull-right">
                      <ul class="nav nav-pills">
+					 <?php 
+					  $this->load->model('faqhomemodel');
+					  $list_phia_nam = $this->faqhomemodel->about(1);
+					  ?>
                         <li class="active"><a href="#"><i
-                           class="glyphicon glyphicon-phone"></i>&nbsp;Hotline : <?php echo $about[0]['phone']?></a></li>
+                           class="glyphicon glyphicon-phone"></i>&nbsp;Hotline : <?php echo $list_phia_nam[0]['phone']?></a></li>
                         <li><a
                            href="<?php echo base_url();?>gio-hang"><i
                            class="glyphicon glyphicon-shopping-cart"></i>&nbsp;Giỏ hàng</a></li>

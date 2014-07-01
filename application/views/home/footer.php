@@ -13,18 +13,36 @@
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6 ovhand-extra-2">
                   <h3>Phía Bắc</h3>
+				  <?php 
+				  $this->load->model('faqhomemodel');
+				  $list_phia_bac = $this->faqhomemodel->about(2);
+				  ?>
                   <ul class="list-unstyled">
-                     <li><span class="glyphicon glyphicon-envelope"></span>&nbsp;tibimarthcm@gmail.com</li>
-                     <li><span class="glyphicon glyphicon-phone"></span>&nbsp;<?php echo $about[1]['phone']?></li>
-                     <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($about[1]['address']);?></li>
+				  		<?php 
+						foreach($list_phia_bac as $l_p_bac)
+						{
+						
+						?>
+                     
+                     <li><span class="glyphicon glyphicon-phone"></span>&nbsp;<?php echo $l_p_bac['phone']?></li>
+                     <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($l_p_bac['address']);?></li>
+					 <li>-----------</li>
+					 <?php } ?>
                   </ul>
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6 ovhand-extra-3">
                   <h3>Phía Nam</h3>
                   <ul class="list-unstyled">
-                     <li><span class="glyphicon glyphicon-envelope"></span>&nbsp;tibimarthcm@gmail.com</li>
-                     <li><span class="glyphicon glyphicon-phone"></span>&nbsp;<?php echo $about[0]['phone']?></li>
-                     <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($about[0]['address']);?></li>
+				  	<?php 
+				  	$list_phia_nam = $this->faqhomemodel->about(1);
+					foreach($list_phia_nam as $l_p_nam)
+						{
+				  	?>
+                     
+                     <li><span class="glyphicon glyphicon-phone"></span>&nbsp;<?php echo $l_p_nam['phone']?></li>
+                     <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($l_p_nam['address']);?></li>
+					 <li>-----------</li>
+					 <?php } ?>
                   </ul>
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6">

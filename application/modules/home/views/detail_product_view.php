@@ -75,13 +75,6 @@
 			    
                <div class="row voffset2">
                   <div class="col-md-12 col-lg-12 col-sm-12">
-				  QRCODE: <script type="text/javascript">
-
-									var uri=window.location.href;
-
-									document.write("<img src='http://api.qrserver.com/v1/create-qr-code/?data="+encodeURI(uri)+"&size=100x100'/>");
-
-									</script>
                   	<?php 
                   	if(!empty($product_detail_sale))
                   	{

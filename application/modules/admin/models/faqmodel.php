@@ -78,13 +78,17 @@ class Faqmodel extends CI_Model
 		$this->db->where('id',$id);
 		$this->db->update('about',$data);
 	}
+	public function insert_address(array $data)
+	{
+		$this->db->insert('about',$data);
+		return $this->db->insert_id();
+	}
 	public function detail_address($id)
 	{
 		$this->db->select();
 		$this->db->where('id',$id);
 		$query = $this->db->get("about");
 		return $query->result_array();
-		
 	}
 	//Image Slide
 	public function list_image($number,$offset)

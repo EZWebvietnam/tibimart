@@ -20,7 +20,7 @@
                      <div class="h-title">Địa chỉ</div>
                   </td>
                   <td style="float: right;">
-                     
+                     <div class="addlink"><a href="<?php echo base_url(); ?>admin/addressadmin/add" class="add grouped_elements"><span>Thêm mới</span></a></div>
                   </td>
                </tr>
             </table>
