@@ -90,6 +90,10 @@ class Faqmodel extends CI_Model
 		$query = $this->db->get("about");
 		return $query->result_array();
 	}
+	public function delete_address($id)
+	{
+		$this->db->delete('about',array('id'=>$id));	
+	}
 	//Image Slide
 	public function list_image($number,$offset)
     {
