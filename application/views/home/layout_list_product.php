@@ -88,9 +88,9 @@ Histats.track_hits();} catch(err){};
 						if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_rand['image']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/product/'.$product_rand['image']) && $product_rand['image']!='')
 						{
 						?>
-                        <img class="text-center" src="<?php echo base_url();?>file/uploads/product/<?php echo $product_rand['image']?>"   height="150" "alt="">
+                        <img class="text-center" src="<?php echo base_url();?>file/uploads/product/<?php echo $product_rand['image']?>"   height="250" alt="" width="250">
 						<?php } else { ?>
-						<img class="text-center" src="<?php echo base_url();?>file/uploads/no_image.gif"   height="150" "alt="">
+						<img class="text-center" src="<?php echo base_url();?>file/uploads/no_image.gif"   height="150" alt="">
 						<?php } ?>
 						<?php 
 						if(!empty($product_sale) && $product_sale[0]['percent']!=0)
@@ -107,7 +107,7 @@ Histats.track_hits();} catch(err){};
                      <div class="caption">
                         <h4 class='text-center text-primary'>
                            <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title_product'])));?>">
-                           <?php echo sub_string($product_rand['title_product'],20);?>   					       </a>
+                           <?php echo $product_rand['title_product'];?>   					       </a>
                         </h4>
                         <p class="bottom-align">
                            <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title_product'])));?>" class="btn btn-warning" role="button">
