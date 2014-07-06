@@ -9,11 +9,11 @@
 					 ?>
                         <img class="text-center"
                            src="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image']?>"
-                           height="250" width="400"/>
+                           height="300"/>
 						<?php } else { ?>
 						<img class="text-center"
-                           src="<?php echo base_url();?>file/uploads/no_image.gif" width="400"
-                           height="250" />
+                           src="<?php echo base_url();?>file/uploads/no_image.gif"
+                           height="300" />
 						<?php } ?>
                      </div>
                      
@@ -22,6 +22,13 @@
                      <form name="addToCart" id='myform' method="post" action="<?php echo full_url_($_SERVER);?>">
                         <div class="well">
                            <h1><?php echo $product_detail[0]['title']?></h1>
+						   <div class="text-muted">
+                            <span class="glyphicon glyphicon-eye-open"></span>Lượt xem : 41                            &nbsp;&nbsp;<span class="glyphicon glyphicon-signal"></span>Số lượng : 1000
+                        </div>
+						<h4>
+                            <strong>Nhà sản xuất :</strong>  </h4>
+							<h4>
+                            <strong>Mã hàng :</strong>  </h4>
                            <?php 
 						   $product_detail_sale = $this->producthomemodel->get_sale_off_product($product_detail[0]['id_product']);
 						   if(!empty($product_detail_sale))
