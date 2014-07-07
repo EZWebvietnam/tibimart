@@ -6,7 +6,7 @@
       <meta vary="User-Agent" />
 	<meta name="title" content="<?php echo $header['title']?>" />
 	<meta name="ROBOTS" content="<?php echo $header['robots']?>" />
-	<meta name="google-site-verification" content="WlnQ-eKKwnhOw3DVTstkNknRMNzlwQ8tHc3znnVab6o" />
+	<meta name="google-site-verification" content="3bw3BmjnA7mCnF4wmWLh1HTdWVFT-ClaJ0uxDDy3_r4" />
 	<link rel="canonical" href="<?php echo full_url_($_SERVER);?>"/>		
 	<meta property="og:url" content="<?php echo full_url_($_SERVER);?>" />
 	<meta property="og:title" content="<?php echo $header['title']?>" />
