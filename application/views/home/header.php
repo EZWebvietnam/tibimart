@@ -3,7 +3,6 @@
    <head>
       <meta charset="utf-8">
       <title><?php echo $header['title']?></title>
-      <meta vary="User-Agent" />
 	<meta name="title" content="<?php echo $header['title']?>" />
 	<meta name="ROBOTS" content="<?php echo $header['robots']?>" />
 	<meta name="google-site-verification" content="3bw3BmjnA7mCnF4wmWLh1HTdWVFT-ClaJ0uxDDy3_r4" />
