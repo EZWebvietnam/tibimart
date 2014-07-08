@@ -69,6 +69,12 @@
                     <textarea name="descriptions" id="descriptions"> <?php echo $setting['description'] ?></textarea>
                 </td>
             </tr>
+			<tr>
+                <td class="label">Giới thiệu</td>
+                <td colspan="3">
+                    <textarea  style="margin: 2px; height: 137px; width: 139px;" name="gioithieu" id="gioithieu"> <?php echo nl2br($setting['gioithieu']) ?></textarea>
+                </td>
+            </tr>
             <tr>
                 <td class="label">Logo</td>
                 <td colspan="3">

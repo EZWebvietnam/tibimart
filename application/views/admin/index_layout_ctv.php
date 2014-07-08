@@ -151,6 +151,12 @@ $time_start = microtime_float();
                                                                    Tài khoản NH
                                                                 </a>
                                                             </li>
+															<li class="main">
+                                                                <a href="<?php echo base_url(); ?>admin/congdungadmin/list_congdung" rel="congdung" class="v_link">
+                                                                    <div><img src="http://quanlybanhang.360vnit.com/icon/customers.png" alt=""></div>
+                                                                   Công dụng
+                                                                </a>
+                                                            </li>
                                                             <li class="main">
                                                                 <a href="<?php echo base_url(); ?>admin/yahooadmin/list_yahoo" rel="yahoo" class="v_link">
                                                                     <div><img width="32" height="32" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/icon/yahoo.png" alt=""></div>

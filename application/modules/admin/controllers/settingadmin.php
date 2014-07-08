@@ -50,8 +50,10 @@ class Settingadmin extends MY_Controller {
             $description = $desc->item(0)->nodeValue;
             $tit = $employee->getElementsByTagName("title");
             $title = $tit->item(0)->nodeValue;
+			$gt = $employee->getElementsByTagName("gioithieu");
+            $gioithieu = $gt->item(0)->nodeValue;
             $data_setting = array('author' => $name, 'publisher' => $pubs, 'copyright' => $cop, 'robots' => $robots,
-                'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title);
+                'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title,'gioithieu'=>$gioithieu);
         }
         $this->data['setting'] = $data_setting;
         $this->load->view('setting/ajax_admin_get_setting', $this->data);
@@ -59,6 +61,7 @@ class Settingadmin extends MY_Controller {
 
     public function edit() {
         if ($this->input->post()) {
+			
             $doc = new DOMDocument();
             $link = PATH_FOLDER.ROT_DIR . 'setting.xml';
             $doc->load($link);
@@ -85,6 +88,8 @@ class Settingadmin extends MY_Controller {
             $root->appendChild($doc->createElement('rating', $this->input->post('rating')));
             $root->appendChild($doc->createTextNode("\n"));
             $root->appendChild($doc->createElement('keywords', $this->input->post('keyword')));
+            $root->appendChild($doc->createTextNode("\n"));
+			$root->appendChild($doc->createElement('gioithieu', $this->input->post('gioithieu')));
             $root->appendChild($doc->createTextNode("\n"));
             $file = $this->input->post('file');
             if($file!='')
@@ -135,8 +140,10 @@ class Settingadmin extends MY_Controller {
                 $description = $desc->item(0)->nodeValue;
                 $tit = $employee->getElementsByTagName("title");
                 $title = $tit->item(0)->nodeValue;
+				$gt = $employee->getElementsByTagName("gioithieu");
+                $gioithieu = $gt->item(0)->nodeValue;
                 $data_setting = array('author' => $name, 'publisher' => $pubs, 'copyright' => $cop, 'robots' => $robots,
-                    'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title);
+                    'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title,'gioithieu'=>$gioithieu);
             }
             $this->data['setting'] = $data_setting;
             $this->load->view('setting/ajax_admin_edit_setting', $this->data);

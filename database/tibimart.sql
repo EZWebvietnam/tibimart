@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2014 at 04:58 PM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- Generation Time: Jul 08, 2014 at 05:20 AM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `tibimart`
 --
-CREATE DATABASE IF NOT EXISTS `tibimart` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `tibimart`;
 
 -- --------------------------------------------------------
 
@@ -34,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `about` (
   `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `about`
@@ -42,7 +40,8 @@ CREATE TABLE IF NOT EXISTS `about` (
 
 INSERT INTO `about` (`id`, `address`, `phone`, `type`) VALUES
 (1, 'Số 40, Đường 13, Quốc lộ 13, P.Hiệp Bình Chánh, Q.Thủ Đức, TPHCM\n- Hotline: 01679 478 959\nEmail: tibimarthcm@gmail.com\n **Cơ sở 2: -Số 7/134 Liên Khu 5-6, P.Bình Hưng Hòa B, Q.Bình Tân, TP.HCM\n- Hotline: 0906 888 545\nEmail: antawavn@gmail.com', '0906.888.545 hoặc 01679.478.959', 1),
-(2, 'Số 666 Đường Xóm Chùa, Phố Dâu, Cổ Thành - TX Chí Linh - Hải Dương\nHotline: 01644 304 255\nEmail: dinhthi92715@gmail.com', '01675.317.435 hoặc 01644.304.255', 2);
+(2, 'Số 666 Đường Xóm Chùa, Phố Dâu, Cổ Thành - TX Chí Linh - Hải Dương\nHotline: 01644 304 255\nEmail: dinhthi92715@gmail.com', '01675.317.435 hoặc 01644.304.255', 2),
+(3, 'sss', 'ssss', 2);
 
 -- --------------------------------------------------------
 
@@ -59,7 +58,14 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `create_date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `id_product`, `quantity`, `price`, `total_price`, `ip`, `create_date`) VALUES
+(1, 8, 1, 100000, 100000, '127.0.0.1', 1404208290);
 
 -- --------------------------------------------------------
 
@@ -72,7 +78,6 @@ CREATE TABLE IF NOT EXISTS `cate_product` (
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `show_home` int(11) NOT NULL,
   `lable` int(11) NOT NULL,
-  `product` int(11) NOT NULL,
   PRIMARY KEY (`id_cate`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
@@ -80,12 +85,12 @@ CREATE TABLE IF NOT EXISTS `cate_product` (
 -- Dumping data for table `cate_product`
 --
 
-INSERT INTO `cate_product` (`id_cate`, `title`, `show_home`, `lable`, `product`) VALUES
-(1, 'Sản phẩm làm đẹp', 0, 5, 1),
-(2, 'Sản phẩm làm đẹp', 0, 5, 0),
-(4, 'ssss', 1, 5, 0),
-(5, 'Danh mục sản phẩm', 0, 0, 0),
-(6, 'Test', 0, 0, 0);
+INSERT INTO `cate_product` (`id_cate`, `title`, `show_home`, `lable`) VALUES
+(1, 'Sản phẩm làm đẹp', 1, 5),
+(2, 'Sản phẩm làm đẹp', 0, 5),
+(4, 'ssss', 1, 5),
+(5, 'Danh mục sản phẩm', 0, 0),
+(6, 'Test', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -107,27 +112,69 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('074781b71ea89b974eabb6cb2c145cf5', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583969, ''),
-('1166c0dde9abf3cd92ad55052ef64bb6', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402584836, ''),
-('14d4fbf473d1fe7419e3a7d826116722', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583528, ''),
-('41f9b982726a68b413bc12f703f8e6ec', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402584841, ''),
-('42d6c6913425d631c5a27d0b149261c6', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583488, ''),
-('48e43b55fa260243dcf010cde731909f', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583642, ''),
-('492223f604e4d15c152409eb9a0aae21', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583537, ''),
-('632e67920f02f05aa978287f5f8c271c', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583968, ''),
-('6b2ff2b13e800b4181b048e6a0b44698', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583959, ''),
-('7943c8ea799d830b0047922818855034', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583529, ''),
-('87aa487572c96671f1485e3bbdd24b5c', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583532, ''),
-('901f3c610ee225676daeaf0a42f186b9', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583581, ''),
-('987a2e119ddfe1a600536f49075ca658', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583245, ''),
-('9ae6b9a437c4ec59378662a29db30715', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583332, ''),
-('a15a316133c9fdcc30f77462dd9801df', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583247, ''),
-('aabab3aa900f96f9a6106532062fb19b', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583706, ''),
-('b9079f33ee6cbffa9e4077b9a91cc5b7', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583233, ''),
-('ba87544f40ee0e7cb36b6c94dcb51b95', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583240, ''),
-('db1f3e37813607cc93fb731a3a5c09e6', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583734, ''),
-('db674fc969b563d51f4a20cfaffe60db', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583485, ''),
-('e6d23c239e2826366151f351a5969fe7', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (K', 1402583499, '');
+('02bdd6c856a41134d58ee2f260749cb4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788707, ''),
+('061b5ae37ecb7acba8d7d50a6cf33ed8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785326, ''),
+('0c8184fa7e6730dbc7d62d6b911982e0', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788710, ''),
+('171adc3c3d1f7344d7eb7dfec49441b3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785298, ''),
+('1a4c5580aa714e85fc63ed6c41c4433b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786009, ''),
+('1d394270dc9065df4125dd9bdb516f6c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788824, ''),
+('1d77f5d0b44cb816fcc1f597f87128d8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786333, ''),
+('22898dba9cb972ccc76d6d9cf3a93862', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785989, ''),
+('2f06592e39aa7a9149818841d8862162', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786503, ''),
+('39617b68414ba623aaa3813624d483a5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785963, ''),
+('438b4623be297fc16120ad5948323639', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785273, ''),
+('496b6953e0f531000039bb9fbb188bea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786507, ''),
+('4a88812494ef4dede024cb65fb3b8695', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786475, ''),
+('57f1017e15341ed652ac358b5672c88d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786475, ''),
+('599c0f9cf952fc83f465e33f278f3a21', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785967, ''),
+('5bf38756dc78846a512e4f607367c86f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786314, ''),
+('636e807897ae10316cdb1aeb7be54d0c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786014, ''),
+('72938163175f7bc72fe496ac5f1903e6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786501, ''),
+('72f1b559185e68f058af5f0f3dbbb99d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786014, ''),
+('7834df8c119e96114fde20f6dcbc9625', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786513, ''),
+('7b123e589b13070d9de74fb2e31fadde', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786504, ''),
+('7e0951bf692ef68b7b562f87cc90baf0', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786016, ''),
+('7f434d27b926e5f039feb11da5a0e10b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788780, ''),
+('7ff40de8a67f8217fb008979eb52e8ae', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785311, ''),
+('8655c25fc1c75cdbf48d818c493e37d3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786511, ''),
+('867d00796274f4e9bd8ea4e6e99cbce7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788826, ''),
+('8694eba995acb3fa89e65571b36fa517', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785669, ''),
+('8bcfe2864c2f2e17d842d14866761ee3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785487, ''),
+('8e873b85af451e4c2ab8d1237079b054', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788707, ''),
+('9d6450131c01419330f00f49d0ea6a8f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786310, ''),
+('b0e69986c4487a8103c5ec7b4bd0d326', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786510, ''),
+('b65ca29992d1112fff1f70e9f72fa4e3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785373, ''),
+('b7b0ed00b829c37fc78689fe35d189c3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785963, ''),
+('bd73de9e88ab1b975464de22ac28cba3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788876, ''),
+('c121400dee2655d7f145ceb5608424ab', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786037, ''),
+('c9de6518fb232826c9a262cbd09e35fd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786335, ''),
+('e12502dea01a9c4b870cc642003a9a67', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788824, ''),
+('e2585ca51c10fea62a2947790b7bbb0f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404788712, ''),
+('e4d4471aa34fc5d1d695404f85e5de93', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786333, ''),
+('eb263a0683b4328f44b3b8360c2559c8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404786227, ''),
+('ec8693de1f0cbcf70d95b2f49e77bde7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785972, ''),
+('f5d23eb7b531f6d7b404da7d5657a389', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785433, ''),
+('f66ac7d9dbb42200fd8d13b17f7b0ca1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1404785281, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cong_dung`
+--
+
+CREATE TABLE IF NOT EXISTS `cong_dung` (
+  `id_cd` int(11) NOT NULL AUTO_INCREMENT,
+  `title_cd` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `content_cd` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_cd`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `cong_dung`
+--
+
+INSERT INTO `cong_dung` (`id_cd`, `title_cd`, `content_cd`) VALUES
+(3, '1', '<p>1</p>\n');
 
 -- --------------------------------------------------------
 
@@ -167,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -198,6 +245,7 @@ CREATE TABLE IF NOT EXISTS `order_customer` (
   `status` int(11) NOT NULL,
   `fee_ship` int(11) NOT NULL,
   `ship_type` int(11) NOT NULL,
+  `note` text COLLATE utf8_unicode_ci NOT NULL,
   `total_price_order` int(11) NOT NULL,
   `create_date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
@@ -207,10 +255,10 @@ CREATE TABLE IF NOT EXISTS `order_customer` (
 -- Dumping data for table `order_customer`
 --
 
-INSERT INTO `order_customer` (`id`, `full_name`, `address`, `phone`, `email`, `status`, `fee_ship`, `ship_type`, `total_price_order`, `create_date`) VALUES
-(1, 'giangbeo91', '173 Chu Văn An, 26, Bình Thạnh, Hồ Chí Minh, Việt Nam', '01667039939', 'nguyentruonggiang91@gmail.com', 0, 0, 1, 355555, 1402377922),
-(2, 'giangbeo91', '173 Chu Văn An, 26, Bình Thạnh, Hồ Chí Minh, Việt Nam', '01667039939', 'nguyentruonggiang91@gmail.com', 0, 0, 1, 355555, 1402377929),
-(3, 'giangbeo91', '173 Chu Văn An, 26, Bình Thạnh, Hồ Chí Minh, Việt Nam', '01667039939', 'nguyentruonggiang91@gmail.com', 0, 0, 1, 160000, 1402543235);
+INSERT INTO `order_customer` (`id`, `full_name`, `address`, `phone`, `email`, `status`, `fee_ship`, `ship_type`, `note`, `total_price_order`, `create_date`) VALUES
+(1, 'giangbeo91', '173 Chu Văn An, 26, Bình Thạnh, Hồ Chí Minh, Việt Nam', '01667039939', 'nguyentruonggiang91@gmail.com', 0, 0, 1, '', 355555, 1402377922),
+(2, 'giangbeo91', '173 Chu Văn An, 26, Bình Thạnh, Hồ Chí Minh, Việt Nam', '01667039939', 'nguyentruonggiang91@gmail.com', 0, 0, 1, '', 355555, 1402377929),
+(3, 'giangbeo91', '173 Chu Văn An, 26, Bình Thạnh, Hồ Chí Minh, Việt Nam', '01667039939', 'nguyentruonggiang91@gmail.com', 0, 0, 1, '', 160000, 1402543235);
 
 -- --------------------------------------------------------
 
@@ -276,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `stock` int(11) NOT NULL,
   `create_date` int(11) NOT NULL,
   PRIMARY KEY (`id_product`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `product`
@@ -297,7 +345,9 @@ INSERT INTO `product` (`id_product`, `title`, `content`, `id_cate`, `price`, `im
 (12, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
 (13, 'Kem đánh răng trẻ em', 'Giá bán	120,000 VND\r\nTrạng thái	Hết hàng\r\nNhãn hiệu	Signal\r\nNơi sản xuất	Đức', 1, '100000', 'effd3139933d4bf287c27846d725e616.JPG', 11, 0),
 (14, 'sss', '<p>ssssssssss</p>\n', 2, '111111', '58d2eca970d596818ad4855c85c1755e.jpg', 100, 1401946622),
-(15, 'ssss', '', 0, '0', '0', 100, 1402125763);
+(15, 'ssss', '', 0, '0', '0', 100, 1402125763),
+(17, 's1 222', '<p>ssssss</p>\n', 1, '222222', '0498db6b5567c5d413a244d327eaa8b9.jpg', 100, 1402627782),
+(18, 'sssss', '<p>ssssssss</p>\n', 0, '0', '0', 100, 1404785963);
 
 -- --------------------------------------------------------
 
@@ -390,7 +440,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `yahoo`, `skype`, `bank`, `stk`, `sex`, `province`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `birthday`, `img`, `role`, `login_id`, `total_like`, `account_type`) VALUES
-(1, 'giangbeo', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$2a$08$av0xeUt7pYqEymtq0ENPN.65FaINVis/64LmuohuAdt8ND8exqVs2', 'nguyentruonggiang91@gmail.com', 1, '', '', '', '', 0, 79, 0, NULL, NULL, NULL, NULL, 'ad9147af77ea0a71cb1045eb8c144048', '::1', '2014-06-12 16:27:19', '2014-03-21 08:25:47', '2014-06-12 14:27:19', '', '', 1, '', 0, 0),
+(1, 'giangbeo', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$2a$08$av0xeUt7pYqEymtq0ENPN.65FaINVis/64LmuohuAdt8ND8exqVs2', 'nguyentruonggiang91@gmail.com', 1, '', '', '', '', 0, 79, 0, NULL, NULL, NULL, NULL, 'ad9147af77ea0a71cb1045eb8c144048', '127.0.0.1', '2014-07-08 04:08:01', '2014-03-21 08:25:47', '2014-07-08 02:08:01', '', '', 1, '', 0, 0),
 (2, 'BeoBeBoi', 'Nguyên Trường Giang', '01667039939', 'HCM', '$2a$08$av0xeUt7pYqEymtq0ENPN.65FaINVis/64LmuohuAdt8ND8exqVs2', 'beobeboi91@gmail.com', 0, 's', 's', 'Vietcombank', '0341005245193', 0, 1, 0, NULL, NULL, NULL, NULL, 'ab37717509a2f5b5e6c4335e8e960710', '::1', '0000-00-00 00:00:00', '2014-03-27 16:59:43', '2014-03-28 04:13:34', '2014/03/05', '', 4, '', 0, 0);
 
 -- --------------------------------------------------------

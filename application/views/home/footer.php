@@ -5,10 +5,7 @@
             <div class="row">
                <div class="col-lg-3 col-md-3 col-sm-6">
                   <h3>TibiMart là gì?</h3>
-                  <p class="text-justify text-muted">Chúng tôi chuyên cung cấp các
-                     sản phẩm, dịch vụ theo tiêu chí tiện lợi, thiết thực và giá cả
-                     tốt nhất cho quý khách hàng. Với TibiMart, mỗi khách hàng là một
-                     người bạn thâm giao.
+                  <p class="text-justify text-muted"><?php echo $header['gioithieu']?>
                   </p>
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6 ovhand-extra-2">

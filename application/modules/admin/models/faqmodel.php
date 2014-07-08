@@ -122,5 +122,38 @@ class Faqmodel extends CI_Model
 		$query = $this->db->query($sql,array($id));
 		return $query->result_array();	
 	}
+	//Cong dung
+	public function list_cd($number,$offset)
+    {
+		$sql = "SELECT * FROM cong_dung LIMIT ?,?";
+		$query = $this->db->query($sql,array($offset,$number));
+		return $query->result_array();
+	}
+	public function count_cd()
+	{
+		$sql = "SELECT * FROM cong_dung";
+		$query = $this->db->query($sql);
+		return count($query->result_array());
+	}
+	public function addcd(array $data)
+	{
+		$this->db->insert('cong_dung',$data);
+		return $this->db->insert_id();
+	}
+	public function cd_detail($id)
+	{
+		$sql = "SELECT * FROM cong_dung WHERE id_cd = ?";
+		$query = $this->db->query($sql,array($id));
+		return $query->result_array();	
+	}
+	public function update_cd($id,array $data)
+	{
+		$this->db->where('id_cd',$id);
+		$this->db->update('cong_dung',$data);
+	}
+	public function delete_cd($id)
+	{
+		$this->db->delete('cong_dung',array('id_cd'=>$id));
+	}
 }
 ?>

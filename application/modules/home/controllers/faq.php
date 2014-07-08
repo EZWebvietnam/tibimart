@@ -35,7 +35,7 @@ class Faq extends MY_Controller
         $this->data['total'] = $config['total_rows'];
         $this->data['list'] = $array_sv;
 		$this->data['cate_detail_'][0]['title']='Hỏi đáp';
-		 $this->load->view('home/layout_faq',$this->data);
+		$this->load->view('home/layout_faq',$this->data);
 	}
 	public function faq_detail($id = null)
 	{
@@ -97,7 +97,39 @@ class Faq extends MY_Controller
         $this->data['total'] = $config['total_rows'];
         $this->data['list'] = $array_sv;
 		$this->data['cate_detail_'][0]['title']='Khuyến mại';
-		 $this->load->view('home/layout_sale',$this->data);
+		$this->load->view('home/layout_sale',$this->data);
+	}
+	public function list_congdung()
+	{
+		$this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(3);
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->faqhomemodel->count_list_cd();
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+        $num_pages = ceil($config['total_rows'] / $config['per_page']);
+        $array_sv = $this->faqhomemodel->list_cd($config['per_page'], $page1);
+        $this->data['total_page'] = $num_pages;
+        $this->data['offset'] = $page1;
+        $this->data['page'] = $page;
+        $this->data['total'] = $config['total_rows'];
+        $this->data['list'] = $array_sv;
+		$this->data['cate_detail_'][0]['title']='Công dụng';
+		$this->load->view('home/layout_congdung',$this->data);
+	}
+	public function congdung_detail($id)
+	{
+		$this->data['congdung_detail'] = $this->faqhomemodel->cd_detail($id);
+		$this->data['header']['title'] = $this->data['congdung_detail'][0]['title_cd'].'-Tibimart.com';
+		$this->data['main_content']='congdung_detail';
+		$this->load->view('home/layout_product_detail',$this->data);
 	}
 }
 ?>

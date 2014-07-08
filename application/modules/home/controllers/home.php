@@ -154,8 +154,8 @@ class Home extends MY_Controller {
     	$this->load->model('orderhomemodel');
     	$this->data['faq_detail'][0]['title'] = 'Hướng dẫn thanh toán';
     	$this->data['list_payment'] = $this->orderhomemodel->load_payment();
-		$this->data['main_content']='thanh_toan_view';
-		$this->load->view('home/layout_faq_detail',$this->data);
+		$this->data['main_content']='thanh_toan_v';
+		$this->load->view('home/layout_product_detail',$this->data);
 	}
 	public function contact()
 	{

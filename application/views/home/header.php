@@ -77,6 +77,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                      href="<?php echo base_url();?>san-pham">Sản phẩm</a>
                   </li>
 				  <li><a
+                     href="<?php echo base_url();?>cong-dung">Công dụng</a>
+                  </li>
+				  <li><a
+                     href="<?php echo base_url();?>huong-dan-thanh-toan">Phương thức thanh toán</a>
+                  </li>
+				  <li><a
                      href="<?php echo base_url();?>khuyen-mai">Khuyến mại</a>
                   </li>
                   <li><a

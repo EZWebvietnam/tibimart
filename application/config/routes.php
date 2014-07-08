@@ -41,6 +41,9 @@
 $route['default_controller'] = "home/index";
 $route['trang-chu'] = "home/home/index";
 $route['huong-dan-thanh-toan'] = "home/home/payment";
+$route['cong-dung'] = "home/faq/list_congdung";
+$route['cong-dung/page/(:any)'] = "home/faq/list_congdung";
+$route['cd/(:any)-(:any)'] = "home/faq/congdung_detail/$1";
 $route['gio-hang']="home/product/cart";
 $route['tim-kiem']="home/product/list_product_search/$1";
 $route['hoi-dap']="home/faq/list_faq";

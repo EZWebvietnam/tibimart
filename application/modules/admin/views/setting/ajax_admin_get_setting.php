@@ -50,6 +50,7 @@
                            <th>Logo</th>
                            <th>Icon</th>
                            <th>Description</th>
+						   <th>Giới thiệu</th>
                            <th class="publish">Chức năng</th>
                         </tr>
                      </thead>
@@ -67,6 +68,7 @@
                         <td><?php echo $setting['logo']?></td>
                         <td><?php echo $setting['icon']?></td>
                         <td><?php echo sub_string($setting['description'],20)?></td>
+						  <td><?php echo sub_string($setting['gioithieu'],20)?></td>
                         <td align="center">
                             <a class="grouped_elements" href="<?php echo base_url();?>admin/settingadmin/edit" title="Sửa"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/edit.png"></a>
                         </td>

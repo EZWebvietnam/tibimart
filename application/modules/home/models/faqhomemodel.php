@@ -63,5 +63,27 @@ class Faqhomemodel extends CI_Model
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+	// Cong dung
+	public function list_cd($number,$offset)
+	{
+		$number = intval($number);
+		$offset = intval($offset);
+		$sql="SELECT * FROM cong_dung  LIMIT $offset,$number";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+	public function count_list_cd()
+	{
+		$sql="SELECT * FROM cong_dung";
+		$query = $this->db->query($sql);
+		return count($query->result_array());
+	}
+	public function cd_detail($id)
+	{
+		
+		$sql="SELECT * FROM cong_dung WHERE id_cd = ?";
+		$query = $this->db->query($sql,array($id));
+		return $query->result_array();
+	}
 }
 ?>
