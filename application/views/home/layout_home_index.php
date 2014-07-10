@@ -169,13 +169,19 @@ Histats.track_hits();} catch(err){};
 		 
          <div class="col-lg-9 col-sm-9 col-md-9" id="feature-product">
             <h1 class="text-center text-color-orange">SẢN PHẨM NỔI BẬT</h1>
-			<div class="row">
+			
 			<?php 
 			$i = 1;
+			$array = array('1','4','6','7','10');
 			foreach($list_product_random as $product_rand)
 			{
+				
 				$product_sale = $this->producthomemodel->get_sale_off_product($product_rand['id_product']);
+				if(in_array($i,$array))
+				{
 			?>
+			<div class="row">
+			<?php } ?>
                <div class="col-md-4 col-lg-4 col-sm-4">
                   <div class="thumbnail " >
                      <div class="myhovercontent">
@@ -229,11 +235,19 @@ Histats.track_hits();} catch(err){};
 			   if($i%3==0)
 			   {
 			   ?>
-               <br>
+               </div>
 			   <?php
 			   } 
-              $i++;} ?>
-            </div>
+			  if($i<3)
+			  {
+			  	$i++;
+			  }
+			  else
+			  {
+			  	$i = 1;	
+			  }
+              } ?>
+            
          </div>
          <!--end tag div-row category and feature product-->
          <!--partner slide-->
