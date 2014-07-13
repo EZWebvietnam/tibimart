@@ -22,6 +22,18 @@
                     <input id="title" type="text" value="<?php echo $detail_product[0]['title'] ?>" name ="title"/>
                 </td>
             </tr>
+            <tr>
+                <td class="label">Mã</td>
+                <td colspan="3">
+                    <input id="code" type="text" value="<?php echo $detail_product[0]['code'] ?>" name="code"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Nhà SX</td>
+                <td colspan="3">
+                    <input id="manu" type="text" value="<?php echo $detail_product[0]['manu'] ?>" name="manu"/>
+                </td>
+            </tr>
 			<tr>
                 <td class="label">Giá</td>
                 <td colspan="3">
@@ -54,6 +66,12 @@
                     <input type='hidden' name='file' id='file'/>
                 </td>
             </tr>
+             <tr>
+                <td class="label">Lưu ý</td>
+                <td colspan="3">
+                   <textarea name="luu_y" id="luu_y" style="margin: 2px; width: 1070px; height: 60px;"><?php echo nl2br($detail_product[0]['luu_y']) ?></textarea>
+                </td>
+            </tr>
             <tr>
                 <td class="label">Nội dung</td>
                 <td colspan="3">
@@ -71,7 +89,7 @@
             </tr>
             <td></td>
             
-            </tr>
+           
 
         </table>
     </form>
@@ -97,7 +115,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title').val(),category:$('#id_category').val(),cost:$('#cost').val(),file:$('#file').val(),content:content},
+                    data: {title:$('#title').val(),category:$('#id_category').val(),cost:$('#cost').val(),file:$('#file').val(),content:content,code:$('#code').val(),manu:$('#manu').val(),luu_y:$('#luu_y').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

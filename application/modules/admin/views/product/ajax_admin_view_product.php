@@ -22,6 +22,18 @@
                 </td>
             </tr>
             <tr>
+                <td class="label">Mã</td>
+                <td colspan="3">
+                    <?php echo $detail_product[0]['code'] ?>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Nhà SX</td>
+                <td colspan="3">
+                    <?php echo $detail_product[0]['manu'] ?>
+                </td>
+            </tr>
+            <tr>
                 <td class="label">Giá</td>
                 <td colspan="3">
                     <?php echo $detail_product[0]['price'] ?>
@@ -31,6 +43,12 @@
                 <td class="label">Năm</td>
                 <td colspan="3">
                     <?php echo $detail_product[0]['year'] ?>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Lưu ý</td>
+                <td colspan="3">
+                   <textarea name="luu_y" id="luu_y" style="margin: 2px; width: 1070px; height: 60px;"><?php echo nl2br($detail_product[0]['luu_y']) ?></textarea>
                 </td>
             </tr>
             <tr>

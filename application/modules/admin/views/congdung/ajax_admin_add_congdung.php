@@ -23,6 +23,15 @@
                 </td>
             </tr>
             <tr>
+                <td class="label">Hình ảnh</td>
+                <td colspan="3">
+                    <input type="file" name="userfile"/>
+                    <input id="userfile" name="userfile" type="button" class="bt100" value="Upload" onClick="fileUpload(this.form,'<?php echo base_url();?>upload/do_congdung','upload','<?php echo base_url(); ?>admin/congdungadmin/add'); return false;">
+                   <div id="upload"></div>
+                    <input type='hidden' name='file' id='file'/>
+                </td>
+            </tr>
+            <tr>
                 <td class="label">Nội dung</td>
                 <td colspan="3">
                     <textarea id="editor2" name="content"></textarea>
@@ -56,7 +65,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title_').val(),content:content},
+                    data: {title:$('#title_').val(),content:content,file:$('#file').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

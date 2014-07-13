@@ -23,6 +23,18 @@
                 </td>
             </tr>
             <tr>
+                <td class="label">Mã</td>
+                <td colspan="3">
+                    <input id="code" type="texbox" name="code"/>
+                </td>
+            </tr>
+             <tr>
+                <td class="label">Nhà SX</td>
+                <td colspan="3">
+                    <input id="manu" type="texbox" name="manu"/>
+                </td>
+            </tr>
+            <tr>
                 <td class="label">Giá</td>
                 <td colspan="3">
                     <input id="cost_" type="texbox" name="cost"/>
@@ -49,6 +61,12 @@
                     <input id="userfile" name="userfile" type="button" class="bt100" value="Upload" onClick="fileUpload(this.form,'<?php echo base_url();?>upload/do_upload','upload','<?php echo base_url(); ?>admin/productadmin/add'); return false;">
                    <div id="upload"></div>
                     <input type='hidden' name='file' id='file'/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Lưu ý</td>
+                <td colspan="3">
+                   <textarea name="luu_y" id="luu_y" style="margin: 2px; width: 1070px; height: 60px;"></textarea>
                 </td>
             </tr>
             <tr>
@@ -95,7 +113,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title_').val(),cost:$('#cost_').val(),file:$('#file').val(),content:content,year:$('#year_').val(),category:$('#id_category').val()},
+                    data: {title:$('#title_').val(),cost:$('#cost_').val(),file:$('#file').val(),content:content,year:$('#year_').val(),category:$('#id_category').val(),code:$('#code').val(),manu:$('#manu').val(),luu_y:$('#luu_y').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

@@ -26,9 +26,10 @@
                             <span class="glyphicon glyphicon-eye-open"></span>Lượt xem : 41                            &nbsp;&nbsp;<span class="glyphicon glyphicon-signal"></span>Số lượng : 1000
                         </div>
 						<h4>
-                            <strong>Nhà sản xuất :</strong>  </h4>
+                            <strong>Nhà sản xuất :</strong> <?php echo $product_detail[0]['manu'];?>  </h4>
 							<h4>
-                            <strong>Mã hàng :</strong>  </h4>
+                            <strong>Mã hàng :</strong> <?php echo $product_detail[0]['code'];?> </h4>
+                            
                            <?php 
 						   $product_detail_sale = $this->producthomemodel->get_sale_off_product($product_detail[0]['id_product']);
 						   if(!empty($product_detail_sale))
@@ -50,6 +51,8 @@
                            <h4>
                               <strong>Giá bán:</strong> <?php echo number_format($price)?> ₫
                            </h4>
+                           <h4>
+                            <strong>Lưu ý :</strong> <?php echo $product_detail[0]['luu_y'];?> </h4>
                            <input type="hidden" name='price'
                               value='179000' />
                            <p>

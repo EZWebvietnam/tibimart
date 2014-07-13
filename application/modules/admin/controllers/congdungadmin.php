@@ -53,7 +53,9 @@ class Congdungadmin extends MY_Controller
 		{
 			$title = $this->input->post('title');
 			$content = $this->input->post('content');
-			$data_save = array('title_cd'=>$title,'content_cd'=>$content);
+			$file = $this->input->post('file');
+			$data_save = array('title_cd'=>$title,'content_cd'=>$content,'file'=>$file);
+			
 			$id = $this->faqmodel->addcd($data_save);
 			if($id>0)
 			{
@@ -77,7 +79,16 @@ class Congdungadmin extends MY_Controller
 		{
 			$title = $this->input->post('title');
 			$content = $this->input->post('content');
-			$data_save = array('title_cd'=>$title,'content_cd'=>$content);
+			$file = $this->input->post('file');
+			if($file!='')
+			{
+				$data_save = array('title_cd'=>$title,'content_cd'=>$content,'file'=>$file);
+			}
+			else
+			{
+				$data_save = array('title_cd'=>$title,'content_cd'=>$content);	
+			}
+			
 			$id = $this->faqmodel->update_cd($id,$data_save);
 			$data = array('error' => '0', 'msg' => 'Update thành công');
             echo json_encode($data);

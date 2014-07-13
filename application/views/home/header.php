@@ -45,7 +45,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          <div class="container">
             <div class="row">
                <div class="col-md-3 col-sm-4 col-lg-3 logo">
-                  <a href="/"><img width="152" height="90"
+                  <a href="/"><img width="130" height="130"
                      src="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" /></a>
                </div>
                <div class="col-md-9 col-sm-8 col-lg-9">

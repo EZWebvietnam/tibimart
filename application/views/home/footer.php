@@ -1,3 +1,4 @@
+
 <!--                 footer -->
          <!--footer info-->
          <div class="clearfix visible-xs"></div>
@@ -20,9 +21,9 @@
 						{
 						
 						?>
-                     
+                      <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($l_p_bac['address']);?></li>
                      <li><span class="glyphicon glyphicon-phone"></span>&nbsp;<?php echo $l_p_bac['phone']?></li>
-                     <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($l_p_bac['address']);?></li>
+                    
 					 <li>-----------</li>
 					 <?php } ?>
                   </ul>
@@ -35,9 +36,9 @@
 					foreach($list_phia_nam as $l_p_nam)
 						{
 				  	?>
-                     
+                      <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($l_p_nam['address']);?></li>
                      <li><span class="glyphicon glyphicon-phone"></span>&nbsp;<?php echo $l_p_nam['phone']?></li>
-                     <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<?php echo nl2br($l_p_nam['address']);?></li>
+                    
 					 <li>-----------</li>
 					 <?php } ?>
                   </ul>
@@ -46,7 +47,50 @@
                   
                  
                   <h3>Facebook</h3>
-                  <a target="_blank" href="https://www.facebook.com/tibimarthcm" data-toggle="tooltip" data-placement="top" title="Tibimart Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+                  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAZ7yY9gsPiLaOraj_eOfWd0e9Bidg0dPc&sensor=true" type="text/javascript"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript">
+    var map;
+    var infowindow;
+    var marker = new Array();
+    var old_id = 0;
+    var infoWindowArray = new Array();
+    var infowindow_array = new Array();
+    function initialize(a, b, c) {
+        var defaultLatLng = new google.maps.LatLng(a, b);
+        var myOptions = { zoom: 16, center: defaultLatLng, scrollwheel: false, mapTypeId: google.maps.MapTypeId.ROADMAP };
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); map.setCenter(defaultLatLng);
+        var arrLatLng = new google.maps.LatLng(a, b);
+        infoWindowArray[1161] = c;
+        //infoWindowArray[1161] = '<div class="inforCty"><b>HaThanhAuto.com – THẾ GIỚI PHỤ TÙNG Ô TÔ NHẬP KHẨU-DẦU NHỚT PHỤ GIA Ô TÔ.</b></div><div class="infoAdd"><b>Địa chỉ</b>: Số 2 ngõ 77 Xuân la – Tây hồ - Hà Nội</div><div class="infoAdd"><b>Điện thoại: 0942 399 366 </b><br/> <b>  Website: </b><a href="http://www.hathanhauto.com" target="_blank">www.hathanhauto.com</a></div>';
+        loadMarker(arrLatLng, infoWindowArray[1161], 1161);
+        moveToMaker(1161);
+    }
+
+    function loadMarker(myLocation, myInfoWindow, id) {
+        marker[id] = new google.maps.Marker({ position: myLocation, map: map, visible: true });
+        var popup = myInfoWindow; infowindow_array[id] = new google.maps.InfoWindow({ content: popup });
+        google.maps.event.addListener(marker[id], 'mouseover', function () {
+            if (id == old_id) return;
+            if (old_id > 0) infowindow_array[old_id].close();
+            infowindow_array[id].open(map, marker[id]);
+            old_id = id;
+        });
+        google.maps.event.addListener(infowindow_array[id], 'closeclick', function () { old_id = 0; });
+    }
+
+    function moveToMaker(id) {
+        var location = marker[id].position; map.setCenter(location);
+        if (old_id > 0) infowindow_array[old_id].close();
+        infowindow_array[id].open(map, marker[id]);
+        old_id = id;
+    }
+</script>
+<?php 
+$title_web = $header['title'];
+?>
+                  <div id='map_canvas' style='width: 290px; height: 286px'></div><script type='text/javascript'>initialize(10.85628,106.722957,"<div class='inforCty' style='text-align:left;'><b>TIBIMART.COM<br/><?php echo $title_web ?></b><div class='infoAdd'><b>Địa chỉ</b>: Số 40, Đường 13, Quốc lộ 13, P.Hiệp Bình Chánh, Q.Thủ Đức, TPHCM</div><div class='infoAdd'>Hotline: <span style='color:Red;'><b>0906.888.545 hoặc 01679.478.959</b></span> <br/> <b>  Website: </b><a href='http://tibimart.com/' target='_blank'>www.tibimart.com</a></div></div>")</script>
                </div>
             </div>
          </div>

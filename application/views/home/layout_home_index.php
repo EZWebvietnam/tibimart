@@ -208,7 +208,7 @@ Histats.track_hits();} catch(err){};
                      <div class="caption">
                         <h4 class='text-center text-primary'>
                            <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title'])));?>">
-                           <?php echo $product_rand['title'];?>   					       </a>
+                           <?php echo sub_string($product_rand['title'],25);?>   					       </a>
                         </h4>
                         <p class="bottom-align">
                            <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title'])));?>" class="btn btn-warning" role="button">

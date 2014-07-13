@@ -84,7 +84,14 @@ Histats.track_hits();} catch(err){};
          <div class="col-md-12 col-lg-12 col-sm-12">
             <div class="media">
                <a class="pull-left" href="<?php echo base_url();?>cd/<?php echo $faq_l['id_cd']?>-<?php echo mb_strtolower(url_title(removesign($faq_l['title_cd'])))?>"> 
-               <img class="media-object img-thumbnail " width="150" height="150" src="<?php echo base_url();?>file/uploads/faq.png" alt="...">
+              <?php 
+						if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/congdung/'.$product_rand['file']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/congdung/'.$product_rand['file']) && $product_rand['file']!='')
+						{
+						?>
+               <img class="media-object img-thumbnail " width="150" height="150" src="<?php echo base_url();?>file/uploads/congdung/<?php echo $product_rand['file'];?>" alt="...">
+               <?php } else { ?>
+                <img class="media-object img-thumbnail " width="150" height="150" src="<?php echo base_url();?>file/uploads/faq.png" alt="...">
+               <?php } ?>
                </a>
                <div class="media-body">
                   <h4 class="media-heading"><a href="<?php echo base_url();?>cd/<?php echo $faq_l['id_cd']?>-<?php echo mb_strtolower(url_title(removesign($faq_l['title_cd'])))?>"><?php echo $faq_l['title_cd']?></a></h4>

@@ -28,7 +28,7 @@ include('header.php');
 							$product_detail = $this->producthomemodel->product_detail($c_dt['product']);
 							
 							?> 
-						<li><a href="<?php echo base_url();?>san-pham/<?php echo $product_detail[0]['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_detail[0]['title']))) ?>"><?php echo $c_dt['title'];?> </a></li>
+						<li><a href="<?php echo base_url();?>san-pham/<?php echo $product_detail[0]['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_detail[0]['title']))) ?>"><?php echo sub_string($c_dt['title'],25);?> </a></li>
 						<?php }} ?>
                      </ul>
                   </li>
@@ -113,7 +113,7 @@ Histats.track_hits();} catch(err){};
                      <div class="caption">
                         <h4 class='text-center text-primary'>
                            <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title_product'])));?>">
-                           <?php echo $product_rand['title_product'];?>   					       </a>
+                           <?php echo sub_string($product_rand['title_product'],25);?>   					       </a>
                         </h4>
                         <p class="bottom-align">
                            <a href="<?php echo base_url();?>san-pham/<?php echo $product_rand['id_product']?>-<?php echo mb_strtolower(url_title(removesign($product_rand['title_product'])));?>" class="btn btn-warning" role="button">

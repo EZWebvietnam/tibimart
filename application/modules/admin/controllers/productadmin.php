@@ -155,7 +155,10 @@ class Productadmin extends MY_Controller {
                 'image' => $this->input->post('file'),
 				'stock'=>100,
 				'create_date'=>strtotime('now'),
-				'id_cate'=>$this->input->post('category')
+				'id_cate'=>$this->input->post('category'),
+				'code'=>$this->input->post('code'),
+				'manu'=>$this->input->post('manu'),
+				'luu_y'=>$this->input->post('luu_y')
             );
 			if($this->input->post('file')!='')
 			{
@@ -229,14 +232,20 @@ class Productadmin extends MY_Controller {
                     'price' => $this->input->post('cost'),
                     'content' => $this->input->post('content'),
                     'image' => $file,
-					'id_cate'=>$this->input->post('category')
+					'id_cate'=>$this->input->post('category'),
+					'code'=>$this->input->post('code'),
+				'manu'=>$this->input->post('manu'),
+				'luu_y'=>$this->input->post('luu_y')
                 );
             } else {
                 $data_save = array(
                     'title' => $this->input->post('title'),
                     'price' => $this->input->post('cost'),
                     'content' => $this->input->post('content'),
-					'id_cate'=>$this->input->post('category')
+					'id_cate'=>$this->input->post('category'),
+					'code'=>$this->input->post('code'),
+				'manu'=>$this->input->post('manu'),
+				'luu_y'=>$this->input->post('luu_y')
                 );
             }
             $this->productmodel->update_product($id, $data_save);
