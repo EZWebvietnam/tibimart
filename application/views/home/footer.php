@@ -90,7 +90,7 @@
 <?php 
 $title_web = $header['title'];
 ?>
-                  <div id='map_canvas' style='width: 290px; height: 286px'></div><script type='text/javascript'>initialize(10.85628,106.722957,"<div class='inforCty' style='text-align:left;'><b>TIBIMART.COM<br/><?php echo $title_web ?></b><div class='infoAdd'><b>Địa chỉ</b>: Số 40, Đường 13, Quốc lộ 13, P.Hiệp Bình Chánh, Q.Thủ Đức, TPHCM</div><div class='infoAdd'>Hotline: <span style='color:Red;'><b>0906.888.545 hoặc 01679.478.959</b></span> <br/> <b>  Website: </b><a href='http://tibimart.com/' target='_blank'>www.tibimart.com</a></div></div>")</script>
+                  <div id='map_canvas' style='width: 290px; height: 286px'></div><script type='text/javascript'>initialize(10.830202,106.713257,"<div class='inforCty' style='text-align:left;'><b>TIBIMART.COM<br/>DẦU DỪA NGUYÊN CHẤT TIBI</b><div class='infoAdd'><b>Địa chỉ</b>: Số 40, Đường 13, Quốc lộ 13, P.Hiệp Bình Chánh, Q.Thủ Đức, TPHCM</div><div class='infoAdd'>Hotline: <span style='color:Red;'><b>0906.888.545 hoặc 01679.478.959</b></span> <br/> <b>  Website: </b><a href='http://tibimart.com/' target='_blank'>www.tibimart.com</a></div></div>")</script>
                </div>
             </div>
          </div>
