@@ -9,6 +9,7 @@ class Faq extends MY_Controller
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
+		parent::rand_sale();
 		//parent::about();
 		$this->load->model('faqhomemodel');
 	}

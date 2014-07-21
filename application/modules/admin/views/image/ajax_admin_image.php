@@ -32,6 +32,7 @@
                   </td>
                   <td style="float: right;">
                      <div class="addlink"><a href="<?php echo base_url(); ?>admin/imageadmin/add" class="add grouped_elements"><span>Thêm mới</span></a></div>
+					 <div class="addlink"><a href="<?php echo base_url(); ?>admin/imageadmin/addimage" class="add grouped_elements"><span>Thêm ảnh popup</span></a></div>
                   </td>
                </tr>
             </table>
@@ -40,7 +41,7 @@
                </div>
                <form action="<?php echo base_url();?>admin/imageadmin/deletes" method="post" accept-charset="utf-8" id="image_khoahoc">
                   <input type="hidden" id="page" value="0"/>
-                  <input type="hidden" id="callback" value="<?php echo base_url();?>admin/imageadmin/list_cate"/>
+                  <input type="hidden" id="callback" value="<?php echo base_url();?>admin/imageadmin/list_image"/>
                   <table class="admindata">
                      <thead>
                         <tr>
@@ -85,7 +86,7 @@
                         <tr>
                            <th class="checkbox"><input type="checkbox" name="sa" id="sa" onclick="check_chose('sa', 'ar_id[]', 'image_khoahoc')"></th>
                            <th class="id">Hình ảnh</th>
-						   
+						   <th class="id">Popup</th>
                            <th class="publish">Chức năng</th>
                         </tr>
                      </thead>
@@ -98,6 +99,10 @@
                         <td align="center"><input  type="checkbox" name="ar_id[]" value="<?php echo $product_ref['id']?>"></td>
 						
                         <td><img src="<?php echo base_url();?>file/uploads/slide/<?php echo $product_ref['image']?>" width="100" height="100"/></td>
+						 <td><?php 
+						 $array = array('1'=>'Có','0'=>'Không');
+						 echo $array[$product_ref['show_popup']];
+						 ?></td>
                         <td align="center">
                             
                             

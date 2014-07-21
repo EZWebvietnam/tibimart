@@ -21,8 +21,31 @@
       <link href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/css/style.css" media="screen" rel="stylesheet" type="text/css">
       <link href="<?php echo base_url();?>template/ezwebvietnam/home_tibimart/favicon.ico" rel="shortcut icon" type="image/x-icon" />
       <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/jquery.min.js"></script>
-	  <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/paging.js"></script>   </head>
+	  <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/paging.js"></script>   
+	  <link href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/popup/linhnguyen.css" media="screen" rel="stylesheet" type="text/css">
+	  <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/popup/jquery.popup.js"></script> 
+	  </head>
    <body>
+   <?php 
+   if(!empty($sale_list_rand))
+   {
+   ?>
+   <script type="text/javascript">
+			$(window).load(function() {
+			 //if(document.cookie.indexOf("adf") == -1)
+	       	 //{
+	            //document.cookie = "popunder1=adf";
+	            jQuery('#myModal').linhnguyen(jQuery('#myModal').data());
+	         //}
+			});
+		</script>
+   <div id="myModal" class="linhnguyen-modal" style="top: 300px !important;">
+			<a href="<?php echo $sale_list_rand[0]['url']?>">
+			<img width="600" height="450" src="<?php echo base_url();?>file/uploads/slide/<?php echo $sale_list_rand[0]['image']?>" />
+			</a>
+			<a class="close-linhnguyen-modal">X</a>
+		</div>	
+		<?php } ?>
    <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5SBRV2"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

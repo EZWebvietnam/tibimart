@@ -85,10 +85,10 @@ Histats.track_hits();} catch(err){};
             <div class="media">
                <a class="pull-left" href="<?php echo base_url();?>cd/<?php echo $faq_l['id_cd']?>-<?php echo mb_strtolower(url_title(removesign($faq_l['title_cd'])))?>"> 
               <?php 
-						if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/congdung/'.$product_rand['file']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/congdung/'.$product_rand['file']) && $product_rand['file']!='')
+						if(file_exists(PATH_FOLDER.ROT_DIR.'file/uploads/congdung/'.$faq_l['file']) && is_file(PATH_FOLDER.ROT_DIR.'file/uploads/congdung/'.$faq_l['file']) && $faq_l['file']!='')
 						{
 						?>
-               <img class="media-object img-thumbnail " width="150" height="150" src="<?php echo base_url();?>file/uploads/congdung/<?php echo $product_rand['file'];?>" alt="...">
+               <img class="media-object img-thumbnail " width="150" height="150" src="<?php echo base_url();?>file/uploads/congdung/<?php echo $faq_l['file'];?>" alt="...">
                <?php } else { ?>
                 <img class="media-object img-thumbnail " width="150" height="150" src="<?php echo base_url();?>file/uploads/faq.png" alt="...">
                <?php } ?>

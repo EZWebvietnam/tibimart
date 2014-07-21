@@ -38,6 +38,15 @@
                     <input id="exp_date" type="texbox" name="exp_date"/>
                 </td>
             </tr>
+			 <tr>
+                <td class="label">Hình ảnh</td>
+                <td colspan="3">
+                    <input type="file" name="userfile"/>
+                    <input id="userfile" name="userfile" type="button" class="bt100" value="Upload" onClick="fileUpload(this.form,'<?php echo base_url();?>upload/do_saleoff','upload','<?php echo base_url(); ?>admin/saleadmin/add'); return false;">
+                   <div id="upload"></div>
+                    <input type='hidden' name='file' id='file'/>
+                </td>
+            </tr>
             <tr>
                 <td class="label">Tiêu đề</td>
                 <td colspan="3">
@@ -83,7 +92,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {id_product:$('#id_product').val(),percent:$('#percent').val(),exp_date:$('#exp_date').val(),content:content,title:$('#title').val()},
+                    data: {id_product:$('#id_product').val(),file:$('#file').val(),percent:$('#percent').val(),exp_date:$('#exp_date').val(),content:content,title:$('#title').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

@@ -102,7 +102,39 @@ class Imageadmin extends MY_Controller
         $array = array('error' => 0, 'msg' => "Xóa thành công");
         echo json_encode($array);
     }
-
+	public function addimage()
+	{
+		if($this->input->post())
+		{
+			$file = $this->input->post('file');
+			$url = $this->input->post('url');
+			$show_popup = $this->input->post('show_popup');
+			if($file!='')
+			{
+				$data_save = array('image'=>$file,'url'=>$url,'show_popup'=>$show_popup);
+				$id = $this->faqmodel->insert_img($data_save);
+				if($id> 0)
+				{
+					$array = array('error'=>0,'msg'=>'Them thanh cong');
+          			echo json_encode($array);
+				}
+				else
+				{
+					$array = array('error'=>1,'msg'=>'Them that bai');
+          			echo json_encode($array);
+				}
+			}
+			else
+			{
+				$array = array('error'=>1,'msg'=>'Them that bai');
+          		echo json_encode($array);
+			}
+		}
+		else
+		{
+			$this->load->view('image/ajax_admin_image_pop',$this->data);
+		}
+	}
     public function deletes() {
         $array = $this->input->post('ar_id');
         foreach ($array as $k => $v) {

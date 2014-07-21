@@ -9,6 +9,7 @@ class Home extends MY_Controller {
 		parent::load_faq();
 		parent::load_header();
 		parent::load_yahoo();
+		parent::rand_sale();
 		//parent::about();
 		parent::rand_image();
     }

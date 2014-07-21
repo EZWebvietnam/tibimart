@@ -59,7 +59,7 @@ class Faqhomemodel extends CI_Model
 	}
 	public function rand_image()
 	{
-		$sql="SELECT * FROM image ORDER BY id DESC";
+		$sql="SELECT * FROM image WHERE show_popup = 0 ORDER BY id DESC";
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}

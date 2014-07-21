@@ -57,7 +57,8 @@ class Saleadmin extends MY_Controller
                 'percent'=>$this->input->post('percent'),
                 'exp_date'=>$this->input->post('exp_date'),
 				'title'=>$this->input->post('title'),
-				'content'=>$this->input->post('content')
+				'content'=>$this->input->post('content'),
+				'img'=>$this->input->post('file')
 				);
             $id = $this->salemodel->insert($data_save);
             if($id>0)

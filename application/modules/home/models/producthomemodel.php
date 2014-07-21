@@ -125,5 +125,11 @@ class Producthomemodel extends CI_Model
 		$query = $this->db->query($sql);
 		return count($query->result_array());
 	}
+	public function sale_list_rand()
+	{		 
+        $sql ="SELECT * FROM image WHERE show_popup = 1 ORDER BY image.id DESC LIMIT 1";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+	}
 }
 ?>

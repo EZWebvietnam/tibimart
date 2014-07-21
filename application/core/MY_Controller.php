@@ -85,5 +85,10 @@ class MY_Controller extends CI_Controller
 		$this->load->model('faqhomemodel');
 		$this->data['rand_image'] = $this->faqhomemodel->rand_image();	
 	}
+	public function rand_sale()
+	{
+		$this->load->model('producthomemodel');
+		$this->data['sale_list_rand'] = $this->producthomemodel->sale_list_rand();
+	}
 }
 ?>
