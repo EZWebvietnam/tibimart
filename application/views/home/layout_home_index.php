@@ -252,9 +252,40 @@ Histats.track_hits();} catch(err){};
          <!--end tag div-row category and feature product-->
          <!--partner slide-->
          <div class="row">
-            
-         </div>
-         <!--end partner slide-->
+    <h1 class="text-center text-color-orange">ÐỐI TÁC - KHÁCH HÀNG</h1>
+    <div class="partner-slide">
+                        <div id="carousel-partner-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                                                                                        <li data-target="#carousel-partner-generic" data-slide-to="0"></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                                                      
+                                    <div class="item  active">
+                                       	<?php 
+										foreach($list_partner as $partner)
+										{
+										?>
+                                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                               <div class="thumbnail">
+                                                   <a target="_blank" href="<?php echo $partner['url'];?>"><img src="<?php echo base_url();?>file/uploads/partner/<?php echo $partner['image'];?>" width="170" height="170" alt="Partner"></a>
+                                               </div>
+                                            </div>
+										<?php } ?>
+                                    </div>
+                                                               		                           		                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control partner-carousel-control-left" href="#carousel-partner-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control  partner-carousel-control-right" href="#carousel-partner-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+</div><!--end partner slide-->
          <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/jquery.contenthover.min.js"></script><script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/script.js"></script>
          <script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/js/jquery.contenthover.min.js"></script>   
 		              

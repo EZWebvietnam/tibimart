@@ -131,5 +131,11 @@ class Producthomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
 	}
+	public function list_partner()
+	{		 
+        $sql ="SELECT * FROM partner";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+	}
 }
 ?>

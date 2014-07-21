@@ -13,7 +13,7 @@
 </div>
 <div class="m-pop">
     <script type="text/javascript" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/js/core/price_format.js"></script>
-    <form action="<?php echo base_url(); ?>admin/imageadmin/addimage" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="adminform">
+    <form action="<?php echo base_url(); ?>admin/partneradmin/addimage" enctype="multipart/form-data" method="post" accept-charset="utf-8" id="adminform">
         <table class="form" style="width: 1200px;">
 
             <tr>
@@ -27,7 +27,7 @@
                 <td class="label">Hình ảnh</td>
                 <td colspan="3">
                     <input type="file" name="userfile"/>
-                    <input id="userfile" name="userfile" type="button" class="bt100" value="Upload" onClick="fileUpload(this.form,'<?php echo base_url();?>upload/upload_image_slide','upload','<?php echo base_url(); ?>admin/imageadmin/addimage'); return false;">
+                    <input id="userfile" name="userfile" type="button" class="bt100" value="Upload" onClick="fileUpload(this.form,'<?php echo base_url();?>upload/do_partner','upload','<?php echo base_url(); ?>admin/partneradmin/addimage'); return false;">
                    <div id="upload"></div>
                     <input type='hidden' name='file' id='file'/>
                 </td>
@@ -74,7 +74,7 @@
                     cache: false,
                     success: function(data) {
                         $.fancybox.close();
-                        reload_callback("<?php echo base_url(); ?>admin/imageadmin/list_image", page, 'image_content');
+                        reload_callback("<?php echo base_url(); ?>admin/partneradmin/list_image", page, 'image_content');
                         show_msg(data.msg);
                     }
                 });

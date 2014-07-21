@@ -18,6 +18,7 @@ class Home extends MY_Controller {
 		$this->load->model('catehomemodel');
 		$this->load->model('producthomemodel');
 		$this->load->model('faqhomemodel');
+		$this->data['list_partner'] = $this->producthomemodel->list_partner();
 		$this->data['list_product_random'] = $this->producthomemodel->list_random_product();
 		$this->data['list_cate_home']=$this->catehomemodel->list_cate_home();
 		$this->load->view('home/layout_home_index',$this->data);

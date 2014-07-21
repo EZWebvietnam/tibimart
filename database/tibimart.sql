@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2014 at 11:26 AM
+-- Generation Time: Jul 21, 2014 at 12:00 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -113,15 +113,20 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
 ('0f818369fd3a34ad97a21e5948a76fb8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405930342, ''),
+('1a4c77b9da4f82c1c6456ba1ace4214f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936135, ''),
 ('21ac102c25eb2a3327f591bd9e0430a5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405930304, ''),
 ('261bd111d9c737351deb84a7a3441040', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933863, ''),
 ('30de5c88e434c0f90bfa742539ee05ea', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405934356, ''),
 ('33671da8f4efc58e976d505e408e46c4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933727, ''),
 ('34815ca479d7c06be3e58aa8da4d90c8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933576, ''),
 ('37aa53f8fd8d73ce400a854253cfb9be', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405929893, ''),
+('3babf9f353f09cd303283574e0cc3e84', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936160, ''),
 ('46ec6333437ba5a65e632a2b67a6aa76', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933640, ''),
+('478e947c007e01915f53a7dbc773179e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405935931, ''),
+('481c97f4a2cb608d9688586b897e4046', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405935934, ''),
 ('4e7e01082a791000a20f4a924537235b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933565, ''),
 ('4eda685d71698976aef5cc1246d41485', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933601, ''),
+('5437255da5cfe7454c4a6c5d703b6af8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936238, ''),
 ('5b10a53edb12629d20540a371bf33a50', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933756, ''),
 ('6194e2e29e3942595f23f4d2d2c9db61', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933657, ''),
 ('637cdd281cadd4ea95bd47adbb008cf4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405930278, ''),
@@ -131,6 +136,7 @@ INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activ
 ('6f00c69f3c538dd2c63e91b4c484e43f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933531, ''),
 ('75465fd62b8a1e9296b9b7f6e425f80f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933790, ''),
 ('7895782717c082836d7d6692662077c6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405930338, ''),
+('82b0d9f0717970d9f7e5a277e9424a44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936295, ''),
 ('83e96223e460b8307edc40b1366af67f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933864, ''),
 ('8c949fdc408be9626fdc9864b9cd8fc8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405929899, ''),
 ('8ec3bb58236913c99b477ae076d38214', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405929908, ''),
@@ -138,26 +144,35 @@ INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activ
 ('945ea55f234d0f2cd42e2b4c2fa284df', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933528, ''),
 ('94cd5b9986021291abc32667346ae0a7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405934359, ''),
 ('9e3a88dc997a30683f42b96ca785ce6a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933640, ''),
+('a0132909a1d422100df2414c49df0dc2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405935931, ''),
 ('a2b937e16fc8792c1cff11f7da5d0809', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933854, ''),
 ('a538f2a24d278217e7c48f04f7ce52c1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405930292, ''),
 ('aae226190d112a34b188d1bf1cffe08a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933879, ''),
 ('adb6e0d4b53617fc957fc5a3ba7a5714', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933637, ''),
+('b2ba26f792fce52e680c3d57088ef8cf', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936281, ''),
 ('b94b9d72a5d1b48ffbbc462006edc2ad', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933588, ''),
 ('baae88f5b815abd04f64506241353116', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933642, ''),
 ('bcedbd16402c2239409bd8fe50484a62', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405934361, ''),
 ('c4e516da7f5770e0edf952acf0864151', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405930276, ''),
 ('c51aab666fd376316a604d126a769c69', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405929917, ''),
+('c57b8bbe2e0f65c1bd8b392ae1e589c7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936161, ''),
 ('cba291953a7bb3b93fb06f629f67c15e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405934376, ''),
+('cd4f4e096f1c484d5dea388dd7b1c165', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936237, ''),
+('ce8ed358912998ba3f20261231936e83', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405935991, ''),
 ('cec4c57dd48a6a4b2ff054c38ebcc89a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933547, ''),
+('d7b68311990549088005cbb3e6575a7d', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936206, ''),
 ('d9d6aa4bfcd1c0808aa2c993969782ca', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405930289, ''),
 ('df771f5ee45609ea2d498d32b67a545f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933727, ''),
 ('e0124cf6a890df525712b05189572139', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933644, ''),
 ('e172fe8436f5e994c035ee7b1bd5f0ba', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933587, ''),
 ('e1dc4cb5ef2f248462f6ccc94924926c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933700, ''),
+('eef0718cc80572b0e7409af7b57a8da0', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936206, ''),
 ('f42b8bc13ca6ef91ba763f6d5e2615f5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405934376, ''),
 ('f5af912a2313abf6622a3b20eced070b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405930339, ''),
 ('fb8f458f5631b0e42fc4ddbb2a5f73c6', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405933528, ''),
-('fe34ea1f2fed13c309566e81f0c0f6a0', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405929904, '');
+('fe34ea1f2fed13c309566e81f0c0f6a0', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405929904, ''),
+('fe6fb072f50da60377821e32dc50927e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936031, ''),
+('fed11aefd5ba62970ca6241bea32ee03', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (K', 1405936229, '');
 
 -- --------------------------------------------------------
 
@@ -302,6 +317,26 @@ INSERT INTO `order_detail` (`id`, `id_product`, `quantity`, `price`, `ip_user`, 
 (1, 14, 4, 111111, '127.0.0.1', 1, 1402377922),
 (2, 14, 4, 111111, '127.0.0.1', 2, 1402377929),
 (3, 1, 1, 160000, '127.0.0.1', 3, 1402543235);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `partner`
+--
+
+CREATE TABLE IF NOT EXISTS `partner` (
+  `id_partner` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_partner`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `partner`
+--
+
+INSERT INTO `partner` (`id_partner`, `image`, `url`) VALUES
+(1, '4f3503208bab3f56960faa4e016e8d08.jpg', '0');
 
 -- --------------------------------------------------------
 

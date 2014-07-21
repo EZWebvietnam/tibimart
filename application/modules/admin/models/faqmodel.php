@@ -94,6 +94,24 @@ class Faqmodel extends CI_Model
 	{
 		$this->db->delete('about',array('id'=>$id));	
 	}
+	//Partner
+	public function list_image_partner($number,$offset)
+    {
+		$sql = "SELECT * FROM partner LIMIT ?,?";
+		$query = $this->db->query($sql,array($offset,$number));
+		return $query->result_array();
+	}
+	public function count_image_partner()
+	{
+		$sql = "SELECT * FROM partner";
+		$query = $this->db->query($sql);
+		return count($query->result_array());
+	}
+	public function insert_partner(array $data)
+	{
+		$this->db->insert('partner',$data);
+		return $this->db->insert_id();
+	}
 	//Image Slide
 	public function list_image($number,$offset)
     {
