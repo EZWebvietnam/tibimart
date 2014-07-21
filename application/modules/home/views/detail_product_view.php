@@ -1,3 +1,18 @@
+	<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/fancy/jquery.easing-1.3.pack.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/fancy/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/fancy/jquery.fancybox-1.3.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/fancy/jquery.fancybox-1.3.4.css" media="screen" />
+	<script>
+		$(document).ready(function() {
+
+	/* This is basic - uses default settings */
+	
+	$("a#image").fancybox();
+	
+	/* Using custom settings */
+	
+});
+	</script>
 <div class="col-md-9 col-lg-9 col-sm-9">
                <div class="row">
                   <div class="col-md-7 col-lg-7 col-sm-8 ">
@@ -7,9 +22,11 @@
 					 {
 					 
 					 ?>
+					 <a id="image" rel="example_group" href="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image']?>">
                         <img class="text-center"
-                           src="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image']?>"
+                           src="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image']?>" data-zoom-image="<?php echo base_url();?>file/uploads/product/<?php echo $product_detail[0]['image']?>"
                            height="300" width="300"/>
+						   </a>
 						<?php } else { ?>
 						<img class="text-center"
                            src="<?php echo base_url();?>file/uploads/no_image.gif"
