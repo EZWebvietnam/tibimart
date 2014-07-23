@@ -49,12 +49,12 @@ class Partneradmin extends MY_Controller
 		$this->load->view('partner/ajax_admin_image',$this->data);
 	}
 	public function delete($id) {
-       	$detail =$this->faqmodel->image_detail($id);
+       	$detail =$this->faqmodel->partner_detail($id);
 		if(!empty($detail))
 		{
 			unlink(PATH_FOLDER.ROT_DIR.'file/uploads/partner/'.$detail[0]['image']);	
 		}
-        $this->faqmodel->delete_image($id);
+        $this->faqmodel->delete_partner($id);
         $array = array('error' => 0, 'msg' => "Xóa thành công");
         echo json_encode($array);
     }
@@ -93,12 +93,12 @@ class Partneradmin extends MY_Controller
     public function deletes() {
         $array = $this->input->post('ar_id');
         foreach ($array as $k => $v) {
-			$detail =$this->faqmodel->image_detail($v);
+			$detail =$this->faqmodel->partner_detail($v);
 			if(!empty($detail))
 			{
 				unlink(PATH_FOLDER.ROT_DIR.'file/uploads/partner/'.$detail[0]['image']);	
 			}
-           $this->faqmodel->delete_image($v);
+           $this->faqmodel->delete_partner($v);
         }
         $array = array('error' => 0, 'msg' => "Xóa thành công");
         echo json_encode($array);

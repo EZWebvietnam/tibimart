@@ -148,5 +148,34 @@ class Imageadmin extends MY_Controller
         $array = array('error' => 0, 'msg' => "Xóa thành công");
         echo json_encode($array);
     }
+	public function edit($id_image)
+	{
+		$detail =$this->faqmodel->image_detail($id_image);
+		if($this->input->post())
+		{
+			$file = $this->input->post('file');
+			$url = $this->input->post('url');
+			$show_popup = $this->input->post('show_popup');
+			if($file!='')
+			{
+				unlink(PATH_FOLDER.ROT_DIR.'file/uploads/slide/'.$detail[0]['image']);	
+				$data_save = array('image'=>$file,'url'=>$url,'show_popup'=>$show_popup);
+			}
+			else
+			{
+				$data_save = array('url'=>$url,'show_popup'=>$show_popup);
+			}
+			$this->faqmodel->update_img($id_image,$data_save);
+			$array = array('error'=>0,'msg'=>'Update thành công');
+          	echo json_encode($array);
+				
+		}	
+		else
+		{
+			
+			$this->data['image_detail'] = $detail;
+			$this->load->view('image/ajax_admin_edit_image_pop',$this->data);
+		}
+	}
 }
 ?>

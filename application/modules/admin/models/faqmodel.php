@@ -130,9 +130,25 @@ class Faqmodel extends CI_Model
 		$this->db->insert('image',$data);
 		return $this->db->insert_id();
 	}
+	public function update_img($id,array $data)
+	{
+		$this->db->where('id',$id);
+		$this->db->update('image',$data);
+		
+	}
 	public function delete_image($id)
 	{
 		$this->db->delete('image',array('id'=>$id));
+	}
+	public function delete_partner($id)
+	{
+		$this->db->delete('partner',array('id_partner'=>$id));
+	}
+	public function partner_detail($id)
+	{
+		$sql = "SELECT * FROM partner WHERE id_partner = ?";
+		$query = $this->db->query($sql,array($id));
+		return $query->result_array();	
 	}
 	public function image_detail($id)
 	{

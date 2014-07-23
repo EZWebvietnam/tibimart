@@ -105,10 +105,17 @@
 						 ?></td>
                         <td align="center">
                             
-                            
+                             <?php 
+						   if($product_ref['show_popup'] == 1)
+						   {
+						   
+						   ?>
+						     <a class="grouped_elements" href="<?php echo base_url();?>admin/imageadmin/edit/<?php echo $product_ref['id']?>" title="Sửa"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/edit.png"></a>
+							 
+                           <?php } ?>
                            <a class="delete_record" href="<?php echo base_url();?>admin/imageadmin/delete/<?php echo $product_ref['id']?>" title="Xóa"><img src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/del.png"></a>        
-                            
-                        </td>
+						   
+                        
                      </tr>
                      <?php }?>       
                      <tfoot>
