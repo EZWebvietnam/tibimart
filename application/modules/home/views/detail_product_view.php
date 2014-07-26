@@ -66,7 +66,7 @@
                            </h4>
 						   <?php } ?>
 						   <h4>
-                              <strong>Giá bán:</strong> <strike><?php echo number_format($product_detail[0]['price_'])?></strike> ₫
+                              <strong>Giá bán:</strong> <strike><?php if($product_detail[0]['price_']!=''){echo number_format($product_detail[0]['price_']);} else {echo $product_detail[0]['price_'];}?></strike> ₫
                            </h4>
                            <h4>
                               <strong>Giá KM:</strong> <?php echo number_format($price)?> ₫
