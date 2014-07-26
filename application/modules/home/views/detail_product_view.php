@@ -7,7 +7,7 @@
 
 	/* This is basic - uses default settings */
 	
-	$("a#image").fancybox();
+	$("#image").fancybox();
 	
 	/* Using custom settings */
 	
@@ -65,9 +65,13 @@
                               <strike></strong>Giá gốc: <?php echo number_format($product_detail[0]['price']);?> ₫</strike>
                            </h4>
 						   <?php } ?>
-                           <h4>
-                              <strong>Giá bán:</strong> <?php echo number_format($price)?> ₫
+						   <h4>
+                              <strong>Giá bán:</strong> <strike><?php echo number_format($product_detail[0]['price_'])?></strike> ₫
                            </h4>
+                           <h4>
+                              <strong>Giá KM:</strong> <?php echo number_format($price)?> ₫
+                           </h4>
+                            
                            <h4>
                             <strong>Lưu ý :</strong> <?php echo $product_detail[0]['luu_y'];?> </h4>
                            <input type="hidden" name='price'

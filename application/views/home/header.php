@@ -3,18 +3,18 @@
    <head>
       <meta charset="utf-8">
       <title><?php echo $header['title']?></title>
-	<meta name="title" content="<?php echo $header['title']?>" />
-	<meta name="ROBOTS" content="<?php echo $header['robots']?>" />
-	<meta name="google-site-verification" content="3bw3BmjnA7mCnF4wmWLh1HTdWVFT-ClaJ0uxDDy3_r4" />
-	<link rel="canonical" href="<?php echo full_url_($_SERVER);?>"/>		
-	<meta property="og:url" content="<?php echo full_url_($_SERVER);?>" />
-	<meta property="og:title" content="<?php echo $header['title']?>" />
-	<meta property="og:description" content="<?php echo $header['description']?>" />
-	<meta property="og:image" content="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
-	<meta name="keywords" content="<?php echo $header['keywords']?>" />
-	<meta name="description" content="<?php echo $header['description']?>" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="title" content="<?php echo $header['title']?>" />
+		<meta name="ROBOTS" content="<?php echo $header['robots']?>" />
+		<meta name="google-site-verification" content="3bw3BmjnA7mCnF4wmWLh1HTdWVFT-ClaJ0uxDDy3_r4" />
+		<link rel="canonical" href="<?php echo full_url_($_SERVER);?>"/>		
+		<meta property="og:url" content="<?php echo full_url_($_SERVER);?>" />
+		<meta property="og:title" content="<?php echo $header['title']?>" />
+		<meta property="og:description" content="<?php echo $header['description']?>" />
+		<meta property="og:image" content="<?php echo base_url();?>file/uploads/logo/<?php echo $header['logo']?>" />
+		<meta name="keywords" content="<?php echo $header['keywords']?>" />
+		<meta name="description" content="<?php echo $header['description']?>" />
+    
       <link href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/css/ovhand.min.css" media="screen" rel="stylesheet" type="text/css">
       <link href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/css/ovhand-theme.min.css" media="screen" rel="stylesheet" type="text/css">
       <link href="<?php echo base_url();?>template/ezwebvietnam/tibimart_orange/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
@@ -32,11 +32,11 @@
    ?>
    <script type="text/javascript">
 			$(window).load(function() {
-			 //if(document.cookie.indexOf("adf") == -1)
-	       	 //{
-	            //document.cookie = "popunder1=adf";
+			 if(document.cookie.indexOf("adf") == -1)
+	       	 {
+	            document.cookie = "popunder1=adf";
 	            jQuery('#myModal').linhnguyen(jQuery('#myModal').data());
-	         //}
+	         }
 			});
 		</script>
    <div id="myModal" class="linhnguyen-modal" style="top: 300px !important;">

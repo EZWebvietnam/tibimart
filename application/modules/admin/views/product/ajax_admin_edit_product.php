@@ -34,8 +34,14 @@
                     <input id="manu" type="text" value="<?php echo $detail_product[0]['manu'] ?>" name="manu"/>
                 </td>
             </tr>
+            <tr>
+                <td class="label">Giá bán</td>
+                <td colspan="3">
+                    <input id="cost_1" type="text" value="<?php echo $detail_product[0]['price_'] ?>" name="cost"/>
+                </td>
+            </tr>
 			<tr>
-                <td class="label">Giá</td>
+                <td class="label">Giá KM</td>
                 <td colspan="3">
                     <input id="cost" type="text" value="<?php echo $detail_product[0]['price'] ?>" name="cost"/>
                 </td>
@@ -115,7 +121,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title').val(),category:$('#id_category').val(),cost:$('#cost').val(),file:$('#file').val(),content:content,code:$('#code').val(),manu:$('#manu').val(),luu_y:$('#luu_y').val()},
+                    data: {title:$('#title').val(),category:$('#id_category').val(),cost:$('#cost').val(),file:$('#file').val(),content:content,code:$('#code').val(),manu:$('#manu').val(),luu_y:$('#luu_y').val(),cost_1:$('#cost_1').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

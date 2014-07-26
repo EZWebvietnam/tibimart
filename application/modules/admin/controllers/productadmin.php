@@ -158,7 +158,8 @@ class Productadmin extends MY_Controller {
 				'id_cate'=>$this->input->post('category'),
 				'code'=>$this->input->post('code'),
 				'manu'=>$this->input->post('manu'),
-				'luu_y'=>$this->input->post('luu_y')
+				'luu_y'=>$this->input->post('luu_y'),
+				'price_'=>$this->input->post('cost_1')
             );
 			if($this->input->post('file')!='')
 			{
@@ -235,7 +236,8 @@ class Productadmin extends MY_Controller {
 					'id_cate'=>$this->input->post('category'),
 					'code'=>$this->input->post('code'),
 				'manu'=>$this->input->post('manu'),
-				'luu_y'=>$this->input->post('luu_y')
+				'luu_y'=>$this->input->post('luu_y'),
+				'price_'=>$this->input->post('cost_1')
                 );
             } else {
                 $data_save = array(
@@ -245,7 +247,8 @@ class Productadmin extends MY_Controller {
 					'id_cate'=>$this->input->post('category'),
 					'code'=>$this->input->post('code'),
 				'manu'=>$this->input->post('manu'),
-				'luu_y'=>$this->input->post('luu_y')
+				'luu_y'=>$this->input->post('luu_y'),
+				'price_'=>$this->input->post('cost_1')
                 );
             }
             $this->productmodel->update_product($id, $data_save);

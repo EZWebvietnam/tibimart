@@ -35,7 +35,13 @@
                 </td>
             </tr>
             <tr>
-                <td class="label">Giá</td>
+                <td class="label">Giá bán</td>
+                <td colspan="3">
+                    <input id="cost_1" type="texbox" name="cost1"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Giá KMs</td>
                 <td colspan="3">
                     <input id="cost_" type="texbox" name="cost"/>
                 </td>
@@ -113,7 +119,7 @@
                 $.ajax({
                     type: "POST",
                     url: $("#adminform").attr('action'),
-                    data: {title:$('#title_').val(),cost:$('#cost_').val(),file:$('#file').val(),content:content,year:$('#year_').val(),category:$('#id_category').val(),code:$('#code').val(),manu:$('#manu').val(),luu_y:$('#luu_y').val()},
+                    data: {title:$('#title_').val(),cost:$('#cost_').val(),file:$('#file').val(),content:content,year:$('#year_').val(),category:$('#id_category').val(),code:$('#code').val(),manu:$('#manu').val(),luu_y:$('#luu_y').val(),cost_1:$('#cost_1').val()},
                     mimeType: "multipart/form-data",
                     dataType: "json",
                     cache: false,

@@ -88,7 +88,8 @@
                            <th>Giới thiệu</th>
                           
                           
-                           <th>Giá</th>
+                           <th>Giá KM</th>
+                           <th>Giá bán</th>
                            <th class="publish">Chức năng</th>
                         </tr>
                      </thead>
@@ -103,6 +104,7 @@
                        
                         
                         <td><?php echo $product_ref['price']?></td>
+                          <td><?php echo $product_ref['price_']?></td>
                         <td align="center"><a class="grouped_elements" href="<?php echo base_url();?>admin/productadmin/edit/<?php echo $product_ref['id_product']?>" title="Sửa"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/edit.png"></a>
                             <a class="grouped_elements" href="<?php echo base_url();?>admin/productadmin/view/<?php echo $product_ref['id_product']?>" title="Xem chi tiết"><img width="16" height="16" src="<?php echo base_url();?>template/ezwebvietnam/admin_cp/icon/view.png"></a>
                             
