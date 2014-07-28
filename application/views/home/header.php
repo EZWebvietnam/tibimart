@@ -105,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                      href="<?php echo base_url();?>huong-dan-thanh-toan">Phương thức thanh toán</a>
                   </li>
 				  <li><a
-                     href="<?php echo base_url();?>khuyen-mai">Khuyến mại</a>
+                     href="<?php echo base_url();?>sp-khuyen-mai">Khuyến mại</a>
                   </li>
                   <li><a
                      href="<?php echo base_url();?>hoi-dap">Hỏi đáp</a>
