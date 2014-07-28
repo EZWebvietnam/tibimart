@@ -33,6 +33,12 @@ include('header.php');
                      </ul>
                   </li>
                <?php } ?>   
+			    <li>
+                     <a href="<?php echo base_url();?>sp-khuyen-mai">
+                     KHUYẾN MẠI	               </a>
+                     <ul class="dropdown-menu">
+					 	                     </ul>
+                  </li> 
                </ul>
                </div>
 			   <div class="navbar navbar-default">
@@ -130,7 +136,7 @@ Histats.track_hits();} catch(err){};
 						   	$price = $product_rand['price'];
 						   }
 						   ?>
-                           <span class="text-info"><strong>Giá KM:<?php echo number_format($price)?> ₫</strong><strong>Giá bán:<strike><?php if($product_rand['price_']!=''){ echo number_format($product_rand['price_']);} else {echo $product_rand['price_'];}?></strike> ₫</strong></span>
+                           <span class="text-info"><strong>Giá KM:<?php echo number_format($price)?> ₫</strong><br><strong>Giá bán:<strike><?php if($product_rand['price_']!=''){ echo number_format($product_rand['price_']);} else {echo $product_rand['price_'];}?></strike> ₫</strong></span>
                            </span>
                         </p>
                      </div>

@@ -157,6 +157,33 @@ class Product extends MY_Controller
 		$this->data['list'] = $array_sv;
 		$this->load->view('home/layout_list_product',$this->data);
 	}
+	public function list_product_km()
+	{
+
+		$this->load->helper('url');
+		$config['uri_segment'] = 5;
+		$page = $this->uri->segment(3);
+		$config['per_page'] = 12;
+		$this->data['cate_detail_'][0]['title'] = 'Sản phẩm';
+		$config['total_rows'] = $this->producthomemodel->count_product_list_km();
+		if($page == ''){
+			$page = 1;
+		}
+		$page1 = ($page - 1) * $config['per_page'];
+		if(!is_numeric($page)){
+			show_404();
+			exit;
+		}
+		$num_pages = ceil($config['total_rows'] / $config['per_page']);
+		$array_sv  = $this->producthomemodel->list_product_list_km($config['per_page'], $page1);
+		$this->data['header']['title'] = 'Sản phẩm khuyến mại - Tibimart.com';
+		$this->data['total_page'] = $num_pages;
+		$this->data['offset'] = $page1;
+		$this->data['page'] = $page;
+		$this->data['total'] = $config['total_rows'];
+		$this->data['list'] = $array_sv;
+		$this->load->view('home/layout_list_product',$this->data);
+	}
 	public function list_product_search()
 	{
 		$key = $_GET['key'];

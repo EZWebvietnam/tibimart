@@ -34,6 +34,12 @@ include('header.php');
                      </ul>
                   </li>
                <?php } ?>   
+			    <li>
+                     <a href="<?php echo base_url();?>sp-khuyen-mai">
+                     KHUYẾN MẠI	               </a>
+                     <ul class="dropdown-menu">
+					 	                     </ul>
+                  </li> 
                </ul>
             </div>
 			<div class="navbar navbar-default">
