@@ -136,7 +136,7 @@ Histats.track_hits();} catch(err){};
 						   	$price = $product_rand['price'];
 						   }
 						   ?>
-                           <span class="text-info"><strong>Giá KM:<?php echo number_format($price)?> ₫</strong><br><strong>Giá bán:<strike><?php if($product_rand['price_']!=''){ echo number_format($product_rand['price_']);} else {echo $product_rand['price_'];}?></strike> ₫</strong></span>
+                           <span class="text-info"><strong style="color: grey !important;"><strike><?php if($product_rand['price_']!=''){ echo number_format($product_rand['price_']);} else {echo $product_rand['price_'];}?></strike> ₫</strong><br><strong><?php echo number_format($price)?> ₫</strong></span>
                            </span>
                         </p>
                      </div>
