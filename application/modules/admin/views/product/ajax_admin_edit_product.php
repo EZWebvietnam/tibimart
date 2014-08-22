@@ -115,7 +115,7 @@
                 cost: "Vui lòng nhập giá",
             }
             , submitHandler: function(form) {
-                var page = 1;
+                var page = $('#page_product').val();
                 dataString = $("#adminform").serialize();
                 var content = CKEDITOR.instances['editor2'].getData();
                 $.ajax({

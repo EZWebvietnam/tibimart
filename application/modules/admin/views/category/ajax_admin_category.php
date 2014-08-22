@@ -39,7 +39,7 @@
                <div class="box_find">
                </div>
                <form action="<?php echo base_url();?>admin/categoryadmin/deletes" method="post" accept-charset="utf-8" id="category_khoahoc">
-                  <input type="hidden" id="page" value="0"/>
+                  <input type="hidden" id="page_category" value="<?php echo $page;?>"/>
                   <input type="hidden" id="callback" value="<?php echo base_url();?>admin/categoryadmin/list_cate"/>
                   <table class="admindata">
                      <thead>

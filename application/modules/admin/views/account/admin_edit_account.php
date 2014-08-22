@@ -95,7 +95,7 @@
                 address: "Vui lòng nhập địa chỉ"
             }
             , submitHandler: function(form) {
-                var page = 1;
+                var page = $('#page_account').val();
                 dataString = $("#adminform").serialize();
                 $.ajax({
                     type: "POST",

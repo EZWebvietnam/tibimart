@@ -27,7 +27,7 @@
                <div class="box_find">
                </div>
                <form action="<?php echo base_url();?>admin/ctvadmin/deletes" method="post" accept-charset="utf-8" id="admindata_account">
-                  <input type="hidden" id="page" value="0"/>
+                  <input type="hidden" id="page_account" value="<?php echo $page;?>"/>
                   <input type="hidden" id="callback" value="<?php echo base_url();?>admin/accountadmin/list_account"/>
                   <table class="admindata">
                      <thead>

@@ -172,7 +172,7 @@
 
             }
             , submitHandler: function(form) {
-                var page = 1;
+                var page = $('#page_category').val();
                 dataString = $("#adminform").serialize();
                 $.ajax({
                     type: "POST",

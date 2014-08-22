@@ -224,14 +224,28 @@ Histats.track_hits();} catch(err){};
                            <?Php 
 						   if(!empty($product_sale))
 						   {
-						   	$price = 	$product_rand['price'] - $product_rand['price']* $product_sale[0]['percent'];
+								if($product_rand['price']=='')
+								{
+									$price = 	$product_rand['price_'] - $product_rand['price_']* $product_sale[0]['percent'];
+								}
+								else
+								{
+									$price = 	$product_rand['price'] - $product_rand['price']* $product_sale[0]['percent'];
+								}
 						   }
 						   else
 						   {
-						   	$price = $product_rand['price'];
+								if($product_rand['price']!='')
+								{
+								$price = $product_rand['price'];
+								}
+								else
+								{
+								$price = $product_rand['price_'];
+								}
 						   }
 						   ?>
-                           <span class="text-info"><strong style="color: grey !important;"><strike><?php if($product_rand['price_']!=''){ echo number_format($product_rand['price_']);} else {echo $product_rand['price_'];}?></strike> ₫</strong><br><strong><?php echo number_format($price)?> ₫</strong></span>
+                           <span class="text-info"><strong style="color: grey !important;"><strike><?php if($product_rand['price_']!='' || $product_rand['price_'] != null){ echo number_format($product_rand['price_']);} else {echo number_format($price);}?></strike> ₫</strong><br><strong><?php echo number_format($price)?> ₫</strong></span>
                            </span>
                         </p>
                      </div>

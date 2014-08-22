@@ -71,7 +71,7 @@
 
             }
             , submitHandler: function(form) {
-                var page = 1;
+                var page = $('#page_faq').val();
                 dataString = $("#adminform").serialize();
                 var content = CKEDITOR.instances['editor2'].getData();
                 $.ajax({

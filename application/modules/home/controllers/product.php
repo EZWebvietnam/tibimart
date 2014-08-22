@@ -68,11 +68,25 @@ class Product extends MY_Controller
 			$price      = 0;
 			if(empty($price_sale))
 			{
-				$price = $product_detail[0]['price'];
+				if($product_detail[0]['price']!='')
+				{
+					$price = $product_detail[0]['price'];
+				}
+				else
+				{
+					$price = $product_detail[0]['price_'];
+				}
 			}
 			else
 			{
-				$price = ($product_detail[0]['price'] - $product_detail[0]['price'] * ($price_sale[0]['percent'] / 100));
+				if($product_detail[0]['price']!='')
+				{
+					$price = ($product_detail[0]['price'] - $product_detail[0]['price'] * ($price_sale[0]['percent'] / 100));
+				}
+				else
+				{
+					$price = ($product_detail[0]['price_'] - $product_detail[0]['price_'] * ($price_sale[0]['percent'] / 100));
+				}
 			}
 			$total_price = $quantity * $price;
 			$cart_detail = $this->cartmodel->check_cart($ip,$id_product);
