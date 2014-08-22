@@ -245,7 +245,7 @@ Histats.track_hits();} catch(err){};
 								}
 						   }
 						   ?>
-                           <span class="text-info"><strong style="color: grey !important;"><strike><?php if($product_rand['price_']!='' || $product_rand['price_'] != null){ echo number_format($product_rand['price_']);} else {echo number_format($price);}?></strike> ₫</strong><br><strong><?php echo number_format($price)?> ₫</strong></span>
+                           <span class="text-info"><strong style="color: grey !important;"><strike><?php if($product_rand['price_']!='' || $product_rand['price_'] != null){ echo number_format($product_rand['price_']);} else {echo number_format(0);}?></strike> ₫</strong><br><strong><?php echo number_format($price)?> ₫</strong></span>
                            </span>
                         </p>
                      </div>
