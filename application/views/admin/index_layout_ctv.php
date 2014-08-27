@@ -133,6 +133,12 @@ $time_start = microtime_float();
                                                     if($this->session->userdata('role')==1)
                                                     {
                                                     ?>
+															<li class="main">
+                                                                <a href="<?php echo base_url(); ?>admin/aboutadmin/list_club" rel="about" class="v_link">
+                                                                    <div><img src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/icon/unit-icon.png" alt=""></div>
+                                                                   Giới thiệu
+                                                                </a>
+                                                            </li>
                                                             <li class="main">
                                                                 <a href="<?php echo base_url(); ?>admin/orderadmin/list_order" rel="khohang" class="v_link">
                                                                     <div><img src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/icon/unit-icon.png" alt=""></div>

@@ -62,6 +62,7 @@ $route['san-pham/page/(:any)'] = "home/product/list_product_all";
 $route['san-pham/c/(:any)-(:any)']="home/product/list_product/$1";
 $route['san-pham/c/(:any)-(:any)/page/(:any)']="home/product/list_product/$1";
 $route['san-pham/(:any)-(:any)'] = "home/product/product_detail/$1";
+$route['gioi-thieu'] = "home/home/about";
 $route['404_override'] = '';
 $route['gioi-thieu']='home/home/about';
 $route['hoi-dap-(:any)-(:any)'] = 'home/faq/faq_detail/$1';

@@ -95,6 +95,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                <ul class="nav navbar-nav">
                   <li class=""><a href="<?php echo base_url();?>"><i
                      class="glyphicon glyphicon-home"></i>&nbsp;Trang chủ</a></li>
+					<li><a
+                     href="<?php echo base_url();?>gioi-thieu">Giới thiệu</a>
+                  </li> 
                   <li><a
                      href="<?php echo base_url();?>san-pham">Sản phẩm</a>
                   </li>

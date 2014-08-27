@@ -141,16 +141,7 @@ class Home extends MY_Controller {
         $array = array('error'=>0,'img'=>$image);
         echo json_encode($array);
     }
-    public function about()
-    {
-        $this->load->model('faq');
-        $this->load->model('productmodel');
-        $this->data['image']=$this->_create_captcha();
-        $this->data['list_product_sale'] = $this->productmodel->get_list_product_sale_off();
-        $this->data['about'] = $this->faq->about();
-        $this->data['main_content'] = 'home_view/detail_about';
-        $this->load->view('home/layout_detail', $this->data);
-    }
+    
     public function payment()
     {
     	$this->load->model('orderhomemodel');
@@ -177,6 +168,14 @@ class Home extends MY_Controller {
 		
 		
 	}
+	public function about()
+    {
+		$this->load->model('abouthomemodel');
+		$this->data['main_content'] = 'about_view';
+		$this->data['header']['title'] = 'Giới thiệu về CLB | Futsal United Saigon';
+		$this->data['about'] = $this->abouthomemodel->get_about(1);
+		$this->load->view('home/layout_product_detail',$this->data);		
+    }
 	function _send_email($type, $to, $email, &$data, $title) {
         /*$this->load->library('email');*/
        // $this->load->library('maillinux');

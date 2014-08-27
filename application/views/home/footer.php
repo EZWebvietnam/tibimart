@@ -47,8 +47,7 @@
                   
                  
                   <h3>Facebook</h3>
-                  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAZ7yY9gsPiLaOraj_eOfWd0e9Bidg0dPc&sensor=true" type="text/javascript"></script>
+                 
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 <script type="text/javascript">
     var map;
