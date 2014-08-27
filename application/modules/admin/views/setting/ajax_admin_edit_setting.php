@@ -14,7 +14,9 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>template/ezwebvietnam/admin_cp/js/core/price_format.js"></script>
     <form action="<?php echo base_url(); ?>admin/settingadmin/edit" method="post" accept-charset="utf-8" id="adminform"><input type="hidden" name="id" value="74">
         <table class="form" style="width: 550px;">
-
+			<?php 
+			$array = array('0'=>'Tắt','1'=>'Bật');
+			?>	
             <tr>
                 <td class="label">Author</td>
                 <td colspan="3">
@@ -55,6 +57,27 @@
                 <td class="label">Rating</td>
                 <td colspan="3">
                     <input id="rating" type="text" value="<?php echo $setting['rating'] ?>" name ="rating"/>
+                </td>
+            </tr>
+			<tr>
+                <td class="label">Bật khuyến mại</td>
+                <td colspan="3">
+                    <select name="enablesale">
+					<?php 
+					foreach($array as $k=>$n)
+					{
+						if($k==$setting['enablesale'])
+						{	
+							$se = 'selected=""';
+						}
+						else
+						{
+							$se = '';
+						}
+					?>
+						<option <?php echo $se;?> value="<?php echo $k;?>"><?php echo $n;?></option>
+					<?php } ?>
+					</select>
                 </td>
             </tr>
             <tr>

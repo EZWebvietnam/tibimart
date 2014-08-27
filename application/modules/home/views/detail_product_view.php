@@ -64,14 +64,21 @@
                            <h4 class="text-muted">
                               <strike></strong>Giá gốc: <?php echo number_format($product_detail[0]['price']);?> ₫</strike>
                            </h4>
-						   <?php } ?>
+						   <?php } 
+						   if($header['enablesale']==1)
+						   {
+						   ?>
 						   <h4>
                               <strong>Giá bán:</strong> <strike><?php if($product_detail[0]['price_']!=''){echo number_format($product_detail[0]['price_']);} else {echo $product_detail[0]['price_'];}?></strike> ₫
                            </h4>
                            <h4>
                               <strong>Giá KM:</strong> <?php echo number_format($price)?> ₫
                            </h4>
-                            
+                            <?php } else { ?>
+							<h4>
+                              <strong>Giá bán:</strong><?php if($product_detail[0]['price_']!=''){echo number_format($product_detail[0]['price_']);} else {echo $product_detail[0]['price_'];}?> ₫
+                           </h4>
+							<?php } ?>
                            <h4>
                             <strong>Lưu ý :</strong> <?php echo $product_detail[0]['luu_y'];?> </h4>
                            <input type="hidden" name='price'

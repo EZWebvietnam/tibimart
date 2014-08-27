@@ -52,8 +52,10 @@ class Settingadmin extends MY_Controller {
             $title = $tit->item(0)->nodeValue;
 			$gt = $employee->getElementsByTagName("gioithieu");
             $gioithieu = $gt->item(0)->nodeValue;
+			$ens = $employee->getElementsByTagName("enablesale");
+            $enablesale = $ens->item(0)->nodeValue;
             $data_setting = array('author' => $name, 'publisher' => $pubs, 'copyright' => $cop, 'robots' => $robots,
-                'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title,'gioithieu'=>$gioithieu);
+                'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title,'gioithieu'=>$gioithieu,'enablesale'=>$enablesale);
         }
         $this->data['setting'] = $data_setting;
         $this->load->view('setting/ajax_admin_get_setting', $this->data);
@@ -90,6 +92,8 @@ class Settingadmin extends MY_Controller {
             $root->appendChild($doc->createElement('keywords', $this->input->post('keyword')));
             $root->appendChild($doc->createTextNode("\n"));
 			$root->appendChild($doc->createElement('gioithieu', $this->input->post('gioithieu')));
+            $root->appendChild($doc->createTextNode("\n"));
+			$root->appendChild($doc->createElement('enablesale', $this->input->post('enablesale')));
             $root->appendChild($doc->createTextNode("\n"));
             $file = $this->input->post('file');
             if($file!='')
@@ -142,8 +146,10 @@ class Settingadmin extends MY_Controller {
                 $title = $tit->item(0)->nodeValue;
 				$gt = $employee->getElementsByTagName("gioithieu");
                 $gioithieu = $gt->item(0)->nodeValue;
+				$ens = $employee->getElementsByTagName("enablesale");
+				$enablesale = $ens->item(0)->nodeValue;
                 $data_setting = array('author' => $name, 'publisher' => $pubs, 'copyright' => $cop, 'robots' => $robots,
-                    'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title,'gioithieu'=>$gioithieu);
+                    'distribution' => $distribution, 'rating' => $rating, 'keywords' => $keywords, 'logo' => $logos, 'icon' => $icons, 'description' => $description, 'title' => $title,'gioithieu'=>$gioithieu,'enablesale'=>$enablesale);
             }
             $this->data['setting'] = $data_setting;
             $this->load->view('setting/ajax_admin_edit_setting', $this->data);

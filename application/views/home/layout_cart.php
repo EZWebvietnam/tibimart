@@ -25,13 +25,27 @@ include('header.php');
 						{
 							$price_sale = $this->producthomemodel->get_sale_off_product($cart['id_product']);
 							$price      = 0;
-							if(empty($price_sale))
+							if($header['enablesale'] ==1)
 							{
-								$price = $cart['price'];
+								if(empty($price_sale))
+								{
+									$price = $cart['price'];
+								}
+								else
+								{
+									$price = ($cart['price'] - $cart['price'] * ($price_sale[0]['percent'] / 100));
+								}
 							}
 							else
 							{
-								$price = ($cart['price'] - $cart['price'] * ($price_sale[0]['percent'] / 100));
+								if(empty($price_sale))
+								{
+									$price = $cart['price_'];
+								}
+								else
+								{
+									$price = ($cart['price_'] - $cart['price_'] * ($price_sale[0]['percent'] / 100));
+								}
 							}
 							?>
 			<tr>

@@ -55,13 +55,15 @@ class MY_Controller extends CI_Controller
             $icon = $employee->getElementsByTagName("icon");
             $icons = $icon->item(0)->nodeValue;
             $desc = $employee->getElementsByTagName("description");
-                $description = $desc->item(0)->nodeValue;
+            $description = $desc->item(0)->nodeValue;
             $tit = $employee->getElementsByTagName("title");
 			$gt = $employee->getElementsByTagName("gioithieu");
             $gioithieu = $gt->item(0)->nodeValue;
-                $title = $tit->item(0)->nodeValue;
+            $title = $tit->item(0)->nodeValue;
+			$ens = $employee->getElementsByTagName("enablesale");
+            $enablesale = $ens->item(0)->nodeValue;
                 $data_setting = array('author'=>$name,'publisher'=>$pubs,'copyright'=>$cop,'robots'=>$robots,
-                    'distribution'=>$distribution,'rating'=>$rating,'keywords'=>$keywords,'logo'=>$logos,'icon'=>$icons,'description'=>$description,'title'=>$title,'gioithieu'=>$gioithieu);
+                    'distribution'=>$distribution,'rating'=>$rating,'keywords'=>$keywords,'logo'=>$logos,'icon'=>$icons,'description'=>$description,'title'=>$title,'gioithieu'=>$gioithieu,'enablesale'=>$enablesale);
         }
         $this->data['header']=$data_setting;
     }
